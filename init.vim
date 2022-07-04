@@ -31,9 +31,15 @@ call plug#begin()
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+    " extra icons
+    Plug 'ryanoasis/vim-devicons'
+
     " For customizing theme
     Plug 'vim-scripts/SyntaxAttr.vim'
 call plug#end()
+
+" not especially needed
+set encoding=UTF-8
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
