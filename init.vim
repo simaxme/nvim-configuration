@@ -12,6 +12,7 @@ call plug#begin()
     Plug 'preservim/nerdtree'
     Plug 'vifm/vifm.vim'
 
+    " Git tools
     Plug 'airblade/vim-gitgutter'
 
     " Auto Completion
@@ -62,6 +63,8 @@ let java_highlight_all = 1
 
 " basic configuration
 
+set clipboard=unnamedplus " always copy yanked data to clipboard
+
 set syntax
 colorscheme onedark
 
@@ -96,9 +99,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " mappings
 
-nnoremap <C-e> :NERDTree<CR>
-nnoremap <S-e> :Vifm<CR>
-nnoremap <S-T> :tabnew<CR>:Vifm<CR>
+nnoremap <S-e> :NERDTree<CR>
+nnoremap <C-e> :Vifm<CR>
 " open small terminal window at bottom
 nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
 " jump to definition
