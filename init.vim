@@ -14,10 +14,9 @@ call plug#begin()
 
     " Git tools
     Plug 'airblade/vim-gitgutter'
+  
+    Plug 'tpope/vim-commentary'
 
-    " Auto Completion
-    " Plug 'ycm-core/YouCompleteMe'
-    
     " AutoSave
     Plug 'Pocco81/AutoSave.nvim'
 
