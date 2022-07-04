@@ -1,6 +1,3 @@
-" need to be changed
-source /home/simon/.config/nvim/typescript_syntax.vim
-
 hi typescriptAccessibilityModifier guifg=#C678DD
 
 " classes
@@ -13,6 +10,7 @@ hi typescriptFunctionMethod guifg=lightgreen
 hi typescriptCacheMethod guifg=lightgreen
 hi typescriptConsoleMethod guifg=lightgreen
 hi typescriptDOMDocMethod guifg=lightgreen
+hi typescriptPromiseMethod guifg=lightgreen
 
 " other calls
 syn match dFunction "\zs\(\k\w*\)*\s*\ze("  "contains=typescriptBlock
