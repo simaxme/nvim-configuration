@@ -37,6 +37,9 @@ call plug#begin()
 
     " For customizing theme
     Plug 'vim-scripts/SyntaxAttr.vim'
+
+    " Highlight css colors
+    Plug 'ap/vim-css-color'
 call plug#end()
 
 " Coc Dependencies
@@ -109,6 +112,8 @@ set showtabline=2 " show tabs even if only one is open
 " always show echo
 let g:echodoc_enable_at_startup = 1
 let g:echodoc#type = 'floating'
+" make floatbg more seeable
+highlight EchoDocFloat guibg=#000000
 " mappings
 
 nnoremap <S-e> :NERDTree<CR>
@@ -119,6 +124,8 @@ nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
 nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 nnoremap <C-q> :bd<CR>
+
+nnoremap z zz
 
 " exit in terminal mode
 tnoremap <Esc> <C-\><C-n>
