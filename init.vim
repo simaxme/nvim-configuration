@@ -40,6 +40,9 @@ call plug#begin()
 
     " Highlight css colors
     Plug 'ap/vim-css-color'
+
+    " Discord RPC
+    Plug 'andweeb/presence.nvim'
 call plug#end()
 
 " Coc Dependencies
