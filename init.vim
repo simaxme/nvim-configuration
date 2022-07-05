@@ -30,6 +30,7 @@ call plug#begin()
     " Auto Completion
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'Shougo/echodoc.vim'
 
     " extra icons
     Plug 'ryanoasis/vim-devicons'
@@ -37,6 +38,11 @@ call plug#begin()
     " For customizing theme
     Plug 'vim-scripts/SyntaxAttr.vim'
 call plug#end()
+
+" Coc Dependencies
+" CocInstall coc-tsserver
+" CocInstall java
+" CocInstall coc-snippets
 
 " not especially needed
 set encoding=UTF-8
@@ -84,6 +90,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set cursorline " show current line highlighted
+
 set noshowmode
 
 set autoindent
@@ -98,10 +106,9 @@ set breakindent " allow keeping indent on auto break
 set showtabline=2 " show tabs even if only one is open
 
 " auto completion
-let g:ycm_autoclose_preview_window_after_insertion = 1
-" auto highlight template in ts documents
-" call jspretmpl#register_tag('ts', 'typescript')
-
+" always show echo
+let g:echodoc_enable_at_startup = 1
+let g:echodoc#type = 'floating'
 " mappings
 
 nnoremap <S-e> :NERDTree<CR>
@@ -116,7 +123,6 @@ nnoremap <C-q> :bd<CR>
 " exit in terminal mode
 tnoremap <Esc> <C-\><C-n>
 
-" autocomplete using tab
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -124,6 +130,15 @@ function! s:check_back_space() abort
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? "\<CR>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" auto close brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O

@@ -1,6 +1,8 @@
 // codelens
 {
     "codeLens.enable": true,
-    "java.referencesCodeLens.enabled": true,
+    // "java.referencesCodeLens.enabled": true,
+    "coc.preferences.echodocSupport": true,
+    "diagnostic.checkCurrentLine": true,
     "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar"
 }
