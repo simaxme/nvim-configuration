@@ -76,6 +76,10 @@ set showmatch
 let java_highlight_all = 1
 " set filetype=java
 
+" Icons
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+
 " autostart
 
 " basic configuration
@@ -156,3 +160,6 @@ inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+" other sources
+source ~/.config/nvim/init_icons.vim
