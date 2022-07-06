@@ -111,6 +111,9 @@ set breakindent " allow keeping indent on auto break
 
 set showtabline=2 " show tabs even if only one is open
 
+set title " show terminal title
+set titlestring=%t%(\ %M%)\ %y\ %(\ \(%F\)%)%a\ -\ NVIM
+
 " auto completion
 " always show echo
 let g:echodoc_enable_at_startup = 1
