@@ -127,7 +127,7 @@ nnoremap <C-e> :Vifm<CR>
 " open small terminal window at bottom
 nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
 " jump to definition
-nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
+nnoremap <C-s> :call CocAction('jumpDefinition')<CR>
 
 nnoremap <C-q> :bd<CR>
 
