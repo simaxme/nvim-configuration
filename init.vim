@@ -128,6 +128,7 @@ nnoremap <C-e> :Vifm<CR>
 nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
 " jump to definition
 nnoremap <C-s> :call CocAction('jumpDefinition')<CR>
+" (BACKUP for opening in new tab) nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 nnoremap <C-q> :bd<CR>
 
