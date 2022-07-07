@@ -146,7 +146,6 @@ nnoremap <C-s> :call CocAction('jumpDefinition')<CR>
 " (BACKUP for opening in new tab) nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 nnoremap <C-q> :NERDTree<CR>:NERDTreeToggle<CR>:bd<CR>
-nnoremap :x :NERDTree<CR>:NERDTreeToggle<CR>:bd<CR>
 
 nnoremap z zz
 " dont yank newline symbol
