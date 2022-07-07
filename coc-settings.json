@@ -1,7 +1,6 @@
 // codelens
 {
     "codeLens.enable": true,
-    // "java.referencesCodeLens.enabled": true,
     "suggest.timeout": 500,
     "suggest.minTriggerInputLength": 0,
     "suggest.selection": "recentlyUsed",

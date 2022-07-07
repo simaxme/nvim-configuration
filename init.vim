@@ -7,9 +7,12 @@ call plug#begin()
     " Status line
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
 
     " File explorer
     Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+
     Plug 'vifm/vifm.vim'
 
     " Git tools
@@ -41,14 +44,22 @@ call plug#begin()
     " Highlight css colors
     Plug 'ap/vim-css-color'
 
+    Plug 'jeffkreeftmeijer/vim-numbertoggle'
+
     " Discord RPC
     Plug 'andweeb/presence.nvim'
+
+    " HTML Support
+    Plug 'alvan/vim-closetag'
 call plug#end()
 
 " Coc Dependencies
 " CocInstall coc-tsserver
 " CocInstall java
 " CocInstall coc-snippets
+" CocInstall coc-css
+" CocInstall coc-html
+" CocInstall coc-angular
 
 " not especially needed
 set encoding=UTF-8
@@ -94,7 +105,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tabs_label = '-'
 
-set relativenumber number
+set number
 
 set tabstop=4
 set shiftwidth=4
@@ -126,7 +137,7 @@ let g:echodoc#type = 'floating'
 highlight EchoDocFloat guibg=#000000
 " mappings
 
-nnoremap <S-e> :NERDTree<CR>
+nnoremap <S-e> :NERDTreeToggle<CR>
 nnoremap <C-e> :Vifm<CR>
 " open small terminal window at bottom
 nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
@@ -134,9 +145,12 @@ nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
 nnoremap <C-s> :call CocAction('jumpDefinition')<CR>
 " (BACKUP for opening in new tab) nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
-nnoremap <C-q> :bd<CR>
+nnoremap <C-q> :NERDTree<CR>:NERDTreeToggle<CR>:bd<CR>
+nnoremap :x :NERDTree<CR>:NERDTreeToggle<CR>:bd<CR>
 
 nnoremap z zz
+" dont yank newline symbol
+nnoremap yy ^vg_y
 
 " exit in terminal mode
 tnoremap <Esc> <C-\><C-n>
