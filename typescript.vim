@@ -11,6 +11,8 @@ hi typescriptCacheMethod guifg=lightgreen
 hi typescriptConsoleMethod guifg=lightgreen
 hi typescriptDOMDocMethod guifg=lightgreen
 hi typescriptPromiseMethod guifg=lightgreen
+hi typescriptArrayMethod guifg=lightgreen
+hi typescriptStringMethod guifg=lightgreen
 
 " other calls
 syn match dFunction "\zs\(\k\w*\)*\s*\ze("  "contains=typescriptBlock
