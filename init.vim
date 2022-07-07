@@ -55,7 +55,8 @@ call plug#end()
 
 " Coc Dependencies
 " CocInstall coc-tsserver
-" CocInstall java
+" CocInstall coc-java
+" -> https://www.chrisatmachine.com/blog/category/neovim/24-neovim-and-java
 " CocInstall coc-snippets
 " CocInstall coc-css
 " CocInstall coc-html
