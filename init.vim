@@ -51,6 +51,8 @@ call plug#begin()
 
     " HTML Support
     Plug 'alvan/vim-closetag'
+
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " Coc Dependencies
@@ -138,7 +140,8 @@ let g:echodoc#type = 'floating'
 highlight EchoDocFloat guibg=#000000
 " mappings
 
-nnoremap <S-e> :NERDTreeToggle<CR>
+" also start nerdtree at startup
+autocmd VimEnter * Gcd " | NERDTree | wincmd p
 nnoremap <C-e> :Vifm<CR>
 " open small terminal window at bottom
 nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
@@ -146,11 +149,11 @@ nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
 nnoremap <C-s> :call CocAction('jumpDefinition')<CR>
 " (BACKUP for opening in new tab) nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
-nnoremap <C-q> :NERDTree<CR>:NERDTreeToggle<CR>:bd<CR>
-
 nnoremap z zz
 " dont yank newline symbol
 nnoremap yy ^vg_y
+
+nnoremap dd ^vg_y"_dd
 
 " exit in terminal mode
 tnoremap <Esc> <C-\><C-n>
@@ -176,4 +179,5 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
 " other sources
+source ~/.config/nvim/nerdtree.vim
 source ~/.config/nvim/init_icons.vim

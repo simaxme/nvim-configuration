@@ -1,6 +1,6 @@
 // codelens
 {
-    "codeLens.enable": true,
+    "codeLens.enable": false,
     "suggest.timeout": 500,
     "suggest.noselect": false,
     "coc.preferences.echodocSupport": true,
