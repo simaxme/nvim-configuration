@@ -2,10 +2,9 @@
 {
     "codeLens.enable": true,
     "suggest.timeout": 500,
-    "suggest.minTriggerInputLength": 0,
-    "suggest.selection": "recentlyUsed",
-    "suggest.enablePreselect": false,
+    "suggest.noselect": false,
     "coc.preferences.echodocSupport": true,
     "diagnostic.checkCurrentLine": true,
-    "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar"
+    "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+    "coc.source.file.triggerCharacters": ["/", "\\", "."]
 }
