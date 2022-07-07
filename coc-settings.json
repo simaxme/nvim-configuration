@@ -2,6 +2,10 @@
 {
     "codeLens.enable": true,
     // "java.referencesCodeLens.enabled": true,
+    "suggest.timeout": 500,
+    "suggest.minTriggerInputLength": 0,
+    "suggest.selection": "recentlyUsed",
+    "suggest.enablePreselect": false,
     "coc.preferences.echodocSupport": true,
     "diagnostic.checkCurrentLine": true,
     "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar"
