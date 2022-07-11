@@ -1,25 +1,36 @@
 " Plugins
 call plug#begin()
     " Theme
-    Plug 'joshdick/onedark.vim'
-    Plug 'sheerun/vim-polyglot'
+    " Plug 'joshdick/onedark.vim' -> Previous used, doesnt provide good
+    " lightning for typescript
+    Plug 'navarasu/onedark.nvim'
+"    Plug 'sheerun/vim-polyglot'
 
-    " Status line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'phanviet/vim-monokai-pro'
+    "Status line
+    " Plug 'vim-airline/vim-airline'
+    " Plug 'vim-airline/vim-airline-themes'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'romgrk/barbar.nvim'
+
     Plug 'Xuyuanp/nerdtree-git-plugin'
 
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'rmagatti/auto-session'
+    Plug 'rmagatti/session-lens'
+    
     " File explorer
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
+
+    Plug 'preservim/nerdcommenter'
 
     Plug 'vifm/vifm.vim'
 
     " Git tools
     Plug 'airblade/vim-gitgutter'
   
-    Plug 'tpope/vim-commentary'
-
     " AutoSave
     Plug 'Pocco81/AutoSave.nvim'
 
@@ -37,6 +48,7 @@ call plug#begin()
 
     " extra icons
     Plug 'ryanoasis/vim-devicons'
+    Plug 'kyazdani42/nvim-web-devicons'
 
     " For customizing theme
     Plug 'vim-scripts/SyntaxAttr.vim'
@@ -53,6 +65,8 @@ call plug#begin()
     Plug 'alvan/vim-closetag'
 
     Plug 'tpope/vim-fugitive'
+
+    Plug 'Raimondi/delimitMate'
 call plug#end()
 
 " Coc Dependencies
@@ -101,12 +115,10 @@ let g:DevIconsEnableFoldersOpenClose = 1
 set clipboard=unnamedplus " always copy yanked data to clipboard
 
 set syntax
-colorscheme onedark
 
-let g:airline_theme='deus' " use airline theme from onedark
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#tabs_label = '-'
+set termguicolors
+colorscheme onedark
+"colorscheme monokai_pro
 
 set number
 
@@ -130,7 +142,14 @@ set breakindent " allow keeping indent on auto break
 set showtabline=2 " show tabs even if only one is open
 
 set title " show terminal title
-set titlestring=%t%(\ %M%)\ %y\ %(\ \(%F\)%)%a\ -\ NVIM
+""set titlestring=%t%(\ %M%)\ %y\ %(\ \(%F\)%)%a\ -\ NVIM
+
+" set titlestring=%{fnamemodify(getcwd(), :t)}
+function! GetCWDTail()
+    return fnamemodify(getcwd(), ':t')
+endfunction
+
+set titlestring=%{GetCWDTail()}\ %(\ \(%f\)%)%a\ -\ NVIM
 
 " auto completion
 " always show echo
@@ -141,19 +160,15 @@ highlight EchoDocFloat guibg=#000000
 " mappings
 
 " also start nerdtree at startup
-autocmd VimEnter * Gcd " | NERDTree | wincmd p
-nnoremap <C-e> :Vifm<CR>
+autocmd VimEnter * :silent! Gcd " | NERDTree | wincmd p
+nnoremap <S-t> :Vifm<CR>
 " open small terminal window at bottom
-nnoremap <C-t> :belowright split<CR>:term<CR>:resize 15<CR>i
-" jump to definition
-nnoremap <C-s> :call CocAction('jumpDefinition')<CR>
+nnoremap <C-t> :belowright split<CR>:term<CR>:resize 8<CR>i
 " (BACKUP for opening in new tab) nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
 
 nnoremap z zz
-" dont yank newline symbol
+" don't yank newline symbol
 nnoremap yy ^vg_y
-
-nnoremap dd ^vg_y"_dd
 
 " exit in terminal mode
 tnoremap <Esc> <C-\><C-n>
@@ -169,15 +184,11 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
-" auto close brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
-
 " other sources
+
 source ~/.config/nvim/nerdtree.vim
 source ~/.config/nvim/init_icons.vim
+source ~/.config/nvim/lua.vim
+source ~/.config/nvim/session.vim
+source ~/.config/nvim/coc.vim
+source ~/.config/nvim/telescope.vim

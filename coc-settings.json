@@ -1,4 +1,3 @@
-// codelens
 {
     "codeLens.enable": false,
     "suggest.timeout": 500,
