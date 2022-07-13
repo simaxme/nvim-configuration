@@ -36,5 +36,5 @@ endfunction
 
 set sessionoptions=buffers
 autocmd SessionLoadPost * :silent! Gcd
-autocmd VimEnter * call SearchSessionIfNoFile()
+autocmd VimEnter * silent! Gcd | call SearchSessionIfNoFile()
 autocmd VimLeave * SaveSession

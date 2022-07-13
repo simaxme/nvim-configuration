@@ -1,5 +1,4 @@
 lua << END
-require('lualine').setup()
 
 require('onedark').setup {
     style = 'deep'

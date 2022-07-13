@@ -6,11 +6,13 @@ call plug#begin()
     Plug 'navarasu/onedark.nvim'
 "    Plug 'sheerun/vim-polyglot'
 
+    Plug 'puremourning/vimspector'
+
     "Plug 'phanviet/vim-monokai-pro'
     "Status line
-    " Plug 'vim-airline/vim-airline'
-    " Plug 'vim-airline/vim-airline-themes'
-    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+""    Plug 'nvim-lualine/lualine.nvim'
     Plug 'romgrk/barbar.nvim'
 
     Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -58,7 +60,7 @@ call plug#begin()
 
     Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-    " Discord RPC
+     "Discord RPC
     Plug 'andweeb/presence.nvim'
 
     " HTML Support
@@ -68,7 +70,6 @@ call plug#begin()
 
     Plug 'Raimondi/delimitMate'
 call plug#end()
-
 " Coc Dependencies
 " CocInstall coc-tsserver
 " CocInstall coc-java
@@ -126,9 +127,13 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set scrolloff=5
+
 set cursorline " show current line highlighted
 
 set noshowmode
+
+let g:airline_powerline_fonts = 1
 
 set autoindent
 set smartindent
@@ -157,35 +162,10 @@ let g:echodoc_enable_at_startup = 1
 let g:echodoc#type = 'floating'
 " make floatbg more seeable
 highlight EchoDocFloat guibg=#000000
-" mappings
-
-" also start nerdtree at startup
-autocmd VimEnter * :silent! Gcd " | NERDTree | wincmd p
-nnoremap <S-t> :Vifm<CR>
-" open small terminal window at bottom
-nnoremap <C-t> :belowright split<CR>:term<CR>:resize 8<CR>i
-" (BACKUP for opening in new tab) nnoremap <C-s> :call CocAction('jumpDefinition', 'tab drop')<CR>
-
-nnoremap z zz
-" don't yank newline symbol
-nnoremap yy ^vg_y
-
-" exit in terminal mode
-tnoremap <Esc> <C-\><C-n>
-
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<CR>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
 
 " other sources
 
+source ~/.config/nvim/hotkeys.vim
 source ~/.config/nvim/nerdtree.vim
 source ~/.config/nvim/init_icons.vim
 source ~/.config/nvim/lua.vim
