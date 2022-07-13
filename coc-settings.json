@@ -5,5 +5,18 @@
     "coc.preferences.echodocSupport": true,
     "diagnostic.checkCurrentLine": true,
     "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
-    "coc.source.file.triggerCharacters": ["/", "\\", "."]
+    "coc.source.file.triggerCharacters": ["/", "\\", "."],
+    "java.configuration.runtimes": [
+       // {
+     //       "name": "JavaSE-17",
+   //         "path": "/usr/lib/jvm/java-17-openjdk",
+         //   "default": true
+ //       },
+        {
+            "name": "JavaSE-18",
+            "path": "/usr/lib/jvm/java-18-openjdk",
+            "default": true
+        }
+    ],
+    "java.progressReports.enabled": true
 }
