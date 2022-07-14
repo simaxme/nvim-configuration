@@ -14,6 +14,7 @@ function! FindNERDFileIfPossible()
     if bufname("%") == ""
         NERDTreeToggle
     else
+        Gcd
         NERDTreeFind
     endif
 endfunction
