@@ -72,5 +72,8 @@ require('packer').startup(function()
     -- required for rounded corners
     use 'neovim/nvim-lspconfig'
 
+    -- copilot must have
+    use 'github/copilot.vim'
+
     use 'Shougo/echodoc.vim'
 end)
