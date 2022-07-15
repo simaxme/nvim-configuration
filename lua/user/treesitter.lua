@@ -1,10 +1,3 @@
-lua << END
-
-require('onedark').setup {
-    style = 'deep'
-}
-require('onedark').load()
-
 require('nvim-treesitter.configs').setup {
     ensure_installed = { 
         "typescript", 
@@ -12,6 +5,7 @@ require('nvim-treesitter.configs').setup {
         "bash",
         "html",
         "lua",
+        "vim",
         "python",
         "css",
         "scss",
@@ -23,13 +17,3 @@ require('nvim-treesitter.configs').setup {
         additional_vim_regex_highlighting = true
     }
 }
-
-require('telescope').load_extension('session-lens')
-require('auto-session').setup {
-    auto_save_enabled = false,
-    auto_restore_enabled = false
-}
-require('session-lens').setup {
-    path_display={'shorten'},
-}
-END

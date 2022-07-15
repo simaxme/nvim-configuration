@@ -1,5 +1,4 @@
-let g:NERDTreeWinSize=35
-
+vim.cmd [[
 " Check if Nerdtree is open
 function! IsNERDTreeOpen()
     return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
@@ -30,8 +29,6 @@ function! SyncTree()
     endif
 endfunction
 
-nnoremap <S-e> :call SyncTree()<CR>
-
 function! ToggleNERDTree()
     if IsNERDTreeOpen()
         NERDTreeToggle
@@ -39,7 +36,6 @@ function! ToggleNERDTree()
         call FindNERDFileIfPossible()
     endif
 endfunction
-nnoremap <C-e> :call ToggleNERDTree()<CR>
 
 " close nerdtree if open, close buffer, and then reopen nerdtree
 function! CloseTreeIfOpen()
@@ -70,7 +66,10 @@ function! CloseForceTreeIfOpen()
         bd!
     endif
 endfunction
+]]
 
-cnoremap x!<CR> call CloseForceTreeIfOpen()<CR>
-cnoremap x<CR> call CloseTreeIfOpen()<CR>
-nnoremap <C-q> :call CloseTreeIfOpen()<CR>
+vim.api.nvim_set_keymap("n", "<S-e>", ":call SyncTree()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-e>", ":call ToggleNERDTree()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("c", "x!<CR>", "call CloseForceTreeIfOpen()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("c", "x<CR>", "call CloseTreeIfOpen()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-q>", ":call CloseTreeIfOpen()<CR>", {noremap = true})

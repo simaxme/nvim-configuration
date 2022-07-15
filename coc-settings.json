@@ -2,6 +2,7 @@
     "codeLens.enable": false,
     "suggest.timeout": 500,
     "suggest.noselect": false,
+    "suggest.echodocSupport": true,
     "coc.preferences.echodocSupport": true,
     "diagnostic.checkCurrentLine": true,
     "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
