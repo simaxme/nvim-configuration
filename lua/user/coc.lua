@@ -13,3 +13,13 @@ vim.cmd [[
           \ v:lua.check_back_space() ? "\<Tab>" :
           \ coc#refresh()
 ]]
+
+vim.g.coc_global_extensions = {
+    'coc-json', 
+    'coc-java',
+    'coc-snippets',
+    'coc-css',
+    'coc-html',
+    'coc-angular',
+    'coc-lua'
+}

@@ -1,6 +1,8 @@
 vim.cmd [[
 	set clipboard=unnamedplus
 
+    set number relativenumber
+
     set cmdheight=2
 	set tabstop=4
 	set shiftwidth=4
