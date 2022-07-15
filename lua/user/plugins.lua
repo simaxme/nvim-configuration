@@ -49,6 +49,7 @@ require('packer').startup(function()
 
 	-- syntax
 	use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/nvim-treesitter-angular'
 
 	-- icon support
 	use 'ryanoasis/vim-devicons'
@@ -63,7 +64,13 @@ require('packer').startup(function()
 	-- html
 	use 'alvan/vim-closetag'
 
+    -- method summary
+    use 'preservim/tagbar'
+
 	use 'Raimondi/delimitMate'
+
+    -- required for rounded corners
+    use 'neovim/nvim-lspconfig'
 
     use 'Shougo/echodoc.vim'
 end)

@@ -1,6 +1,7 @@
 vim.cmd [[
 	set clipboard=unnamedplus
 
+    set cmdheight=2
 	set tabstop=4
 	set shiftwidth=4
 	set expandtab
@@ -11,4 +12,7 @@ vim.cmd [[
 	set breakindent
 
 	set mouse=a
+
+    set shortmess+=O
+    set shortmess+=F
 ]]
