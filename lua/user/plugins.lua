@@ -76,4 +76,6 @@ require('packer').startup(function()
     use 'github/copilot.vim'
 
     use 'Shougo/echodoc.vim'
+
+    use 'glepnir/dashboard-nvim'
 end)

@@ -21,7 +21,7 @@ end
 
 vim.cmd [[
     autocmd SessionLoadPost * :silent! Gcd
-    autocmd VimEnter * lua require('user.session').searchSessionIfNoFileExists()
+"    autocmd VimEnter * lua require('user.session').searchSessionIfNoFileExists()
     autocmd VimLeave * SaveSess
 ]]
 
