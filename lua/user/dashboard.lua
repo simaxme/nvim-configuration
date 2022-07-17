@@ -14,11 +14,11 @@ for sessionIndex = 1, #sessions do
     local fileName2Splits = utils.split(fileName2, '%.')
     local fileName = fileName2Splits[#fileName2Splits - 1]
     local last_edited = session.get_file_last_edit_date(file)
-    local last_edited_string = os.date("%d.%m.%Y %H:%M", last_edited)
+    local last_edited_string = os.date("%d.%m", last_edited)
 
     table.insert(custom_center, {
-        icon = '',
-        desc = 'Open ' .. fileName .. ' (' .. last_edited_string .. ')',
+        icon = '',
+        desc = " Open " .. fileName .. ' (' .. last_edited_string .. ')',
         action = 'RestoreSession ' .. file
     })
 end
@@ -27,3 +27,19 @@ table.insert(custom_center, {icon='', desc=' Load Session', action='Telescope
 
 db.hide_tabline = false
 db.custom_center = custom_center
+db.custom_header = {
+	[[                               ]],
+	[[                               ]],
+	[[                               ]],
+	[[                               ]],
+	[[                               ]],
+	[[   ▄████▄              ▒▒▒▒▒   ]],
+	[[  ███▄█▀              ▒ ▄▒ ▄▒  ]],
+	[[ ▐████     █  █  █   ▒▒▒▒▒▒▒▒▒ ]],
+	[[  █████▄             ▒▒▒▒▒▒▒▒▒ ]],
+	[[   ▀████▀            ▒ ▒ ▒ ▒ ▒ ]],
+	[[                               ]],
+	[[                               ]],
+	[[                               ]],
+	[[                               ]],
+}

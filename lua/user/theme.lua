@@ -4,7 +4,7 @@ require('onedark').setup {
 require('onedark').load()
 
 vim.cmd [[
-	set termguicolors
+    set termguicolors
 	set number
 	set noshowmode
 	set cursorline

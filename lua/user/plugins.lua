@@ -14,7 +14,7 @@ require('packer').startup(function()
 	-- Statusline and top tab/buffer bar
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
-	-- use 'romgrk/barbar.nvim'
+    use 'akinsho/bufferline.nvim'
 
 	-- Nerdtree (File Navigator)
 	use 'preservim/nerdtree'
@@ -24,7 +24,9 @@ require('packer').startup(function()
 	-- basic session management
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
-	use 'rmagatti/auto-session'
+	use 'PhilRunninger/bufselect.vim'    
+
+    use 'rmagatti/auto-session'
 	use 'rmagatti/session-lens'
 
 	-- comments
