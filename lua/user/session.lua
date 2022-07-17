@@ -1,5 +1,10 @@
 x = {}
 
+require('telescope').setup {
+    defaults = {
+        path_display = {"smart"}
+    }
+}
 require('telescope').load_extension('session-lens')
 require('auto-session').setup {
     auto_save_enabled = false,

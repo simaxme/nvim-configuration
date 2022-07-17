@@ -1,4 +1,8 @@
+local nerdtree = {}
+
 vim.g.NERDTreeWinSize=40
+vim.g.NERDTreeMinimalUI = 1
+vim.g.NERDTreeShowHidden = 1
 
 vim.cmd [[
 " Check if Nerdtree is open
@@ -68,6 +72,7 @@ function! CloseForceTreeIfOpen()
         bd!
     endif
 endfunction
+
 ]]
 
 vim.api.nvim_set_keymap("n", "<S-e>", ":call SyncTree()<CR>", {noremap = true})
@@ -75,3 +80,5 @@ vim.api.nvim_set_keymap("n", "<C-e>", ":call ToggleNERDTree()<CR>", {noremap = t
 vim.api.nvim_set_keymap("c", "x!<CR>", "call CloseForceTreeIfOpen()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("c", "x<CR>", "call CloseTreeIfOpen()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-q>", ":call CloseTreeIfOpen()<CR>", {noremap = true})
+
+return nerdtree
