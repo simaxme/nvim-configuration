@@ -34,7 +34,7 @@ require('packer').startup(function()
 	use 'vifm/vifm.vim'
 
 	-- basic git tools
-	use 'airblade/vim-gitgutter'
+    use 'lewis6991/gitsigns.nvim'
 	use 'tpope/vim-fugitive'
 
 	-- Markdown support
