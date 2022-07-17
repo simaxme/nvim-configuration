@@ -1,3 +1,5 @@
+vim.g.NERDTreeWinSize=40
+
 vim.cmd [[
 " Check if Nerdtree is open
 function! IsNERDTreeOpen()
