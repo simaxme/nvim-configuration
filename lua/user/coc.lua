@@ -4,8 +4,9 @@ function _G.check_back_space()
 end
 
 vim.api.nvim_set_keymap("i", "<silent><expr>", "<c-space> coc#refresh", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-s>", ":call CocAction('jumpDefinition')<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "rn", "<Plug>(coc-rename)", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-s>", "<Plug>(coc-definition)", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<C-x>", "<Plug>(coc-references)", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "rn", "<Plug>(coc-rename)", {noremap = true, silent = true})
 
 vim.cmd [[
     inoremap <silent><expr> <Tab>

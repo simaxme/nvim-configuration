@@ -14,7 +14,7 @@ require('packer').startup(function()
 	-- Statusline and top tab/buffer bar
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
-	use 'romgrk/barbar.nvim'
+	-- use 'romgrk/barbar.nvim'
 
 	-- Nerdtree (File Navigator)
 	use 'preservim/nerdtree'

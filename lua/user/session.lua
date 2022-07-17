@@ -13,16 +13,40 @@ vim.cmd [[
     set sessionoptions=buffers
 ]]
 
-function x.searchSessionIfNoFileExists()
-    if (vim.fn.argc() == 0) then
-        vim.cmd [[Telescope session-lens search_session]]
+vim.cmd [[
+    autocmd SessionLoadPost * :silent! Gcd
+    autocmd VimLeave * SaveSess
+]]
+
+local SESSION_FOLDER = os.getenv('HOME') .. '/.local/share/nvim/sessions'
+local MAX_SESSION_OPTIONS = 5 -- only show last 5 sessions
+
+function x.get_file_last_edit_date(path)
+    return io.popen("stat -c %Y " .. path):read()
+end
+
+local scan = require'plenary.scandir'
+function x.get_last_sessions()
+    local arr = scan.scan_dir(SESSION_FOLDER, { hidden = true, depth = 0 });
+    table.sort(arr, function(a, b)
+        return x.get_file_last_edit_date(a) > x.get_file_last_edit_date(b)
+    end)
+    if #arr > MAX_SESSION_OPTIONS then
+        return { arr[1], arr[2], arr[3], arr[4], arr[5] }
+    else
+        return arr
     end
 end
 
-vim.cmd [[
-    autocmd SessionLoadPost * :silent! Gcd
-"    autocmd VimEnter * lua require('user.session').searchSessionIfNoFileExists()
-    autocmd VimLeave * SaveSess
-]]
+    -- local resArray
+
+    -- for nameCount = 1, #arr do
+        -- local file = arr[nameCount]
+        -- local last_edited = x.get_file_last_edit_date(file)
+        -- local last_edited_string = os.date("%d.%m.%Y %H:%M", last_edited)
+        -- vim.cmd('echo "got file: ' .. file .. ' with last edit date of: ' .. last_edited_string .. '"')
+    -- end
+-- end
+
 
 return x
