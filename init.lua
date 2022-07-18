@@ -10,6 +10,7 @@ require('user.terminal')
 require('user.session')
 
 require('user.nerdtree')
+require('user.angular')
 require('user.treesitter')
 require('user.coc')
 require('user.echodoc')

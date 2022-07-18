@@ -1,6 +1,7 @@
 vim.cmd [[
 	set clipboard=unnamedplus
 
+    set modifiable
     set number relativenumber
 
     set cmdheight=2

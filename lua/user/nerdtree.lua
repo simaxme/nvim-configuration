@@ -1,51 +1,49 @@
-local nerdtree = {}
+local x = {}
 
 vim.g.NERDTreeWinSize=40
 vim.g.NERDTreeMinimalUI = 1
 vim.g.NERDTreeShowHidden = 1
 
-vim.cmd [[
-" Check if Nerdtree is open
-function! IsNERDTreeOpen()
-    return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
 
-function! IsCurrentWindowNERDTree()
-    return exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) == winnr()
-endfunction
+function isNERDTreeOpen()
+    return vim.fn.exists("t:NERDTreeBufName") == 1 and vim.fn.bufwinnr(vim.t.NERDTreeBufName) ~= -1
+end
+function isCurrentWindowNERDTree()
+    return vim.fn.exists("t:NERDTreeBufName") == 1 and vim.fn.bufwinnr(vim.t.NERDTreeBufName) == vim.fn.winnr()
+end
 
-" Close nerd tree if open, else open nerd tree with current file selected
-function! FindNERDFileIfPossible() 
-    if bufname("%") == ""
-        NERDTreeToggle
+function findNERDFileIfPossible()
+    if vim.fn.bufname("%") == "" then
+        vim.cmd [[NERDTreeToggle]]
     else
-        Gcd
-        NERDTreeFind
-    endif
-endfunction
-function! SyncTree()
-    if IsNERDTreeOpen()
-        if IsCurrentWindowNERDTree()
-            wincmd p
+        vim.cmd [[Gcd]]
+        vim.cmd [[NERDTreeFind]]
+    end
+end
+
+function x.syncTree()
+    if isNERDTreeOpen() then
+        if isCurrentWindowNERDTree() then
+            vim.cmd [[wincmd p]]
         else
-            NERDTreeFocus
-        endif
+            vim.cmd [[NERDTreeFocus]]
+        end
     else
-         call FindNERDFileIfPossible()
-    endif
-endfunction
+        findNERDFileIfPossible()
+    end
+end
 
-function! ToggleNERDTree()
-    if IsNERDTreeOpen()
-        NERDTreeToggle
+function x.toggleNERDTree()
+    if isNERDTreeOpen() then
+        vim.cmd [[NERDTreeToggle]]
     else
-        call FindNERDFileIfPossible()
-    endif
-endfunction
+        findNERDFileIfPossible()
+    end
+end
 
-" close nerdtree if open, close buffer, and then reopen nerdtree
-function! CloseTreeIfOpen()
-    if IsNERDTreeOpen()
+function x.closeTreeIfOpen()
+    if isNERDTreeOpen() then
+        vim.cmd [[
         NERDTreeToggle
         bd
         if bufname("%") == ""
@@ -54,31 +52,15 @@ function! CloseTreeIfOpen()
             NERDTreeFind
         endif
         wincmd p
+        ]]
     else
-        bd
-    endif
-endfunction
-function! CloseForceTreeIfOpen()
-    if IsNERDTreeOpen()
-        NERDTreeToggle
-        bd!
-        if bufname("%") == ""
-            NERDTreeToggle
-        else
-            NERDTreeFind
-        endif
-        wincmd p
-    else
-        bd!
-    endif
-endfunction
+        vim.cmd [[bd]]
+    end
+end
 
-]]
+vim.api.nvim_set_keymap("n", "<S-e>", ":lua require'user.nerdtree'.syncTree()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-e>", ":lua require'user.nerdtree'.toggleNERDTree()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("c", "x<CR>", ":lua require'user.nerdtree'.closeTreeIfOpen()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-q>", ":lua require'user.nerdtree'.closeTreeIfOpen()<CR>", {noremap = true})
 
-vim.api.nvim_set_keymap("n", "<S-e>", ":call SyncTree()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-e>", ":call ToggleNERDTree()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("c", "x!<CR>", "call CloseForceTreeIfOpen()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("c", "x<CR>", "call CloseTreeIfOpen()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-q>", ":call CloseTreeIfOpen()<CR>", {noremap = true})
-
-return nerdtree
+return x
