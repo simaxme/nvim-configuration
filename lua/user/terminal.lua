@@ -1,4 +1,5 @@
 vim.api.nvim_set_keymap("n", "<C-t>", [[
+    :Gcd<CR>
     :belowright split<CR>
     :term<CR>
     :resize 8<CR>
