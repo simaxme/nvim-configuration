@@ -12,8 +12,9 @@ require('packer').startup(function()
 	use 'puremourning/vimspector'
 
 	-- Statusline and top tab/buffer bar
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	-- use 'vim-airline/vim-airline'
+	-- use 'vim-airline/vim-airline-themes'
+    use 'nvim-lualine/lualine.nvim'
     use 'akinsho/bufferline.nvim'
 
 	-- Nerdtree (File Navigator)
