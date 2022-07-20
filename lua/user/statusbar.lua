@@ -1,5 +1,13 @@
-vim.g.airline_powerline_fonts = 1
-vim.g.airline_theme = 'minimalist'
+local function getCOCStatus()
+    return vim.api.nvim_eval('coc#status()');
+end
+
+require('lualine').setup {
+    sections = {
+        lualine_y = {getCOCStatus},
+        lualine_z = {'progress', 'location'}
+    }
+}
 
 vim.opt.termguicolors = true
 require("bufferline").setup{
