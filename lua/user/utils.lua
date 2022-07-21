@@ -20,4 +20,8 @@ function x.split(search_string, pattern)
   return result
 end
 
+function x.echo(str)
+    vim.cmd([[echo ']] .. str .. [[']])
+end
+
 return x
