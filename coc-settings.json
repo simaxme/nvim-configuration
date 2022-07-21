@@ -19,6 +19,11 @@
     "suggest.noselect": false,
     "suggest.echodocSupport": true,
     "coc.preferences.echodocSupport": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "scss",
+        "typescript"
+    ],
     "diagnostic.checkCurrentLine": true,
     "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
     "coc.source.file.triggerCharacters": ["/", "\\", "."],
@@ -30,6 +35,8 @@
         }
     ],
     "java.progressReports.enabled": true,
+
+    "prettier.tabWidth": 4,
 
     "Lua": {
         "workspace.library": {

@@ -19,4 +19,8 @@ function x.split(pString, pPattern)
    return Table
 end
 
+function x.echo(str)
+    vim.cmd([[echo ']] .. str .. [[']])
+end
+
 return x
