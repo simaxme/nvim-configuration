@@ -8,7 +8,9 @@ require('user.events')
 require('user.hotkeys')
 require('user.terminal')
 require('user.session')
+require('user.startup.telescope')
 
+-- plugins
 require('user.nerdtree')
 require('user.angular')
 require('user.treesitter')
