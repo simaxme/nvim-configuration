@@ -16,7 +16,7 @@ function findNERDFileIfPossible()
     if vim.fn.bufname("%") == "" then
         vim.cmd [[NERDTreeToggle]]
     else
-        vim.cmd [[Gcd]]
+        vim.cmd [[silent! Gcd]]
         vim.cmd [[NERDTreeFind]]
     end
 end
