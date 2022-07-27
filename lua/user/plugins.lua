@@ -81,4 +81,6 @@ require('packer').startup(function()
     use 'Shougo/echodoc.vim'
 
     use 'glepnir/dashboard-nvim'
+
+    use 'lambdalisue/suda.vim'
 end)
