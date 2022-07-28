@@ -9,6 +9,7 @@ require('user.hotkeys')
 require('user.terminal')
 require('user.session')
 require('user.startup.telescope')
+require('user.ssession.init')
 
 -- plugins
 require('user.nerdtree')

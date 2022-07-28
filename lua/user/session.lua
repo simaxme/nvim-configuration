@@ -43,15 +43,5 @@ function x.get_last_sessions()
     end
 end
 
-    -- local resArray
-
-    -- for nameCount = 1, #arr do
-        -- local file = arr[nameCount]
-        -- local last_edited = x.get_file_last_edit_date(file)
-        -- local last_edited_string = os.date("%d.%m.%Y %H:%M", last_edited)
-        -- vim.cmd('echo "got file: ' .. file .. ' with last edit date of: ' .. last_edited_string .. '"')
-    -- end
--- end
-
 
 return x
