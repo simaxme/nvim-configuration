@@ -24,6 +24,7 @@ vim.g.coc_global_extensions = {
     'coc-snippets',
     'coc-css',
     'coc-html',
+    'coc-tsserver',
     'coc-angular',
     'coc-lua',
     'coc-prettier'
