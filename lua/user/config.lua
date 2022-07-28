@@ -4,8 +4,6 @@ vim.cmd [[
     set modifiable
     set number relativenumber
 
-    set laststatus=3
-
     set cmdheight=2
 	set tabstop=4
 	set shiftwidth=4

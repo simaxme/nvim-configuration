@@ -58,13 +58,15 @@ function lib.getAllSessions()
             local fileExtensionSplits = utils.split(fileName1, "%.")
             local withoutFileExtension = fileExtensionSplits[#fileExtensionSplits-1]
 
-            table.insert(result, withoutFileExtension)
+            if withoutFileExtension ~= nil then
+                table.insert(result, withoutFileExtension)
+            end
         end
     end
 
-    table.sort(result, function(a, b)
-        return x.get_file_last_edit_date(a) > x.get_file_last_edit_date(b)
-    end)
+    -- table.sort(result, function(a, b)
+        -- return lib.get_file_last_edit_date(a) > lib.get_file_last_edit_date(b)
+    -- end)
     return result
 end
 
