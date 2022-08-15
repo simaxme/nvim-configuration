@@ -12,10 +12,15 @@ vim.api.nvim_set_keymap("n", "rn", "<Plug>(coc-rename)", {noremap = true, silent
 vim.api.nvim_set_keymap("n", "<C-c>", "<Plug>(coc-codeaction-selected)<CR>", {noremap = true})
 
 vim.cmd [[
-    inoremap <silent><expr> <Tab>
-          \ pumvisible() ? "\<CR>" :
-          \ v:lua.check_back_space() ? "\<Tab>" :
-          \ coc#refresh()
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
 ]]
 
 vim.g.coc_global_extensions = {
