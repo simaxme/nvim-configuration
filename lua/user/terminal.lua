@@ -15,7 +15,13 @@ function terminal.focusTerminalInput()
     -- focus current window after switching to terminal
     vim.cmd [[normal! i]]
 end
+
+function tryGCD()
+    vim.cmd [[silent! Gcd]]
+end
+
 function createTerminal(command)
+    tryGCD()
     if command ~= nil then
         vim.cmd ([[term ]] .. command)
     else

@@ -48,6 +48,10 @@ local scan = require'plenary.scandir'
 function lib.getAllSessions()
     local arr = scan.scan_dir(SESSION_FOLDER, { hidden = true, depth = 0 });
 
+    table.sort(arr, function(a, b)
+        return lib.get_file_last_edit_date(a) > lib.get_file_last_edit_date(b)
+    end)
+
     local result = {}
 
     for i = 1, #arr do
@@ -64,9 +68,6 @@ function lib.getAllSessions()
         end
     end
 
-    -- table.sort(result, function(a, b)
-        -- return lib.get_file_last_edit_date(a) > lib.get_file_last_edit_date(b)
-    -- end)
     return result
 end
 
@@ -94,7 +95,7 @@ function lib.createSession()
     local buffers = lib.getAllBuffers()
 
     local completeJSON = {}
-    completeJSON["focused"] = vim.fn.expand("%")
+    completeJSON["focused"] = vim.fn.expand("%:p")
     completeJSON["buffers"] = buffers
 
     local cwdID = lib.getCurrentCWDId()
