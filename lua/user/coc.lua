@@ -5,6 +5,8 @@ function _G.check_back_space()
     return (col == 0 or vim.api.nvim_get_current_line():sub(col, col)) and true
 end
 
+-- transparent floating
+
 vim.api.nvim_set_keymap("i", "<silent><expr>", "<c-space> coc#refresh", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-s>", "<Plug>(coc-definition)", {noremap = true, silent = true})
 vim.api.nvim_set_keymap("n", "<C-x>", "<Plug>(coc-references)", {noremap = true, silent = true})
@@ -21,6 +23,7 @@ inoremap <silent><expr> <Tab>
       \ coc#pum#visible() ? coc#_select_confirm() :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+
 ]]
 
 vim.g.coc_global_extensions = {

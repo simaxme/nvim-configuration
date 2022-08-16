@@ -1,5 +1,7 @@
 x = {}
 
+local utils = require('user.utils');
+
 require('telescope').setup {
     defaults = {
         path_display = {"smart"}
@@ -31,8 +33,21 @@ function x.get_file_last_edit_date(path)
 end
 
 local scan = require'plenary.scandir'
+function x.scan_dir(folder, extension, parameters)
+    local unfiltered = scan.scan_dir(folder, parameters);
+    local result = {}
+    for index = 1, #unfiltered do
+        local object = unfiltered[index]
+        if utils.stringEndsWithWith(object, extension) then
+            table.insert(result, object)
+        end
+    end
+
+    return result
+end
+
 function x.get_last_sessions()
-    local arr = scan.scan_dir(SESSION_FOLDER, { hidden = true, depth = 0 });
+    local arr = x.scan_dir(SESSION_FOLDER, "json", { hidden = true, depth = 0 });
     table.sort(arr, function(a, b)
         return x.get_file_last_edit_date(a) > x.get_file_last_edit_date(b)
     end)

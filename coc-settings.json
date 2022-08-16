@@ -1,16 +1,21 @@
 {
     // general theming
     "suggest.floatConfig": {
-        "border": true
+        "border": true,  
+        "highlight": "CocFloating", 
+        "rounded": true
     },
     "hover.floatConfig": {
-        "border": true
+        "border": true,
+        "rounded": true
     },
     "diagnostic.floatConfig": {
-        "border": true
+        "border": true,
+        "rounded": true
     },
     "signature.floatConfig": {
-        "border": true
+        "border": true,
+        "rounded": true
     },
     // ---
 

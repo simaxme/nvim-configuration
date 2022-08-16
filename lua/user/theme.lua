@@ -1,5 +1,10 @@
 require('onedark').setup {
-    style = 'deep'
+    style = 'deep',
+
+    highlights = {
+        CocFloating = {bg = "#ff0000"},
+        Pmenu = {bg = "#ff0000"}
+    }
 }
 require('onedark').load()
 
@@ -8,4 +13,7 @@ vim.cmd [[
 	set number
 	set noshowmode
 	set cursorline
+
+    autocmd VimEnter * hi CocFloating guibg=NONE
 ]]
+
