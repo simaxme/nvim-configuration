@@ -122,11 +122,11 @@ function lib.openSession(name)
     vim.cmd [[bufdo bd]]
 
     for index = 1, #buffers do
-        vim.cmd([[edit ]] .. buffers[index])
+        vim.cmd([[silent! edit ]] .. buffers[index])
     end
 
     if focused ~= nil then
-        vim.cmd([[edit ]] .. focused)
+        vim.cmd([[silent! edit ]] .. focused)
     end
 
     lib.closeNoNameBuffers()
