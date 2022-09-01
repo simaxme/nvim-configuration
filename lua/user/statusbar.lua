@@ -21,8 +21,10 @@ local function escapeString(str)
     return result
 end
 
+
 local function getCOCStatus()
     local cocStatus = escapeString(vim.api.nvim_eval('coc#status()'));
+
 
     y = y + 1
 

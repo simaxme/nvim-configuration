@@ -83,6 +83,9 @@ end
 
 -- get the current working directory and return the id (will only be the folder name)
 function lib.getCurrentCWDId()
+    -- go into main directory
+    vim.cmd [[Gcd]]
+
     local cwd = vim.fn.getcwd()
     
     local fileNameSplits = utils.split(cwd, '/')
