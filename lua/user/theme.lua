@@ -14,6 +14,9 @@ vim.cmd [[
 	set noshowmode
 	set cursorline
 
+    autocmd VimEnter * hi Pmenu guibg=NONE
+    autocmd VimEnter * hi PmenuSel guibg=#ffffff
     autocmd VimEnter * hi CocFloating guibg=NONE
+    autocmd VimEnter * hi CocMenuSel guibg=white guifg=black
 ]]
 

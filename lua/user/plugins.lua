@@ -53,6 +53,9 @@ require('packer').startup(function()
 	-- syntax
 	use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-angular'
+    use 'nvim-treesitter/nvim-treesitter-context'
+
+    use 'rcarriga/nvim-notify'
 
 	-- icon support
 	use 'ryanoasis/vim-devicons'
