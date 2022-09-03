@@ -95,11 +95,26 @@ function lib.getLastSessions()
 end
 
 -- get the current working directory and return the id (will only be the folder name)
+function lib.isGitDirectory()
+    local data = vim.fn.FugitiveGitDir()
+    local isDirectory = data ~= ""
+
+    return isDirectory
+end
+
 function lib.getCurrentCWDId()
     -- go into main directory
-    vim.cmd [[silent! Gcd]]
+    
+    local cwd = "unknown"
 
-    local cwd = vim.fn.getcwd()
+    if lib.isGitDirectory() then
+        vim.cmd [[silent! Gcd]]
+
+        cwd = vim.fn.getcwd()
+    else
+        cwd = vim.fn.expand("%:p:h")
+    end
+
     
     local fileNameSplits = utils.split(cwd, '/')
     local fileName1 = fileNameSplits[#fileNameSplits]
@@ -125,6 +140,8 @@ function lib.createSession()
 end
 
 function lib.openSession(name)
+    lib.createSession()
+
     local namesSplitted = utils.split(name, " # ");
     local resName = namesSplitted[1];
 
