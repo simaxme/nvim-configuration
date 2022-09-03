@@ -20,7 +20,7 @@ function! CheckBackspace() abort
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ coc#pum#visible() ? coc#_select_confirm() :
+      \ coc#pum#visible() ? coc#pum#confirm() :
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 

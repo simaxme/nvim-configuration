@@ -62,8 +62,21 @@ function lib.getAllSessions()
             local fileExtensionSplits = utils.split(fileName1, "%.")
             local withoutFileExtension = fileExtensionSplits[#fileExtensionSplits-1]
 
-            if withoutFileExtension ~= nil then
-                table.insert(result, withoutFileExtension)
+            local file = io.open(SESSION_FOLDER .. "/" .. withoutFileExtension .. ".json", "r") -- r read mode and b binary mode
+
+            if file ~= nil then
+
+                local content = file:read "*a" -- *a or *all reads the whole file
+                file:close()
+
+                local jsonContent = json.decode(content)
+
+                local buffers = jsonContent["buffers"]
+
+                if withoutFileExtension ~= nil and buffers ~= nil then
+                    table.insert(result, withoutFileExtension .. " # " .. #buffers)
+                end
+
             end
         end
     end
@@ -84,7 +97,7 @@ end
 -- get the current working directory and return the id (will only be the folder name)
 function lib.getCurrentCWDId()
     -- go into main directory
-    vim.cmd [[Gcd]]
+    vim.cmd [[silent! Gcd]]
 
     local cwd = vim.fn.getcwd()
     
@@ -112,7 +125,10 @@ function lib.createSession()
 end
 
 function lib.openSession(name)
-    local file = io.open(SESSION_FOLDER .. "/" .. name .. ".json", "r") -- r read mode and b binary mode
+    local namesSplitted = utils.split(name, " # ");
+    local resName = namesSplitted[1];
+
+    local file = io.open(SESSION_FOLDER .. "/" .. resName .. ".json", "r") -- r read mode and b binary mode
     if not file then return nil end
     local content = file:read "*a" -- *a or *all reads the whole file
     file:close()
