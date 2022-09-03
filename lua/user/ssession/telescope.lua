@@ -37,7 +37,7 @@ vim.api.nvim_create_user_command(
     end,
     {nargs = '*'}
 )
-vim.api.nvim_set_keymap("n", "<Leader>s", ":SSessionOpen<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "fs", ":SSessionOpen<CR>", {noremap = true})
 
 
 return telescope
