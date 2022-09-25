@@ -6,7 +6,7 @@ local kind_icons = icons.kind
 
 -- keymaps
 vim.api.nvim_set_keymap("n", "<C-s>", ":lua vim.lsp.buf.definition()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-c>", ":lua vim.lsp.buf.references()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<C-c>", ":Telescope lsp_references<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>", {noremap = true})
 
 vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
