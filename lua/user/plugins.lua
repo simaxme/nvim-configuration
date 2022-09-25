@@ -20,9 +20,11 @@ require('packer').startup(function()
     use 'akinsho/bufferline.nvim'
 
 	-- Nerdtree (File Navigator)
-	use 'preservim/nerdtree'
-	use 'Xuyuanp/nerdtree-git-plugin'
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
+	-- use 'preservim/nerdtree'
+	-- use 'Xuyuanp/nerdtree-git-plugin'
+    -- use 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+    use 'kyazdani42/nvim-tree.lua'
 
 	-- basic session management
 	use 'nvim-lua/plenary.nvim'

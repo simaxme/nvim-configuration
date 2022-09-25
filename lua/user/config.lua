@@ -19,5 +19,7 @@ vim.cmd [[
     set shortmess+=O
     set shortmess+=F
 
+    set laststatus=3
+
     autocmd ColorScheme * highlight VertSplit guibg=None guifg=#191724
 ]]
