@@ -126,7 +126,12 @@ function lib.createSession()
     local buffers = lib.getAllBuffers()
 
     local completeJSON = {}
-    completeJSON["focused"] = vim.fn.expand("%:p")
+ 
+    local isListed = vim.fn.buflisted("%") == 1
+
+    if isListed then
+        completeJSON["focused"] = vim.fn.expand("%:p")
+    end
     completeJSON["buffers"] = buffers
 
     local cwdID = lib.getCurrentCWDId()
