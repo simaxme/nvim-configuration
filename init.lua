@@ -11,10 +11,12 @@ require('user.startup.telescope')
 require('user.ssession.init')
 
 -- plugins
+require('user.mason')
+require('user.lsp')
+require('user.cmp')
 require('user.nerdtree')
 require('user.angular')
 require('user.treesitter')
-require('user.coc')
 require('user.echodoc')
 require('user.explorer')
 require('user.nerdcommenter')

@@ -1,6 +1,6 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = { 
-        "typescript", 
+    ensure_installed = {
+        "typescript",
         "java",
         "bash",
         "html",
@@ -12,7 +12,7 @@ require('nvim-treesitter.configs').setup {
         "json"
     },
 
-    highlight = { 
+    highlight = {
         enable = true,
         additional_vim_regex_highlighting = true
     }

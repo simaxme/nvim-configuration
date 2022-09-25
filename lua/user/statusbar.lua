@@ -22,16 +22,6 @@ local function escapeString(str)
 end
 
 
-local function getCOCStatus()
-    local cocStatus = escapeString(vim.api.nvim_eval('coc#status()'));
-
-
-    y = y + 1
-
-    c = cocStatus
-
-    return cocStatus;
-end
 
 function x.showLastStatus()
     utils.echo("coc status " .. '"' .. c .. '"')
@@ -44,7 +34,7 @@ require('lualine').setup {
         }
     },
     sections = {
-        lualine_y = {getCOCStatus},
+        lualine_y = {'lsp_progress'},
         lualine_z = {'progress', 'location'}
     }
 }

@@ -7,9 +7,11 @@ require('packer').startup(function()
   	use 'wbthomason/packer.nvim'
 
 	-- theme
-	use 'navarasu/onedark.nvim'	
+	use 'navarasu/onedark.nvim'
 
 	use 'puremourning/vimspector'
+
+    use 'mfussenegger/nvim-jdtls'
 
 	-- Statusline and top tab/buffer bar
 	-- use 'vim-airline/vim-airline'
@@ -45,12 +47,20 @@ require('packer').startup(function()
 	use 'preservim/vim-markdown'
 
 	-- auto completion
-	use {
-		'neoclide/coc.nvim',
-		branch = 'release'
-	}
+    use "neovim/nvim-lspconfig"
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use 'arkav/lualine-lsp-progress'
 
-	-- syntax
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
+    use 'hrsh7th/nvim-cmp'
+
+	-- -- syntax
 	use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-context'
 
@@ -74,15 +84,21 @@ require('packer').startup(function()
 
 	use 'Raimondi/delimitMate'
 
-    -- required for rounded corners
-    use 'neovim/nvim-lspconfig'
-
-    -- copilot must have
-    use 'github/copilot.vim'
-
     use 'Shougo/echodoc.vim'
 
     use 'glepnir/dashboard-nvim'
 
     use 'lambdalisue/suda.vim'
+
+    -- use {
+      -- "AckslD/nvim-neoclip.lua",
+      -- requires = {
+        -- -- you'll need at least one of these
+        -- -- {'nvim-telescope/telescope.nvim'},
+        -- {'ibhagwan/fzf-lua'},
+      -- },
+      -- config = function()
+        -- require('neoclip').setup()
+      -- end,
+    -- }
 end)

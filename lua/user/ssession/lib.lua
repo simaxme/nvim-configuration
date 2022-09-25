@@ -139,8 +139,14 @@ function lib.createSession()
     io.close(file)
 end
 
+lib.loadedSession = false
+
 function lib.openSession(name)
-    lib.createSession()
+    if lib.loadedSesssion then
+        lib.createSession()
+    end
+
+    lib.loadedSession = true
 
     local namesSplitted = utils.split(name, " # ");
     local resName = namesSplitted[1];
