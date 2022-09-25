@@ -4,6 +4,8 @@ local icons = require "user.icons"
 
 local kind_icons = icons.kind
 
+local compare = require('cmp.config.compare')
+
 -- keymaps
 vim.api.nvim_set_keymap("n", "<C-s>", ":lua vim.lsp.buf.definition()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-c>", ":Telescope lsp_references<CR>", {noremap = true})
@@ -45,6 +47,20 @@ cmp.setup({
         completion = {
           border = "rounded",
         },
+    },
+
+    sorting = {
+      priority_weight = 2,
+      comparators = {
+        compare.sort_text,
+        compare.offset,
+        compare.exact,
+        compare.score,
+        compare.recently_used,
+        compare.kind,
+        compare.length,
+        compare.order,
+      },
     },
 
     formatting = {
