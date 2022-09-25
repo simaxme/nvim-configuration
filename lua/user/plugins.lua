@@ -11,6 +11,8 @@ require('packer').startup(function()
 
 	use 'puremourning/vimspector'
 
+    use 'mfussenegger/nvim-jdtls'
+
 	-- Statusline and top tab/buffer bar
 	-- use 'vim-airline/vim-airline'
 	-- use 'vim-airline/vim-airline-themes'
@@ -45,12 +47,17 @@ require('packer').startup(function()
 	use 'preservim/vim-markdown'
 
 	-- auto completion
-	use {
-		'neoclide/coc.nvim',
-		branch = 'release'
-	}
+	-- use {
+		-- 'neoclide/coc.nvim',
+		-- branch = 'release'
+	-- }
+    use "neovim/nvim-lspconfig"
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use 'arkav/lualine-lsp-progress'
 
-	-- syntax
+
+	-- -- syntax
 	use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-context'
 
