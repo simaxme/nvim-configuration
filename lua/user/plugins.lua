@@ -7,7 +7,7 @@ require('packer').startup(function()
   	use 'wbthomason/packer.nvim'
 
 	-- theme
-	use 'navarasu/onedark.nvim'	
+	use 'navarasu/onedark.nvim'
 
 	use 'puremourning/vimspector'
 
@@ -47,15 +47,18 @@ require('packer').startup(function()
 	use 'preservim/vim-markdown'
 
 	-- auto completion
-	-- use {
-		-- 'neoclide/coc.nvim',
-		-- branch = 'release'
-	-- }
     use "neovim/nvim-lspconfig"
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use 'arkav/lualine-lsp-progress'
 
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/vim-vsnip'
+    use 'hrsh7th/vim-vsnip-integ'
+    use 'hrsh7th/nvim-cmp'
 
 	-- -- syntax
 	use 'nvim-treesitter/nvim-treesitter'
@@ -80,12 +83,6 @@ require('packer').startup(function()
     use 'preservim/tagbar'
 
 	use 'Raimondi/delimitMate'
-
-    -- required for rounded corners
-    use 'neovim/nvim-lspconfig'
-
-    -- copilot must have
-    use 'github/copilot.vim'
 
     use 'Shougo/echodoc.vim'
 

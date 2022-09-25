@@ -9,7 +9,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 )
 
 
-
 require('lspconfig').tsserver.setup{}
 require('lspconfig').sumneko_lua.setup{}
 require('lspconfig').angularls.setup{}
