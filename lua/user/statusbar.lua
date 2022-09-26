@@ -27,6 +27,11 @@ function x.showLastStatus()
     utils.echo("coc status " .. '"' .. c .. '"')
 end
 
+local java = require('user.java')
+function getJavaVersion()
+    return java.javaVersion or ""
+end
+
 require('lualine').setup {
     options = {
         refresh = {
@@ -34,7 +39,7 @@ require('lualine').setup {
         }
     },
     sections = {
-        lualine_y = {'lsp_progress'},
+        lualine_y = {'lsp_progress', getJavaVersion},
         lualine_z = {'progress', 'location'}
     }
 }

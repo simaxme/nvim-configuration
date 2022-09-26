@@ -2,7 +2,7 @@
 
 JAR="$HOME/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"
 export GRADLE_HOME=/usr/bin/gradle
-java \
+$(echo "$2/bin/java") \
   -Declipse.application=org.eclipse.jdt.ls.core.id1 \
   -Dosgi.bundles.defaultStartLevel=4 \
   -Declipse.product=org.eclipse.jdt.ls.core.product \

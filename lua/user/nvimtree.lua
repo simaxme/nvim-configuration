@@ -32,6 +32,6 @@ require('nvim-tree').setup({
 
 vim.api.nvim_set_keymap("", "<S-e>", ":lua require('user.nvimtree').findFile()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("", "<C-e>", ":lua require('user.nvimtree').toggle()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("c", "x<CR>", ":bd<CR>", {noremap = true})
+vim.api.nvim_set_keymap("c", "x<CR>", ":bd | bp<CR>", {noremap = true})
 
 return M
