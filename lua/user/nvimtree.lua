@@ -20,6 +20,7 @@ require('nvim-tree').setup({
     },
 
     view = {
+        width = 40,
         mappings = {
             list ={
                 {key = "<C-e>", action=""},
