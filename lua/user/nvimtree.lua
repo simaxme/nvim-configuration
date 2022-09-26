@@ -4,12 +4,12 @@ vim.g.loaded_netrwPlugin = 1
 local M = {}
 
 function M.findFile()
-    vim.cmd [[Gcd]]
+    vim.cmd [[silent! Gcd]]
     vim.cmd [[NvimTreeFindFile]]
 end
 
 function M.toggle()
-    vim.cmd [[Gcd]]
+    vim.cmd [[silent! Gcd]]
     vim.cmd [[NvimTreeToggle]]
 end
 
