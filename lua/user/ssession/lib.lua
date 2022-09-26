@@ -5,6 +5,8 @@ local json = require('dependencies.jsonlua.json')
 
 local SESSION_FOLDER = os.getenv('HOME') .. '/.local/share/nvim/sessions'
 
+os.execute("mkdir -p " .. SESSION_FOLDER)
+
 function lib.getAllBuffers()
     local buffers = vim.api.nvim_list_bufs()
     local resultBuffers = {}
