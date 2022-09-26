@@ -4,7 +4,7 @@ vim.cmd [[packadd packer.nvim]]
 
 require('packer').startup(function()
 	-- Packer can manage itself
-  	use 'wbthomason/packer.nvim'
+    use 'wbthomason/packer.nvim'
 
 	-- theme
 	use 'navarasu/onedark.nvim'
@@ -29,23 +29,23 @@ require('packer').startup(function()
 	-- basic session management
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'
-	use 'PhilRunninger/bufselect.vim'    
+	use 'PhilRunninger/bufselect.vim'
 
-    use 'rmagatti/auto-session'
-	use 'rmagatti/session-lens'
+    -- use 'rmagatti/auto-session'
+	-- use 'rmagatti/session-lens'
 
 	-- comments
 	use 'preservim/nerdcommenter'
 
 	-- vifm ("bigger" file navigator)
-	use 'vifm/vifm.vim'
+	-- use 'vifm/vifm.vim'
 
 	-- basic git tools
     use 'lewis6991/gitsigns.nvim'
 	use 'tpope/vim-fugitive'
 
 	-- Markdown support
-	use 'godlygeek/tabular'
+	-- use 'godlygeek/tabular'
 	use 'preservim/vim-markdown'
 
 	-- auto completion
@@ -84,23 +84,14 @@ require('packer').startup(function()
     -- method summary
     use 'preservim/tagbar'
 
-	use 'Raimondi/delimitMate'
+	-- use 'Raimondi/delimitMate'
 
-    use 'Shougo/echodoc.vim'
+    use 'windwp/nvim-autopairs'
+
+    -- use 'Shougo/echodoc.vim'
 
     use 'glepnir/dashboard-nvim'
 
     use 'lambdalisue/suda.vim'
 
-    -- use {
-      -- "AckslD/nvim-neoclip.lua",
-      -- requires = {
-        -- -- you'll need at least one of these
-        -- -- {'nvim-telescope/telescope.nvim'},
-        -- {'ibhagwan/fzf-lua'},
-      -- },
-      -- config = function()
-        -- require('neoclip').setup()
-      -- end,
-    -- }
 end)
