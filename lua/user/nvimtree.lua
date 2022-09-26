@@ -1,7 +1,24 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
+local M = {}
+
+function M.findFile()
+    vim.cmd [[Gcd]]
+    vim.cmd [[NvimTreeFindFile]]
+end
+
+function M.toggle()
+    vim.cmd [[Gcd]]
+    vim.cmd [[NvimTreeToggle]]
+end
+
 require('nvim-tree').setup({
+    update_focused_file = {
+        enable = true,
+        update_cwd = true
+    },
+
     view = {
         mappings = {
             list ={
@@ -12,6 +29,8 @@ require('nvim-tree').setup({
     }
 })
 
-vim.api.nvim_set_keymap("", "<S-e>", ":NvimTreeFindFile<CR>", {noremap = true})
-vim.api.nvim_set_keymap("", "<C-e>", ":NvimTreeToggle<CR>", {noremap = true})
+vim.api.nvim_set_keymap("", "<S-e>", ":lua require('user.nvimtree').findFile()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("", "<C-e>", ":lua require('user.nvimtree').toggle()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("c", "x<CR>", ":bd<CR>", {noremap = true})
+
+return M
