@@ -62,12 +62,19 @@ require("bufferline").setup{
         offsets = {
             {
                 filetype = "NvimTree",
-                text = "File Explorer",
-                highlight = "Directory",
-                text_align = "left"
+                text = "",
+                highlight = "FolderTitle",
+                text_align = "left",
+                -- separator = true
             }
         }
     }
 }
 
+vim.cmd [[
+autocmd VimEnter * hi FolderTitle guifg=red
+autocmd VimEnter * hi! link FolderTitle NvimTreeNormal
+]]
+
+-- autocmd VimEnter * hi FolderTitle guifg=red
 return x
