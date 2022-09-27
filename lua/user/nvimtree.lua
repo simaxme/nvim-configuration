@@ -55,4 +55,11 @@ vim.cmd [[
     autocmd VimEnter * hi NvimTreeVertSplit guibg=NONE guifg=background 
 ]]
 
+local api = require('nvim-tree.api')
+function M.getCurrentNode()
+    local data = api.tree.get_node_under_cursor()
+    return data.absolute_path
+end
+
+
 return M

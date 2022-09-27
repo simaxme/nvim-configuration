@@ -17,6 +17,7 @@ cmp.setup({
 
     sources = cmp.config.sources({
         {name = "nvim_lsp"},
+        {name = "nvim_lsp_signature_help"}
     }),
 
     mapping = cmp.mapping.preset.insert({
@@ -40,13 +41,10 @@ cmp.setup({
     sorting = {
       priority_weight = 2,
       comparators = {
-        compare.sort_text,
-        compare.offset,
-        compare.exact,
-        compare.score,
+        compare.locality,
         compare.recently_used,
-        compare.kind,
-        compare.length,
+        compare.score,
+        compare.offset,
         compare.order,
       },
     },
