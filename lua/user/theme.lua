@@ -15,6 +15,8 @@ vim.cmd [[
 	set cursorline
 
     autocmd VimEnter * hi Pmenu guibg=NONE
+    autocmd VimEnter * hi FloatBorder guifg=white guibg=bg
+    autocmd VimEnter * hi NormalFloat guibg=bg guifg=white
     
  ]]
 

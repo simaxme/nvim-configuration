@@ -94,4 +94,6 @@ require('packer').startup(function()
     use 'glepnir/dashboard-nvim'
 
     use 'lambdalisue/suda.vim'
+
+    use 'stevearc/dressing.nvim'
 end)
