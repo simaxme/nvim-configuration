@@ -15,7 +15,7 @@ vim.cmd [[
 	set cursorline
 
     autocmd VimEnter * hi Pmenu guibg=NONE
-    autocmd VimEnter * hi PmenuSel guibg=#bd93f9
     
  ]]
 
+    -- autocmd VimEnter * hi PmenuSel guibg=#bd93f9
