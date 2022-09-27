@@ -3,3 +3,11 @@ vim.api.nvim_set_keymap("n", "fg", "<cmd>Telescope live_grep<CR>", {noremap = tr
 vim.api.nvim_set_keymap("n", "fb", "<cmd>ShowBufferList<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>ShowBufferList<CR>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<Leader>v", "<cmd>lua require('neoclip.fzf')({'unnamed', 'plus'})<CR>", {noremap = true})
+
+local M = {}
+
+
+require('user.telescope.pickers.nvimtreeactions.init')
+
+
+return M

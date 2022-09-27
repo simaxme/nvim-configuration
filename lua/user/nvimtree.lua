@@ -40,7 +40,8 @@ require('nvim-tree').setup({
         mappings = {
             list ={
                 {key = "<C-e>", action=""},
-                {key = "E", action=""}
+                {key = "E", action=""},
+                {key = "<Leader><Tab>", action = "open_nvimtree_options", action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect}
             }
         }
     }
@@ -54,12 +55,5 @@ vim.api.nvim_set_keymap("c", "x<CR>", ":bd | bp<CR>", {noremap = true})
 vim.cmd [[
     autocmd VimEnter * hi NvimTreeVertSplit guibg=NONE guifg=background 
 ]]
-
-local api = require('nvim-tree.api')
-function M.getCurrentNode()
-    local data = api.tree.get_node_under_cursor()
-    return data.absolute_path
-end
-
 
 return M

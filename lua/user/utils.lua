@@ -47,4 +47,11 @@ function utils.stringEndsWithWith(String, End)
     return string.sub(String, string.len(String) - string.len(End) + 1, string.len(String)) == End
 end
 
+function utils.isDir(path)
+    local f = io.open(path, "r")
+    local _, _, code = f:read(1)
+    f:close()
+    return code == 21
+end
+
 return utils
