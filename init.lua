@@ -12,7 +12,7 @@ require('user.ssession.init')
 -- plugins
 require('user.java')
 require('user.mason')
-require('user.lsp')
+require('user.lsp.init')
 require('user.cmp')
 require('user.nvimtree')
 require('user.angular')
