@@ -3,8 +3,8 @@ local utils = require('user.utils')
 
 -- CONSTANTS
 local HORIZONTAL_TERMINAL_SIZE_FULL = 15
-local HORIZONTAL_TERMINAL_SIZE_MIN = 4
-local VERTICAL_TERMINAL_SIZE_MIN = 25
+-- local HORIZONTAL_TERMINAL_SIZE_MIN = 4
+-- local VERTICAL_TERMINAL_SIZE_MIN = 25
 local VERTICAL_TERMINAL_SIZE_FULL = 45
 -- ----
 
@@ -50,30 +50,6 @@ function terminal.isCurrentBufferTerminal()
     return terminal.getCurrentBufferType() == "terminal"
 end
 
-function terminal.beforeBufferLeave()
-    if terminal.isCurrentBufferTerminal() then
-        if utils.stringStartsWith(getBuffName(), "HO") then
-            vim.cmd ([[resize ]] .. HORIZONTAL_TERMINAL_SIZE_MIN)
-        elseif utils.stringStartsWith(getBuffName(), "VE") then 
-            vim.cmd ([[vertical resize ]] .. VERTICAL_TERMINAL_SIZE_MIN)
-        end
-    end
-end
-function terminal.afterBufferLeave()
-    if terminal.isCurrentBufferTerminal() then
-        if utils.stringStartsWith(getBuffName(), "HO") then
-            vim.cmd ([[resize ]] .. HORIZONTAL_TERMINAL_SIZE_FULL)
-        elseif utils.stringStartsWith(getBuffName(), "VE") then 
-            vim.cmd ([[vertical resize ]] .. VERTICAL_TERMINAL_SIZE_FULL)
-        end
-        terminal.focusTerminalInput()
-    end
-end
-
-vim.cmd [[
-autocmd BufLeave * lua require('user.terminal').beforeBufferLeave()
-autocmd BufEnter * lua require('user.terminal').afterBufferLeave() 
-]]
 
 vim.api.nvim_create_user_command(
     'VTerminal',

@@ -18,6 +18,10 @@ function M.openSelect()
             action = require('user.telescope.pickers.nvimtreeactions.default').callback("c")
         },
         {
+            name = "Remove File",
+            action = require('user.telescope.pickers.nvimtreeactions.default').callback("d")
+        },
+        {
             name = "Angular",
             action = require('user.telescope.pickers.nvimtreeactions.angular').open
         }

@@ -1,3 +1,5 @@
+require('user.lsp.prettier')
+
 -- lsp config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -14,3 +16,4 @@ require('lspconfig').sumneko_lua.setup{}
 require('lspconfig').angularls.setup{}
 
 require"fidget".setup{}
+

@@ -11,7 +11,6 @@ require('packer').startup(function()
 
 	use 'puremourning/vimspector'
 
-    use 'mfussenegger/nvim-jdtls'
 
 	-- Statusline and top tab/buffer bar
 	-- use 'vim-airline/vim-airline'
@@ -62,6 +61,10 @@ require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
     use 'hrsh7th/nvim-cmp'
+
+    -- external lsp servers for config
+    use 'mfussenegger/nvim-jdtls'
+    use 'MunifTanjim/prettier.nvim'
 
 	-- -- syntax
 	use 'nvim-treesitter/nvim-treesitter'
