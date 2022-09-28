@@ -41,15 +41,21 @@ require('nvim-tree').setup({
             list ={
                 {key = "<C-e>", action=""},
                 {key = "E", action=""},
-                {key = "<Leader>q", action = "open_nvimtree_options", action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect}
+                {key = "<Leader>q", action = "open_nvimtree_options", action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect},
+                {key = "ff", action = "telescope_file", action_cb = function () vim.cmd("Telescope find_files") end},
+                {key = "fg", action = "telescope_grep", action_cb = function () vim.cmd("Telescope live_grep") end}
             }
         }
     }
 })
 
+
+-- vim.api.nvim_set_keymap("n", "ff", "<cmd>Telescope find_files<CR>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "fg", "<cmd>Telescope live_grep<CR>", {noremap = true})
+
 vim.api.nvim_set_keymap("", "<S-e>", ":lua require('user.nvimtree').findFile()<CR>", {noremap = true})
 vim.api.nvim_set_keymap("", "<C-e>", ":lua require('user.nvimtree').toggle()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("c", "x<CR>", ":bd | bp<CR>", {noremap = true})
+vim.api.nvim_set_keymap("c", "x<CR>", ":bp|bd#<CR>", {noremap = true})
 
 -- hide seperator
 vim.cmd [[
