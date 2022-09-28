@@ -96,4 +96,8 @@ require('packer').startup(function()
     use 'lambdalisue/suda.vim'
 
     use 'stevearc/dressing.nvim'
+
+    use 'RRethy/vim-illuminate'
+
+    use 'j-hui/fidget.nvim'
 end)

@@ -13,3 +13,4 @@ require('lspconfig').tsserver.setup{}
 require('lspconfig').sumneko_lua.setup{}
 require('lspconfig').angularls.setup{}
 
+require"fidget".setup{}

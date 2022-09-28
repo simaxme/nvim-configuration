@@ -39,7 +39,7 @@ require('lualine').setup {
         }
     },
     sections = {
-        lualine_y = {'lsp_progress', getJavaVersion},
+        lualine_y = {getJavaVersion},
         lualine_z = {'progress', 'location'}
     }
 }

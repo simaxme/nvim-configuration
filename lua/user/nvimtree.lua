@@ -41,7 +41,7 @@ require('nvim-tree').setup({
             list ={
                 {key = "<C-e>", action=""},
                 {key = "E", action=""},
-                {key = "<Leader><Tab>", action = "open_nvimtree_options", action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect}
+                {key = "<Leader>q", action = "open_nvimtree_options", action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect}
             }
         }
     }
