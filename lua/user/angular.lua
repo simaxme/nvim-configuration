@@ -13,13 +13,14 @@ function x.createComponent(componentType)
     NERDTreeFocus
     wincmd p
     ]]
-    vim.cmd ([[ene|e ]] .. selected .. "/" .. componentName .. "." .. componentType .. ".ts")
+    vim.cmd([[ene|e ]] .. selected .. "/" .. componentName .. "." .. componentType .. ".ts")
     vim.cmd [[echo 'Created Schematic']]
 end
 
 function addAngularHotkey(hotkey, componentName)
-    vim.cmd (
-        [[autocmd FileType nerdtree nmap <buffer> ]] .. hotkey .. [[ :lua require'user.angular'.createComponent(']] ..componentName .. [[')<CR>]]
+    vim.cmd(
+        [[autocmd FileType nerdtree nmap <buffer> ]] ..
+        hotkey .. [[ :lua require'user.angular'.createComponent(']] .. componentName .. [[')<CR>]]
     )
 end
 

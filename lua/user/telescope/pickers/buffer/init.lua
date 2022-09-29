@@ -14,6 +14,10 @@ function M.openSelect()
         {
             name = "[LSP] Rename Symbol",
             action = vim.lsp.buf.rename
+        },
+        {
+            name = "[LSP] Symbols",
+            action = function() vim.cmd("SymbolsOutline") end
         }
     }
 
@@ -27,8 +31,5 @@ function M.openSelect()
 
     lib.start("NvimTreeActions", options)
 end
-
-vim.api.nvim_set_keymap("n", "<Leader>q", ":lua require('user.telescope.pickers.buffer.init').openSelect()<CR>",
-    { noremap = true })
 
 return M

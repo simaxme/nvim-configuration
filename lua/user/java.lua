@@ -3,7 +3,7 @@ local jvmDirectory = "/usr/lib/jvm"
 local M = {}
 
 local utils = require('user.utils')
-local scan = require'plenary.scandir'
+local scan = require 'plenary.scandir'
 local sessionLib = require('user.ssession.lib')
 
 local home = os.getenv("HOME")
@@ -24,7 +24,6 @@ function M.getJavaVersions()
     return versions
 end
 
-
 local pickers = require 'telescope.pickers'
 local finders = require 'telescope.finders'
 local conf = require('telescope.config').values
@@ -38,8 +37,8 @@ function M.chooseJavaVersion(opts)
             results = M.getJavaVersions()
         },
         sorter = conf.generic_sorter(opts),
-        attach_mappings = function (prompt_bufnr, map)
-            actions.select_default:replace(function ()
+        attach_mappings = function(prompt_bufnr, map)
+            actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()[1]
                 M.selectJavaVersion(selection)
@@ -55,7 +54,7 @@ function M.selectJavaVersion(version)
 
     local config = home .. "/dev/java/" .. sessionLib.getCurrentCWDId() .. ".txt"
 
-    os.execute("mkdir -p " .. home .. "/dev/java/")
+    os.execute("mkdir -p " .. home .. "/dev/nvim/java/")
 
     local file = io.open(config, "w")
     io.output(file)
@@ -69,7 +68,7 @@ end
 
 M.javaVersion = nil
 function M.findJavaVersion()
-    local config = home .. "/dev/java/" .. sessionLib.getCurrentCWDId() .. ".txt"
+    local config = home .. "/dev/nvim/java/" .. sessionLib.getCurrentCWDId() .. ".txt"
 
     local file = io.open(config, "r") -- r read mode and b binary mode
     if not file then return nil end
@@ -83,10 +82,10 @@ end
 
 vim.api.nvim_create_user_command(
     'JavaVersion',
-    function (args)
+    function(args)
         M.chooseJavaVersion()
     end,
-    {nargs = '*'}
+    { nargs = '*' }
 )
 
 return M
