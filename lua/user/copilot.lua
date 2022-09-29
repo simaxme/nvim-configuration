@@ -1,3 +1,4 @@
-vim.g.copilot_no_tab_map = true
+require('copilot').setup()
 
-vim.api.nvim_set_keymap("i", "<C-d>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+require('copilot_cmp').setup {}
+

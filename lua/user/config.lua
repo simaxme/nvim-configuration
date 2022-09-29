@@ -13,3 +13,4 @@ vim.opt.breakindent = true
 vim.opt.mouse = "a"
 vim.opt.shortmess = vim.opt.shortmess + "OF"
 vim.opt.laststatus = 3
+vim.opt.wrap = false

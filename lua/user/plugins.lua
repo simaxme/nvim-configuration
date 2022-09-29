@@ -24,7 +24,7 @@ require('packer').startup(function()
     use 'PhilRunninger/bufselect.vim'
 
     -- comments
-    use 'preservim/nerdcommenter'
+    use 'numToStr/Comment.nvim'
 
     -- basic git tools
     use 'lewis6991/gitsigns.nvim'
@@ -87,4 +87,8 @@ require('packer').startup(function()
     use 'j-hui/fidget.nvim'
 
     use 'karb94/neoscroll.nvim'
+
+    -- copilot
+    use 'zbirenbaum/copilot-cmp'
+    use 'zbirenbaum/copilot.lua'
 end)

@@ -18,6 +18,10 @@ function M.openSelect()
         {
             name = "[LSP] Symbols",
             action = function() vim.cmd("SymbolsOutline") end
+        },
+        {
+            name = "[LSP] Show Error",
+            action = function() vim.diagnostic.open_float() end
         }
     }
 
