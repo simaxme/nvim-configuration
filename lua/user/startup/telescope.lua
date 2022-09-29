@@ -51,50 +51,5 @@ function telescope.runSelection(selection, vertical)
     end
 end
 
-function telescope.generateTelescopeWindow(opts, vertical)
-    local options = telescope.extractOptions()
-
-    opts = opts or {}
-
-    pickers.new(opts, {
-        prompt_title = "Startup",
-        finder = finders.new_table {
-            results = options
-        },
-        sorter = conf.generic_sorter(opts),
-        attach_mappings = function (prompt_bufnr, map)
-            actions.select_default:replace(function ()
-                actions.close(prompt_bufnr)
-                local selection = action_state.get_selected_entry()[1]
-                utils.echo("got selection: " .. selection)
-                telescope.runSelection(selection, vertical)
-            end)
-            return true
-        end
-    }):find()
-end
-
-vim.api.nvim_create_user_command(
-    'Start',
-    function (args)
-        telescope.generateTelescopeWindow(nil, true)
-    end,
-    {nargs = '*'}
-)
-vim.api.nvim_create_user_command(
-    'VStart',
-    function (args)
-        telescope.generateTelescopeWindow(nil, true)
-    end,
-    {nargs = '*'}
-)
-vim.api.nvim_create_user_command(
-    'HStart',
-    function (args)
-        telescope.generateTelescopeWindow(nil, false)
-    end,
-    {nargs = '*'}
-)
-
 
 return telescope

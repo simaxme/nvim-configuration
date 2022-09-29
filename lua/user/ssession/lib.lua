@@ -17,8 +17,9 @@ function lib.getAllBuffers()
         local filePath = vim.fn.expand('#' .. buffer .. ':p')
 
         local isListed = vim.fn.buflisted(buffer) == 1
+        local isNotTerminal = vim.fn.getbufvar(buffer, "&buftype") ~= "terminal"
 
-        if isListed then
+        if isListed and isNotTerminal then
             table.insert(resultBuffers, filePath)
         end
     end

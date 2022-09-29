@@ -10,6 +10,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
+vim.api.nvim_create_autocmd({'BufWritePre'}, {callback = vim.lsp.buf.formatting_sync})
 
 require('lspconfig').tsserver.setup{}
 require('lspconfig').sumneko_lua.setup{}
