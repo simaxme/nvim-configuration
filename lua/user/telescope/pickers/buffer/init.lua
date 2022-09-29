@@ -3,12 +3,10 @@ local utils = require('user.utils')
 
 local M = {}
 
+local startupLib = require('user.startup.telescope')
+
 function M.openSelect()
-    lib.start("NvimTreeActions", {
-        {
-            name = "Run",
-            action = function() require('user.startup.telescope').generateTelescopeWindow(nil, true) end
-        },
+    local options = {
         {
             name = "[LSP] Format",
             action = vim.lsp.buf.formatting
@@ -17,9 +15,20 @@ function M.openSelect()
             name = "[LSP] Rename Symbol",
             action = vim.lsp.buf.rename
         }
-    })
+    }
+
+    local startupOptions = startupLib.extractOptions()
+    for _, name in ipairs(startupOptions) do
+        table.insert(options, {
+            name = name,
+            action = function() startupLib.runSelection(name, true) end
+        })
+    end
+
+    lib.start("NvimTreeActions", options)
 end
 
-vim.api.nvim_set_keymap("n", "<Leader>q", ":lua require('user.telescope.pickers.buffer.init').openSelect()<CR>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<Leader>q", ":lua require('user.telescope.pickers.buffer.init').openSelect()<CR>",
+    { noremap = true })
 
 return M
