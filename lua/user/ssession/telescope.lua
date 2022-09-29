@@ -19,8 +19,8 @@ function telescope.generateTelescopeWindow(opts)
             results = sessions
         },
         sorter = conf.generic_sorter(opts),
-        attach_mappings = function (prompt_bufnr, map)
-            actions.select_default:replace(function ()
+        attach_mappings = function(prompt_bufnr, map)
+            actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()[1]
                 lib.openSession(selection)
@@ -32,12 +32,10 @@ end
 
 vim.api.nvim_create_user_command(
     'SSessionOpen',
-    function (args)
+    function(args)
         telescope.generateTelescopeWindow(nil)
     end,
-    {nargs = '*'}
+    { nargs = '*' }
 )
-vim.api.nvim_set_keymap("n", "fs", ":SSessionOpen<CR>", {noremap = true})
-
 
 return telescope
