@@ -13,7 +13,7 @@ $(echo "$2/bin/java") \
   "-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar" \
   -jar $(echo "$JAR") \
   -configuration "$HOME/.local/share/nvim/mason/packages/jdtls/config_linux" \
-  -data $(echo "$HOME/dev/nvim/$1") \
+  -data $(echo "$HOME/dev/nvim/jdtls/$1") \
   --add-modules=ALL-SYSTEM \
   --add-opens java.base/java.util=ALL-UNNAMED \
   --add-opens java.base/java.lang=ALL-UNNAMED

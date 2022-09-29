@@ -1,25 +1,15 @@
-vim.cmd [[
-	set clipboard=unnamedplus
-
-    set modifiable
-    set number relativenumber
-
-    set cmdheight=2
-	set tabstop=4
-	set shiftwidth=4
-	set expandtab
-	set scrolloff=5
-
-	set autoindent
-	set smartindent
-	set breakindent
-
-	set mouse=a
-
-    set shortmess+=O
-    set shortmess+=F
-
-    set laststatus=3
-
-    autocmd ColorScheme * highlight VertSplit guibg=None guifg=#191724
-]]
+vim.opt.clipboard = "unnamedplus"
+vim.opt.modifiable = true
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.cmdheight = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.scrolloff = 5
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.breakindent = true
+vim.opt.mouse = "a"
+vim.opt.shortmess = vim.opt.shortmess + "OF"
+vim.opt.laststatus = 3
