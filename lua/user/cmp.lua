@@ -3,10 +3,6 @@ local cmp = require('cmp')
 
 local compare = require('cmp.config.compare')
 
--- keymaps
-vim.api.nvim_set_keymap("n", "<C-s>", ":lua vim.lsp.buf.definition()<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-c>", ":Telescope lsp_references<CR>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>", {noremap = true})
 
 cmp.setup({
     snippet = {
@@ -16,16 +12,17 @@ cmp.setup({
     },
 
     sources = cmp.config.sources({
-        {name = "nvim_lsp"},
-        {name = "nvim_lsp_signature_help"}
+        { name = "nvim_lsp" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "copilot" }
     }),
 
     mapping = cmp.mapping.preset.insert({
-      ['<C-Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
-      ['<C-Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
+        ['<C-Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), {'i'}),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     }),
     completion = {
         completeopt = 'menu,menuone,noinsert'
@@ -34,7 +31,7 @@ cmp.setup({
     window = {
         documentation = false,
         completion = {
-          border = "rounded",
+            border = "rounded",
         },
     },
 
@@ -56,6 +53,6 @@ cmp.setup({
 
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
-  'confirm_done',
-  cmp_autopairs.on_confirm_done()
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
 )
