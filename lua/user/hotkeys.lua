@@ -36,10 +36,6 @@ vim.api.nvim_set_keymap("c", "x<CR>", ":bn|bd#<CR>", { noremap = true })
 -- symbols summary
 vim.api.nvim_set_keymap("n", "<Leader>s", ":SymbolsOutline<CR>", { noremap = true })
 
--- smooth scrolling
-vim.api.nvim_set_keymap("", "<S-Up>", ":lua require('neoscroll').scroll(-50, true, 100)<CR>", { noremap = true })
-vim.api.nvim_set_keymap("", "<S-Down>", ":lua require('neoscroll').scroll(50, true, 100)<CR>", { noremap = true })
-
 -- LSP Config
 vim.api.nvim_set_keymap("n", "<C-s>", ":lua vim.lsp.buf.definition()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-c>", ":Telescope lsp_references<CR>", { noremap = true })
@@ -47,6 +43,13 @@ vim.api.nvim_set_keymap("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>", { nor
 
 -- Commenting
 vim.api.nvim_set_keymap("n", "<Leader><Tab>", "gcc", { noremap = false })
+
+-- Telescope
+vim.api.nvim_set_keymap("n", "ff", "<cmd>Telescope find_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "fg", "<cmd>Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "fb", "<cmd>Telescope buffers<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>ShowBufferList<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>v", "<cmd>lua require('neoclip.fzf')({'unnamed', 'plus'})<CR>", { noremap = true })
 
 -- close all tabs except current
 vim.cmd [[command! X %bd|e#|bd#]]

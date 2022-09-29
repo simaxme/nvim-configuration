@@ -2,8 +2,8 @@ require('onedark').setup {
     style = 'deep',
 
     highlights = {
-        CocFloating = {bg = "#ff0000"},
-        Pmenu = {bg = "#ff0000"}
+        CocFloating = { bg = "#ff0000" },
+        Pmenu = { bg = "#ff0000" }
     }
 }
 require('onedark').load()
@@ -21,4 +21,4 @@ vim.cmd [[
     autocmd VimEnter * hi IlluminatedWordText gui=none guibg=#283347
  ]]
 
-    -- autocmd VimEnter * hi PmenuSel guibg=#bd93f9
+-- autocmd VimEnter * hi PmenuSel guibg=#bd93f9
