@@ -9,7 +9,8 @@ require('nvim-treesitter.configs').setup {
         "python",
         "css",
         "scss",
-        "json"
+        "json",
+        "tsx"
     },
 
     highlight = {
