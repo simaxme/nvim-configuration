@@ -91,4 +91,7 @@ require('packer').startup(function(use)
     -- copilot
     use 'zbirenbaum/copilot-cmp'
     use 'zbirenbaum/copilot.lua'
+
+    -- terminal
+    use 'akinsho/toggleterm.nvim'
 end)

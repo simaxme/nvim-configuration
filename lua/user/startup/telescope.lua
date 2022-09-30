@@ -6,7 +6,7 @@ local telescopeOptions = {
 }
 
 local utils = require('user.utils')
-local terminal = require('user.terminal')
+local terminal = require('user.toggleterm')
 
 -- telescope
 local pickers = require 'telescope.pickers'
@@ -38,18 +38,14 @@ function telescope.runSelection(selection, vertical)
         for index = 1, #telescopeOptions do
             local telescopeOption = telescopeOptions[index]
             if utils.stringStartsWith(selection, telescopeOption.prefix) then
-                local command = telescopeOption.runOption(string.sub(selection, string.len(telescopeOption.prefix) + 1, string.len(selection)))
-                if vertical then
-                    terminal.createVerticalTerminal(command)
-                else
-                    terminal.createHorizontalTerminal(command)
-                end
+                local command = telescopeOption.runOption(string.sub(selection, string.len(telescopeOption.prefix) + 1,
+                    string.len(selection)))
+                terminal.runCommand(command)
             end
         end
     else
         utils.echo("selection is empty")
     end
 end
-
 
 return telescope

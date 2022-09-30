@@ -24,9 +24,12 @@ vim.api.nvim_set_keymap("n", "<Leader>q", ":lua require('user.telescope.pickers.
     { noremap = true })
 
 -- terminal stuff
-vim.api.nvim_set_keymap("n", "<C-t>", ":lua require('user.terminal').createHorizontalTerminal()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 vim.api.nvim_set_keymap("t", "<C-w>", "<C-\\><C-n><C-w>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-t>", ":ToggleTerm direction=horizontal<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<S-t>", ":ToggleTerm direction=vertical size=40<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>t", ":ToggleTerm direction=float<CR>", { noremap = true })
+vim.api.nvim_set_keymap("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true })
 
 -- nvimtree
 vim.api.nvim_set_keymap("", "<S-e>", ":lua require('user.nvimtree').findFile()<CR>", { noremap = true })
@@ -43,6 +46,7 @@ vim.api.nvim_set_keymap("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>", { nor
 
 -- Commenting
 vim.api.nvim_set_keymap("n", "<Leader><Tab>", "gcc", { noremap = false })
+vim.api.nvim_set_keymap("v", "<Leader><Tab>", "gcc", { noremap = false })
 
 -- Telescope
 vim.api.nvim_set_keymap("n", "ff", "<cmd>Telescope find_files<CR>", { noremap = true })
