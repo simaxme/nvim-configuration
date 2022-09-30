@@ -4,7 +4,6 @@ commandline.prefix = "[BASH] "
 
 local utils = require('user.utils')
 local scan = require'plenary.scandir'
-local terminal = require('user.terminal')
 
 function commandline.getOptions()
     local options = {}
