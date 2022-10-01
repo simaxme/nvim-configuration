@@ -9,7 +9,7 @@ function M.openSelect()
     local options = {
         {
             name = "[LSP] Format",
-            action = vim.lsp.buf.formatting
+            action = function() vim.lsp.buf.format({ async = false }) end
         },
         {
             name = "[LSP] Rename Symbol",
