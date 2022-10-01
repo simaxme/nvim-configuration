@@ -1,6 +1,6 @@
 local utils = require('user.utils')
 
-local x  = {}
+local x = {}
 
 local c = nil
 
@@ -21,15 +21,13 @@ local function escapeString(str)
     return result
 end
 
-
-
 function x.showLastStatus()
     utils.echo("coc status " .. '"' .. c .. '"')
 end
 
 local java = require('user.java')
 function getJavaVersion()
-    return java.javaVersion or ""
+    return require('user.java').javaVersion or ""
 end
 
 require('lualine').setup {
@@ -39,18 +37,18 @@ require('lualine').setup {
         }
     },
     sections = {
-        lualine_y = {getJavaVersion},
-        lualine_z = {'progress', 'location'}
+        lualine_y = { getJavaVersion },
+        lualine_z = { 'progress', 'location' }
     }
 }
 
 
 vim.opt.termguicolors = true
-require("bufferline").setup{
+require("bufferline").setup {
     options = {
         diagnostics = "nvim_lsp",
 
-        diagnostics_indicator = function (count, level, diagnostics_dict, context)
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
             if not level:match("error") then
                 return ""
             end

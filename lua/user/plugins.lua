@@ -94,4 +94,6 @@ require('packer').startup(function(use)
 
     -- terminal
     use 'akinsho/toggleterm.nvim'
+
+    use 'aspeddro/lsp_menu.nvim'
 end)

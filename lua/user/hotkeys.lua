@@ -43,6 +43,7 @@ vim.api.nvim_set_keymap("n", "<Leader>s", ":SymbolsOutline<CR>", { noremap = tru
 vim.api.nvim_set_keymap("n", "<C-s>", ":lua vim.lsp.buf.definition()<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-c>", ":Telescope lsp_references<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>r", ":lua vim.lsp.buf.rename()<CR>", { noremap = true })
+vim.keymap.set("n", "<Leader>w", function() require 'lsp_menu'.codeaction.run({ close_key = "<ESC>" }) end, {})
 
 -- Commenting
 vim.api.nvim_set_keymap("n", "<Leader><Tab>", "gcc", { noremap = false })
