@@ -15,5 +15,8 @@ vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = function() vim.cmd("sile
 require('lspconfig').tsserver.setup {}
 require('lspconfig').sumneko_lua.setup {}
 require('lspconfig').angularls.setup {}
+require('lspconfig').html.setup {}
+require('lspconfig').jsonls.setup {}
+require('lspconfig').cssls.setup {}
 
 require "fidget".setup {}
