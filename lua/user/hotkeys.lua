@@ -56,5 +56,9 @@ vim.api.nvim_set_keymap("n", "fb", "<cmd>Telescope buffers<CR>", { noremap = tru
 vim.api.nvim_set_keymap("n", "<C-b>", "<cmd>ShowBufferList<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>v", "<cmd>lua require('neoclip.fzf')({'unnamed', 'plus'})<CR>", { noremap = true })
 
+-- avoid copying
+vim.api.nvim_set_keymap("n", "d", '"_d', { noremap = true })
+vim.api.nvim_set_keymap("v", "d", '"_d', { noremap = true })
+
 -- close all tabs except current
 vim.cmd [[command! X %bd|e#|bd#]]
