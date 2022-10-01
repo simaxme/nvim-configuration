@@ -14,3 +14,4 @@ vim.opt.mouse = "a"
 vim.opt.shortmess = vim.opt.shortmess + "OF"
 vim.opt.laststatus = 3
 vim.opt.wrap = false
+vim.opt.updatetime = 2000 -- faster cursor hold event

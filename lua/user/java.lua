@@ -41,7 +41,7 @@ function M.chooseJavaVersion(opts)
             actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()[1]
-                M.selectJavaVersion(selection)
+                M.selectJavaVersion(selection, true)
             end)
             return true
         end
@@ -49,10 +49,10 @@ function M.chooseJavaVersion(opts)
 
 end
 
-function M.selectJavaVersion(version)
+function M.selectJavaVersion(version, quit)
     local path = jvmDirectory .. version
 
-    local config = home .. "/dev/java/" .. sessionLib.getCurrentCWDId() .. ".txt"
+    local config = home .. "/dev/nvim/java/" .. sessionLib.getCurrentCWDId() .. ".txt"
 
     os.execute("mkdir -p " .. home .. "/dev/nvim/java/")
 
@@ -61,9 +61,11 @@ function M.selectJavaVersion(version)
     io.write(path)
     io.close(file)
 
+    M.javaVersion = version
+
     utils.echo("Java Version set to " .. path)
 
-    vim.cmd [[qa]]
+    if quit then vim.cmd [[qa]] end
 end
 
 M.javaVersion = nil
@@ -71,7 +73,10 @@ function M.findJavaVersion()
     local config = home .. "/dev/nvim/java/" .. sessionLib.getCurrentCWDId() .. ".txt"
 
     local file = io.open(config, "r") -- r read mode and b binary mode
-    if not file then return nil end
+    if not file then
+        M.selectJavaVersion(M.getJavaVersions()[1], false)
+        return jvmDirectory .. M.javaVersion
+    end
     local content = file:read "*a" -- *a or *all reads the whole file
     file:close()
 
