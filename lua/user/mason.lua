@@ -5,7 +5,9 @@ require('mason-lspconfig').setup({
         "sumneko_lua",
         "tsserver",
         "angularls",
-        "jdtls"
+        "jdtls",
+        "html",
+        "jsonls",
+        "cssls"
     }
 })
-

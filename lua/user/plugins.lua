@@ -96,4 +96,6 @@ require('packer').startup(function(use)
     use 'akinsho/toggleterm.nvim'
 
     use 'aspeddro/lsp_menu.nvim'
+
+    use 'jose-elias-alvarez/null-ls.nvim'
 end)
