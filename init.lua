@@ -10,6 +10,8 @@ require('user.toggleterm')
 require('user.startup.telescope')
 require('user.ssession.init')
 
+require('user.git')
+
 -- plugins
 require('user.java')
 require('user.mason')

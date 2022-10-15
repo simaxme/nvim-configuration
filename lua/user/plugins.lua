@@ -8,7 +8,7 @@ require('packer').startup(function(use)
     -- theme
     use 'navarasu/onedark.nvim'
 
-    use 'puremourning/vimspector'
+    -- use 'puremourning/vimspector'
 
 
     -- Statusline and top tab/buffer bar
@@ -54,7 +54,7 @@ require('packer').startup(function(use)
 
     -- -- syntax
     use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-treesitter/nvim-treesitter-context'
+    -- use 'nvim-treesitter/nvim-treesitter-context'
 
     use 'rcarriga/nvim-notify'
 
@@ -98,4 +98,6 @@ require('packer').startup(function(use)
     use 'aspeddro/lsp_menu.nvim'
 
     use 'jose-elias-alvarez/null-ls.nvim'
+
+    use 'SmiteshP/nvim-navic'
 end)

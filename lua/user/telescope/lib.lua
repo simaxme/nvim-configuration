@@ -19,8 +19,8 @@ function M.start(title, data)
             results = options
         },
         sorter = conf.generic_sorter({}),
-        attach_mappings = function (prompt_bufnr, map)
-            actions.select_default:replace(function ()
+        attach_mappings = function(prompt_bufnr, map)
+            actions.select_default:replace(function()
                 actions.close(prompt_bufnr)
                 local selection = action_state.get_selected_entry()[1]
                 for _, val in ipairs(data) do
@@ -33,6 +33,14 @@ function M.start(title, data)
         end
     }):find()
 
+end
+
+function M.findBuffer()
+    local dropdown = require('telescope.themes').get_dropdown({
+        previewer = false
+    })
+
+    require('telescope.builtin').buffers(dropdown)
 end
 
 return M

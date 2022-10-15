@@ -19,6 +19,7 @@ vim.cmd [[
     autocmd VimEnter * hi TreesitterContext guifg=white guibg=bg
     autocmd VimEnter * hi NormalFloat guibg=bg guifg=white
     autocmd VimEnter * hi IlluminatedWordRead gui=none guibg=#283347
+    autocmd VimEnter * hi IlluminatedWordWrite gui=none guibg=#283347
     autocmd VimEnter * hi IlluminatedWordText gui=none guibg=#283347
  ]]
 

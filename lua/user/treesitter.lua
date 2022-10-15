@@ -20,14 +20,14 @@ require('nvim-treesitter.configs').setup {
     }
 }
 
-require('treesitter-context').setup {
-    mode = "topline",
-    separator = "-",
-    patterns = {
-        default = {
-            'class',
-            'function',
-            'method'
-        }
-    }
-}
+-- require('treesitter-context').setup {
+--    mode = "topline",
+--    separator = "-",
+--    patterns = {
+--        default = {
+--            'class',
+--            'function',
+--            'method'
+--        }
+--    }
+-- }
