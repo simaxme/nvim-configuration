@@ -15,8 +15,10 @@ local conf = require('telescope.config').values
 local actions = require 'telescope.actions'
 local action_state = require 'telescope.actions.state'
 
+local git = require "user.git"
+
 function telescope.extractOptions()
-    vim.cmd [[Gcd]]
+    git.navigateToGitRoot()
 
     local result = {}
     for index = 1, #telescopeOptions do

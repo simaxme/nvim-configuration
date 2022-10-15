@@ -47,7 +47,7 @@ function lib.get_file_last_edit_date(path)
     return io.popen("stat -c %Y " .. path):read()
 end
 
-local scan = require'plenary.scandir'
+local scan = require 'plenary.scandir'
 function lib.getAllSessions()
     local arr = scan.scan_dir(SESSION_FOLDER, { hidden = true, depth = 0 });
 
@@ -63,7 +63,7 @@ function lib.getAllSessions()
             local fileNameSplits = utils.split(obj, '/')
             local fileName1 = fileNameSplits[#fileNameSplits]
             local fileExtensionSplits = utils.split(fileName1, "%.")
-            local withoutFileExtension = fileExtensionSplits[#fileExtensionSplits-1]
+            local withoutFileExtension = fileExtensionSplits[#fileExtensionSplits - 1]
 
             local file = io.open(SESSION_FOLDER .. "/" .. withoutFileExtension .. ".json", "r") -- r read mode and b binary mode
 
@@ -93,7 +93,7 @@ function lib.getLastSessions()
     if #sessions <= 5 then
         return sessions
     else
-        return {sessions[1], sessions[2], sessions[3], sessions[4], sessions[5]}
+        return { sessions[1], sessions[2], sessions[3], sessions[4], sessions[5] }
     end
 end
 
@@ -105,20 +105,22 @@ function lib.isGitDirectory()
     return isDirectory
 end
 
+local git = require("user.git")
+
 function lib.getCurrentCWDId()
     -- go into main directory
-    
+
     local cwd = "unknown"
 
     if lib.isGitDirectory() then
-        vim.cmd [[silent! Gcd]]
+        git.navigateToGitRoot()
 
         cwd = vim.fn.getcwd()
     else
         cwd = vim.fn.expand("%:p:h")
     end
 
-    
+
     local fileNameSplits = utils.split(cwd, '/')
     local fileName1 = fileNameSplits[#fileNameSplits]
 
@@ -129,8 +131,8 @@ function lib.createSession()
     local buffers = lib.getAllBuffers()
 
     local completeJSON = {}
- 
-    local isListed = vim.fn.buflisted("%") == 1
+
+    local isListed = vim.fn.buflisted(vim.fn.expand("%")) == 1
 
     if isListed then
         completeJSON["focused"] = vim.fn.expand("%:p")
@@ -184,10 +186,10 @@ end
 
 vim.api.nvim_create_user_command(
     'SSessionSave',
-    function (args)
+    function(args)
         lib.createSession()
     end,
-    {nargs = '*'}
+    { nargs = '*' }
 )
 
 -- save on close

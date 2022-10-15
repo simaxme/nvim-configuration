@@ -3,13 +3,15 @@ vim.g.loaded_netrwPlugin = 1
 
 local M = {}
 
+local git = require('user.git')
+
 function M.findFile()
-    vim.cmd [[silent! Gcd]]
+    git.navigateToGitRoot()
     vim.cmd [[NvimTreeFindFile]]
 end
 
 function M.toggle()
-    vim.cmd [[silent! Gcd]]
+    git.navigateToGitRoot()
     vim.cmd [[NvimTreeToggle]]
 end
 

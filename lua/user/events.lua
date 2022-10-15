@@ -1,6 +1,6 @@
-vim.cmd [[
-    autocmd VimEnter * :silent! Gcd
-]]
+local git = require('user.git');
+
+vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = function() git.navigateToGitRoot() end })
 
 vim.diagnostic.config {
     float = { border = "rounded" },
