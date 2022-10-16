@@ -36,15 +36,17 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
-    completion = {
-        completeopt = 'menu,menuone,noinsert'
-    },
+    -- completion = {
+    --     completeopt = 'menu,menuone,noinsert'
+    -- },
 
     window = {
-        documentation = false,
+        documentation = {
+            border = "rounded"
+        },
         completion = {
             border = "rounded",
-        },
+        }
     },
 
     sorting = {

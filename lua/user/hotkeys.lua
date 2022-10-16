@@ -1,4 +1,4 @@
-vim.keymap.set("", "<Space>", "<Leader>", { noremap = false })
+vim.api.nvim_set_keymap("", "<Space>", "<Leader>", { noremap = false })
 
 -- tab selection
 vim.keymap.set("v", "<Tab>", ">gv", { noremap = false })
@@ -43,11 +43,11 @@ vim.keymap.set("n", "<Leader>s", ":SymbolsOutline<CR>", { noremap = true })
 vim.keymap.set("n", "<C-s>", function() vim.lsp.buf.definition() end, { noremap = true })
 vim.keymap.set("n", "<C-c>", ":Telescope lsp_references<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>r", function() vim.lsp.buf.rename() end, { noremap = true })
-vim.keymap.set("n", "<Leader>w", function() require 'lsp_menu'.codeaction.run({ close_key = "<ESC>" }) end, {})
+vim.keymap.set("n", "<Leader>w", function() vim.lsp.buf.code_action() end, {})
 
 -- Commenting
-vim.keymap.set("n", "<Leader><Tab>", "gcc", { noremap = false })
-vim.keymap.set("v", "<Leader><Tab>", "gcc", { noremap = false })
+vim.api.nvim_set_keymap("n", "<Leader><Tab>", "gcc", { noremap = false })
+vim.api.nvim_set_keymap("v", "<Leader><Tab>", "gcc", { noremap = false })
 
 -- Telescope
 vim.keymap.set("n", "ff", "<cmd>Telescope find_files<CR>", { noremap = true })

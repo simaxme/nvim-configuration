@@ -25,19 +25,45 @@ function x.showLastStatus()
     utils.echo("coc status " .. '"' .. c .. '"')
 end
 
-local java = require('user.java')
-function getJavaVersion()
+local function getJavaVersion()
     return require('user.java').javaVersion or ""
 end
+
+local resultString = ""
+local function loadLSPClients()
+    local clients = vim.lsp.buf_get_clients(vim.api.nvim_get_current_buf())
+    local names = {}
+
+    for index = 1, #clients do
+        table.insert(names, clients[index].name)
+    end
+
+    resultString = table.concat(names, " ")
+end
+
+local function getLSPClients()
+    return resultString
+end
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = "LspProgressUpdate",
+    --group = "lsp_notify",
+    desc = "LSP progress notification",
+    callback = function()
+        loadLSPClients()
+    end
+})
+
+
 
 require('lualine').setup {
     options = {
         refresh = {
-            statusline = 250
+            statusline = 5000
         }
     },
     sections = {
-        lualine_y = { getJavaVersion },
+        lualine_y = { getJavaVersion, getLSPClients },
         lualine_z = { 'progress', 'location' }
     }
 }
