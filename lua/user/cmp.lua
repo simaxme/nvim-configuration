@@ -24,15 +24,17 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<Tab>'] = cmp.mapping.confirm({ select = true }),
     }),
-    completion = {
-        completeopt = 'menu,menuone,noinsert'
-    },
+    -- completion = {
+    --     completeopt = 'menu,menuone,noinsert'
+    -- },
 
     window = {
-        documentation = false,
+        documentation = {
+            border = "rounded"
+        },
         completion = {
             border = "rounded",
-        },
+        }
     },
 
     sorting = {
