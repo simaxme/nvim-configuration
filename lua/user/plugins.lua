@@ -8,9 +8,6 @@ require('packer').startup(function(use)
     -- theme
     use 'navarasu/onedark.nvim'
 
-    -- use 'puremourning/vimspector'
-
-
     -- Statusline and top tab/buffer bar
     use 'nvim-lualine/lualine.nvim'
     use 'akinsho/bufferline.nvim'
@@ -21,7 +18,6 @@ require('packer').startup(function(use)
     -- basic session management
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
-    use 'PhilRunninger/bufselect.vim'
 
     -- comments
     use 'numToStr/Comment.nvim'
@@ -29,9 +25,6 @@ require('packer').startup(function(use)
     -- basic git tools
     use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-fugitive'
-
-    -- Markdown support
-    use 'preservim/vim-markdown'
 
     -- auto completion
     use "neovim/nvim-lspconfig"
