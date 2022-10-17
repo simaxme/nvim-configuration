@@ -22,7 +22,7 @@ local function formatLspWithoutError()
     end
 end
 
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, { callback = function() formatLspWithoutError() end })
+-- vim.api.nvim_create_autocmd({ 'BufWritePre' }, { callback = function() formatLspWithoutError() end })
 vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = function() git.navigateToGitRoot() end })
 
 local navic = require('nvim-navic')
@@ -33,7 +33,7 @@ local function onAttach(client, bufnr)
     if client.server_capabilities.documentSymbolProvider then
         vim.g.navic_silence = true
         navic.attach(client, bufnr)
-        vim.o.winbar = "    %{%v:lua.require'nvim-navic'.get_location()%}"
+        vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
     end
 end
 
