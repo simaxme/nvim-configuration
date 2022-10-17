@@ -35,7 +35,9 @@ local function loadLSPClients()
     local names = {}
 
     for index = 1, #clients do
-        table.insert(names, clients[index].name)
+        if clients[index] ~= nil then
+            table.insert(names, clients[index].name)
+        end
     end
 
     resultString = table.concat(names, " ")
