@@ -130,6 +130,10 @@ end
 function lib.createSession()
     local buffers = lib.getAllBuffers()
 
+    if #buffers == 0 then
+        return
+    end
+
     local completeJSON = {}
 
     local isListed = vim.fn.buflisted(vim.fn.expand("%")) == 1
