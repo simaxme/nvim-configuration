@@ -6,25 +6,49 @@ require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     -- theme
-    use 'navarasu/onedark.nvim'
+    use {
+        'navarasu/onedark.nvim',
+        commit = 'fdfe7bfff486acd102aae7fb2ff52e7e5f6c2bad'
+    }
 
     -- Statusline and top tab/buffer bar
-    use 'nvim-lualine/lualine.nvim'
-    use 'akinsho/bufferline.nvim'
+    use {
+        'nvim-lualine/lualine.nvim',
+        commit = 'abb03129e0b0b7f4c992b1b4c98245cd4422e7d5'
+    }
+    use {
+        'akinsho/bufferline.nvim',
+        commit = 'e70be6232f632d16d2412b1faf85554285036278'
+    }
 
 
-    use 'kyazdani42/nvim-tree.lua'
+    use {
+        'kyazdani42/nvim-tree.lua',
+        commit = '2b970635d1ef531355a380258372411576ecad4d'
+    }
 
     -- basic session management
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
+    use {
+        'nvim-lua/plenary.nvim',
+        commit = '4b7e52044bbb84242158d977a50c4cbcd85070c7'
+    }
+    use {
+        'nvim-telescope/telescope.nvim',
+        commit = 'f174a0367b4fc7cb17710d867e25ea792311c418'
+    }
 
     -- comments
-    use 'numToStr/Comment.nvim'
+    use {
+        'numToStr/Comment.nvim',
+        commit = 'ad7ffa8ed2279f1c8a90212c7d3851f9b783a3d6'
+    }
 
     -- basic git tools
-    use 'lewis6991/gitsigns.nvim'
-    use 'tpope/vim-fugitive'
+    use {
+        'lewis6991/gitsigns.nvim',
+        commit = '56e01cb0ea52635854e97bd2dd2587c8ebfab978'
+    }
+    -- use 'tpope/vim-fugitive'
 
     -- auto completion
     use "neovim/nvim-lspconfig"
@@ -43,7 +67,10 @@ require('packer').startup(function(use)
 
     -- external lsp servers for config
     use 'mfussenegger/nvim-jdtls'
-    use 'MunifTanjim/prettier.nvim'
+    use {
+        'MunifTanjim/prettier.nvim',
+        commit = 'f27e94f81c9cd5b0925bf46eabb5570c832bd6a7'
+    }
 
     -- -- syntax
     use 'nvim-treesitter/nvim-treesitter'

@@ -24,6 +24,7 @@ for sessionIndex = 1, #sessions do
 end
 
 table.insert(custom_center, {icon='', desc=' Load Session', action='SSessionOpen'})
+table.insert(custom_center, {icon='', desc=' Load Project', action='SSessionProjectOpen'})
 
 db.hide_tabline = false
 db.custom_center = custom_center
