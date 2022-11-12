@@ -141,6 +141,9 @@ function lib.createSession()
     if isListed then
         completeJSON["focused"] = vim.fn.expand("%:p")
     end
+
+    completeJSON["cwd"] = vim.fn.getcwd()
+
     completeJSON["buffers"] = buffers
 
     local cwdID = lib.getCurrentCWDId()
@@ -171,6 +174,11 @@ function lib.openSession(name)
     file:close()
 
     local jsonContent = json.decode(content)
+
+    local cwd = jsonContent["cwd"]
+    if cwd then
+        vim.cmd("cd " .. jsonContent["cwd"])
+    end
 
     local buffers = jsonContent["buffers"]
     local focused = jsonContent["focused"]
