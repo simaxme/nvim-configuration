@@ -44,17 +44,9 @@ local function loadLSPClients()
 end
 
 local function getLSPClients()
+    loadLSPClients()
     return resultString
 end
-
-vim.api.nvim_create_autocmd("User", {
-    pattern = "LspProgressUpdate",
-    --group = "lsp_notify",
-    desc = "LSP progress notification",
-    callback = function()
-        loadLSPClients()
-    end
-})
 
 
 
