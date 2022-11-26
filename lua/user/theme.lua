@@ -18,9 +18,9 @@ vim.cmd [[
     autocmd VimEnter * hi FloatBorder guifg=white guibg=bg
     autocmd VimEnter * hi TreesitterContext guifg=white guibg=bg
     autocmd VimEnter * hi NormalFloat guibg=bg guifg=white
-    autocmd VimEnter * hi IlluminatedWordRead gui=none guibg=#283347
-    autocmd VimEnter * hi IlluminatedWordWrite gui=none guibg=#283347
-    autocmd VimEnter * hi IlluminatedWordText gui=none guibg=#283347
+    autocmd VimEnter * hi IlluminatedWordRead gui=bold cterm=bold
+    autocmd VimEnter * hi IlluminatedWordWrite gui=bold cterm=bold
+    autocmd VimEnter * hi IlluminatedWordText gui=bold cterm=bold
  ]]
 
 -- autocmd VimEnter * hi PmenuSel guibg=#bd93f9
