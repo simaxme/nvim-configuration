@@ -47,7 +47,7 @@ require('packer').startup(function(use)
 
     -- -- syntax
     use 'nvim-treesitter/nvim-treesitter'
-    -- use 'nvim-treesitter/nvim-treesitter-context'
+    use 'nvim-treesitter/nvim-treesitter-angular'
 
     use 'rcarriga/nvim-notify'
 
