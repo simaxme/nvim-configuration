@@ -24,7 +24,7 @@ require('packer').startup(function(use)
 
     -- basic git tools
     use 'lewis6991/gitsigns.nvim'
-    use 'tpope/vim-fugitive'
+    use 'sindrets/diffview.nvim'
 
     -- auto completion
     use "neovim/nvim-lspconfig"
@@ -47,7 +47,6 @@ require('packer').startup(function(use)
 
     -- -- syntax
     use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-treesitter/nvim-treesitter-angular'
 
     use 'rcarriga/nvim-notify'
 
@@ -60,9 +59,8 @@ require('packer').startup(function(use)
 
     -- numbertoggle
     use 'andweeb/presence.nvim'
-
     -- html
-    use 'alvan/vim-closetag'
+    use 'windwp/nvim-ts-autotag'
 
     -- method summary
     use 'simrat39/symbols-outline.nvim'
@@ -82,8 +80,8 @@ require('packer').startup(function(use)
     use 'karb94/neoscroll.nvim'
 
     -- copilot
-    use 'zbirenbaum/copilot-cmp'
-    use 'zbirenbaum/copilot.lua'
+    -- use 'zbirenbaum/copilot-cmp'
+    -- use 'zbirenbaum/copilot.lua'
 
     -- terminal
     use 'akinsho/toggleterm.nvim'

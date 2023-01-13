@@ -2,6 +2,7 @@ local lib = {}
 
 local utils = require('user.utils')
 local json = require('dependencies.jsonlua.json')
+local git = require("user.git")
 
 local SESSION_FOLDER = os.getenv('HOME') .. '/.local/share/nvim/sessions'
 
@@ -99,8 +100,8 @@ end
 
 -- get the current working directory and return the id (will only be the folder name)
 function lib.isGitDirectory()
-    local data = vim.fn.FugitiveGitDir()
-    local isDirectory = data ~= ""
+    local data = git.gitcheck(vim.fn.expand("%:p:h"))
+    local isDirectory = not not data
 
     return isDirectory
 end

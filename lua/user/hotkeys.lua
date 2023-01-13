@@ -54,6 +54,9 @@ vim.keymap.set("n", "ff", "<cmd>Telescope find_files<CR>", { noremap = true })
 vim.keymap.set("n", "fg", "<cmd>Telescope live_grep<CR>", { noremap = true })
 vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.keymap.set("n", "fb", require('user.telescope.lib').findBuffer, { noremap = true })
+
+vim.keymap.set("n", "fd", "<cmd>DiffviewOpen<CR>", {noremap = true})
+
 vim.keymap.set("n", "<C-b>", "<cmd>ShowBufferList<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>v", function() require('neoclip.fzf')({ 'unnamed', 'plus' }) end, { noremap = true })
 

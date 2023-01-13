@@ -1,7 +1,3 @@
-require('user.lsp.prettier')
-
-local utils = require('user.utils')
-
 -- lsp config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -12,15 +8,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 })
 
 local git = require('user.git')
-
-local function formatLspWithoutError()
-    local clients = vim.tbl_filter(function(client)
-        return client.supports_method "textDocument/formatting"
-    end, vim.lsp.buf_get_clients(vim.api.nvim_get_current_buf()));
-    if #clients ~= 0 then
-        vim.lsp.buf.format({ async = false })
-    end
-end
 
 -- vim.api.nvim_create_autocmd({ 'BufWritePre' }, { callback = function() formatLspWithoutError() end })
 vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = function() git.navigateToGitRoot() end })
