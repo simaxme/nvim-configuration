@@ -17,17 +17,9 @@ require('nvim-treesitter.configs').setup {
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = true
+    },
+
+    autotag = {
+        enable = true
     }
 }
-
--- require('treesitter-context').setup {
---    mode = "topline",
---    separator = "-",
---    patterns = {
---        default = {
---            'class',
---            'function',
---            'method'
---        }
---    }
--- }
