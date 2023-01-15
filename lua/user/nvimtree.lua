@@ -52,6 +52,8 @@ require('nvim-tree').setup({
     }
 })
 
+require('lsp-file-operations').setup({})
+
 -- hide seperator
 vim.cmd [[
     autocmd VimEnter * hi NvimTreeVertSplit guibg=NONE guifg=background 
