@@ -11,7 +11,8 @@ require('nvim-treesitter.configs').setup {
         "scss",
         "json",
         "tsx",
-        "javascript"
+        "javascript",
+        "nix"
     },
 
     highlight = {

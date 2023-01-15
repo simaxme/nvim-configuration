@@ -27,6 +27,9 @@ cmp.setup({
     -- completion = {
     --     completeopt = 'menu,menuone,noinsert'
     -- },
+    view = {
+        entries = {name = 'custom', selection_order = 'near_cursor'}
+    },
 
     window = {
         documentation = {

@@ -75,6 +75,8 @@ require('packer').startup(function(use)
 
     use 'RRethy/vim-illuminate'
 
+    use 'MunifTanjim/nui.nvim'
+
     use 'j-hui/fidget.nvim'
 
     use 'karb94/neoscroll.nvim'
@@ -89,4 +91,6 @@ require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
 
     use 'SmiteshP/nvim-navic'
+
+    use 'antosha417/nvim-lsp-file-operations'
 end)
