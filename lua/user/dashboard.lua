@@ -28,14 +28,28 @@ table.insert(custom_center, {icon='', desc=' Load Session', action='SSessionO
 db.hide_tabline = false
 db.custom_center = custom_center
 
-
-
-db.custom_header = {
+local header = {
+    "",
+    "",
+    "",
+    "",
     [[.__   __.  _______   ______   ____    ____  __  .___  ___.]],
     [[|  \ |  | |   ____| /  __  \  \   \  /   / |  | |   \/   |]],
     [[|   \|  | |  |__   |  |  |  |  \   \/   /  |  | |  \  /  |]],
     [[|  . `  | |   __|  |  |  |  |   \      /   |  | |  |\/|  |]],
     [[|  |\   | |  |____ |  `--'  |    \    /    |  | |  |  |  |]],
     [[|__| \__| |_______| \______/      \__/     |__| |__|  |__|]],
-    [[                                                          ]]
+    [[                                                          ]],
+    "",
+    "",
+    ""
+}
+
+db.setup {
+    theme = "doom",
+    config = {
+        header = header,
+        footer = {"Config by SimaxDev"},
+        center = custom_center
+    }
 }
