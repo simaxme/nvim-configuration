@@ -27,7 +27,7 @@ local function onAttach(client, bufnr)
 end
 
 require('lspconfig').tsserver.setup { on_attach = onAttach }
-require('lspconfig').sumneko_lua.setup { on_attach = onAttach }
+require('lspconfig').lua_ls.setup { on_attach = onAttach }
 require('lspconfig').angularls.setup { on_attach = onAttach }
 require('lspconfig').html.setup { on_attach = onAttach }
 require('lspconfig').jsonls.setup { on_attach = onAttach }
