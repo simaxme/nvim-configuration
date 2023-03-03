@@ -26,13 +26,16 @@ local function onAttach(client, bufnr)
     end
 end
 
+local capabilities  = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+
+
 require('lspconfig').tsserver.setup { on_attach = onAttach }
 require('lspconfig').lua_ls.setup { on_attach = onAttach }
 require('lspconfig').angularls.setup { on_attach = onAttach }
 require('lspconfig').html.setup { on_attach = onAttach }
 require('lspconfig').jsonls.setup { on_attach = onAttach }
-require('lspconfig').cssls.setup { on_attach = onAttach }
--- require('lspconfig').cssmodules_ls.setup {}
+require('lspconfig').cssls.setup { on_attach = onAttach, filetypes = {"css", "scss"}, capabilities = capabilities }
 
 require "fidget".setup { on_attach = onAttach }
 

@@ -7,6 +7,9 @@ require('mason-lspconfig').setup({
         "jdtls",
         "html",
         "jsonls",
-        "cssls"
+        -- "unocss"
+
+        "cssls",
+        -- "cssmodules_ls"
     }
 })
