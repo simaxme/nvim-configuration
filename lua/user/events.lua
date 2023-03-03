@@ -12,4 +12,7 @@ vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' },
 
 
 
-vim.notify = require('notify')
+vim.notify = require('notify');
+vim.notify.setup {
+    background_colour = "#00000000"
+}
