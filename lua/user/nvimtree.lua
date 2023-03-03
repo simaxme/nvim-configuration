@@ -52,7 +52,7 @@ require('nvim-tree').setup({
     }
 })
 
-require('lsp-file-operations').setup({})
+--require('lsp-file-operations').setup({})
 
 local function open_nvim_tree(data)
 

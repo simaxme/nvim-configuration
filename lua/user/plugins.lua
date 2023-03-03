@@ -1,5 +1,17 @@
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- Automatically install packer
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	PACKER_BOOTSTRAP = vim.fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+	print("Installing packer close and reopen Neovim...")
+	vim.cmd([[packadd packer.nvim]])
+end
 
 require('packer').startup(function(use)
     -- Packer can manage itself
@@ -82,8 +94,8 @@ require('packer').startup(function(use)
     use 'karb94/neoscroll.nvim'
 
     -- copilot
-    -- use 'zbirenbaum/copilot-cmp'
-    -- use 'zbirenbaum/copilot.lua'
+    use 'zbirenbaum/copilot-cmp'
+    use 'zbirenbaum/copilot.lua'
 
     -- terminal
     use 'akinsho/toggleterm.nvim'
@@ -92,5 +104,9 @@ require('packer').startup(function(use)
 
     use 'SmiteshP/nvim-navic'
 
-    use 'antosha417/nvim-lsp-file-operations'
+    -- use 'antosha417/nvim-lsp-file-operations'
+
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
 end)
