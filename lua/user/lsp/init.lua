@@ -9,6 +9,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 })
 
+
+-- I am writing annn text
 local git = require('user.git')
 
 -- vim.api.nvim_create_autocmd({ 'BufWritePre' }, { callback = function() formatLspWithoutError() end })
@@ -38,4 +40,9 @@ require('lspconfig').cssls.setup { on_attach = onAttach, filetypes = {"css", "sc
 
 require "fidget".setup { on_attach = onAttach }
 
-require("null-ls").setup()
+local null_ls = require("null-ls")
+null_ls.setup({
+    -- sources = {
+    --     null_ls.builtins.diagnostics.codespell
+    -- }
+})
