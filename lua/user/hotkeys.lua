@@ -28,7 +28,7 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", { noremap = true })
 vim.keymap.set("n", "<C-t>", ":ToggleTerm direction=horizontal<CR>", { noremap = true })
 vim.keymap.set("n", "<S-t>", ":ToggleTerm direction=vertical size=40<CR>", { noremap = true })
-vim.keymap.set("n", "<Leader>t", ":ToggleTerm direction=float<CR>", { noremap = true })
+-- vim.keymap.set("n", "<Leader>t", ":ToggleTerm direction=float<CR>", { noremap = true })
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true })
 
 -- nvimtree
@@ -63,7 +63,7 @@ vim.keymap.set("n", "<Leader>v", function() require('neoclip.fzf')({ 'unnamed', 
 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
-vim.keymap.set("v", "d", '"_d', { noremap = true })
+-- vim.keymap.set("v", "d", '"_d', { noremap = true })
 
 -- close all tabs except current
 vim.cmd [[command! X %bd|e#|bd#]]
