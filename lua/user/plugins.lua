@@ -28,6 +28,9 @@ require('packer').startup(function(use)
     use 'kyazdani42/nvim-tree.lua'
 
     -- basic session management
+    use 'rmagatti/auto-session'
+    use 'rmagatti/session-lens'
+
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
 
@@ -43,6 +46,8 @@ require('packer').startup(function(use)
     use "williamboman/mason.nvim"
     use "williamboman/mason-lspconfig.nvim"
     use 'arkav/lualine-lsp-progress'
+    use "antosha417/nvim-lsp-file-operations"
+
 
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
@@ -57,6 +62,7 @@ require('packer').startup(function(use)
     -- external lsp servers for config
     use 'mfussenegger/nvim-jdtls'
     use 'MunifTanjim/prettier.nvim'
+    use 'jose-elias-alvarez/typescript.nvim'
 
     -- -- syntax
     use 'nvim-treesitter/nvim-treesitter'
@@ -70,7 +76,6 @@ require('packer').startup(function(use)
     -- css color highlighting
     use 'ap/vim-css-color'
 
-    -- numbertoggle
     use 'andweeb/presence.nvim'
     -- html
     use 'windwp/nvim-ts-autotag'
@@ -104,6 +109,10 @@ require('packer').startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim'
 
     use 'SmiteshP/nvim-navic'
+
+    use 'junegunn/fzf'
+    use 'junegunn/fzf.vim'
+
 
     -- use 'antosha417/nvim-lsp-file-operations'
 
