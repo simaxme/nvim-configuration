@@ -1,4 +1,8 @@
-require('user.lsp.rename')
+-- require('user.lsp.rename')
+
+require('user.lsp.typescript')
+require('user.lsp.nullls')
+require('user.lsp.fileutils')
 
 -- lsp config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -40,9 +44,3 @@ require('lspconfig').cssls.setup { on_attach = onAttach, filetypes = {"css", "sc
 
 require "fidget".setup { on_attach = onAttach }
 
-local null_ls = require("null-ls")
-null_ls.setup({
-    -- sources = {
-    --     null_ls.builtins.diagnostics.codespell
-    -- }
-})

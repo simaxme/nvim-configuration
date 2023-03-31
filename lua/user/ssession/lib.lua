@@ -39,7 +39,8 @@ function lib.closeNoNameBuffers()
         local isListed = vim.fn.buflisted(buffer) == 1
 
         if isListed and filePath == '' then
-            vim.cmd([[bd]] .. buffer)
+            print("delete!")
+            -- vim.cmd([[bd]] .. buffer)
         end
     end
 end
@@ -184,7 +185,7 @@ function lib.openSession(name)
     local buffers = jsonContent["buffers"]
     local focused = jsonContent["focused"]
 
-    vim.cmd [[bufdo bd]]
+    -- vim.cmd [[bufdo bd]]
 
     for index = 1, #buffers do
         vim.cmd([[silent! edit ]] .. buffers[index])
@@ -197,15 +198,15 @@ function lib.openSession(name)
     lib.closeNoNameBuffers()
 end
 
-vim.api.nvim_create_user_command(
-    'SSessionSave',
-    function(args)
-        lib.createSession()
-    end,
-    { nargs = '*' }
-)
+-- vim.api.nvim_create_user_command(
+--     'SSessionSave',
+--     function(args)
+--         lib.createSession()
+--     end,
+--     { nargs = '*' }
+-- )
 
 -- save on close
-vim.cmd [[autocmd VimLeave * SSessionSave]]
+-- vim.cmd [[autocmd VimLeave * SSessionSave]]
 
 return lib

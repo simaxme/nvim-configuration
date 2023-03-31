@@ -8,7 +8,7 @@ require('user.hotkeys')
 -- require('user.terminal')
 require('user.toggleterm')
 require('user.startup.telescope')
-require('user.ssession.init')
+-- require('user.ssession.init')
 
 require('user.git')
 
@@ -31,3 +31,6 @@ require('user.neoscroll')
 require('user.symbols')
 require('user.illuminate')
 require('user.tmux')
+require('user.autosession')
+
+require("user.grep")

@@ -30,12 +30,12 @@ function telescope.generateTelescopeWindow(opts)
     }):find()
 end
 
-vim.api.nvim_create_user_command(
-    'SSessionOpen',
-    function(args)
-        telescope.generateTelescopeWindow(nil)
-    end,
-    { nargs = '*' }
-)
+-- vim.api.nvim_create_user_command(
+--     'SSessionOpen',
+--     function(args)
+--         telescope.generateTelescopeWindow(nil)
+--     end,
+--     { nargs = '*' }
+-- )
 
 return telescope
