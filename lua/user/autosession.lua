@@ -15,7 +15,7 @@ local session_lens = require("session-lens")
 
 vim.api.nvim_create_autocmd("VimLeave", {
     callback = function ()
-        vim.cmd("SaveSession")
+        vim.cmd("SessionSave")
     end
 })
 
