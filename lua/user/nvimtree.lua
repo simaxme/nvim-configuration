@@ -21,6 +21,8 @@ require('nvim-tree').setup({
         update_cwd = true
     },
 
+    on_attach = require("user.nvimtree_attach"),
+
     renderer = {
         add_trailing = false,
         group_empty = false,
@@ -38,17 +40,17 @@ require('nvim-tree').setup({
     },
 
     view = {
-        width = 40,
-        mappings = {
-            list = {
-                { key = "<C-e>", action = "" },
-                { key = "E", action = "" },
-                { key = "<Leader>q", action = "open_nvimtree_options",
-                    action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect },
-                { key = "ff", action = "telescope_file", action_cb = function() vim.cmd("Telescope find_files") end },
-                { key = "fg", action = "telescope_grep", action_cb = function() vim.cmd("Telescope live_grep") end }
-            }
-        }
+        width = 40
+        -- mappings = {
+        --     list = {
+        --         { key = "<C-e>", action = "" },
+        --         { key = "E", action = "" },
+        --         { key = "<Leader>q", action = "open_nvimtree_options",
+        --             action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect },
+        --         { key = "ff", action = "telescope_file", action_cb = function() vim.cmd("Telescope find_files") end },
+        --         { key = "fg", action = "telescope_grep", action_cb = function() vim.cmd("Telescope live_grep") end }
+        --     }
+        -- }
     }
 })
 

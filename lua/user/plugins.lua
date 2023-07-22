@@ -95,7 +95,10 @@ require('packer').startup(function(use)
 
     use 'MunifTanjim/nui.nvim'
 
-    use 'j-hui/fidget.nvim'
+    use {
+        'j-hui/fidget.nvim',
+        tag = "legacy"
+    }
 
     use 'karb94/neoscroll.nvim'
 
