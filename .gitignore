@@ -2,3 +2,6 @@ run.sh
 /run.sh
 packer.nvim
 /packer.nvim
+
+/jdk
+jdk
