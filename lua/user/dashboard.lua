@@ -1,11 +1,17 @@
 local db = require('dashboard')
-local session_lens = require("session-lens")
+local session_lens = require("auto-session.session-lens")
 local utils = require('user.utils')
 
 local custom_center = {}
 
 table.insert(custom_center, {icon='', desc=' Load Session',
     action = session_lens.search_session
+})
+
+table.insert(custom_center, {icon='', desc=' Delete Session',
+    action = function()
+        vim.cmd [[ Autosession delete ]]
+    end
 })
 
 db.hide_tabline = false

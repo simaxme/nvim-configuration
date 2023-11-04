@@ -14,6 +14,10 @@ function git.gitcheck(dir)
     return #dir > 0 and dir
 end
 
+function git.isGitDirectory()
+ return git.gitcheck(vim.fn.expand("%:p:h"));
+end
+
 function git.navigateToGitRoot()
     local isGitRepo = git.gitcheck(vim.fn.expand("%:p:h"));
 

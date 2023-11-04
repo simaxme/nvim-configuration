@@ -5,3 +5,5 @@ packer.nvim
 
 /jdk
 jdk
+
+.DS_Store
