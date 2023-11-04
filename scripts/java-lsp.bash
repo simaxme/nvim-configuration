@@ -1,5 +1,8 @@
  #!/bin/bash
 
+echo "$1"
+
+
 JAR="$HOME/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"
 export GRADLE_HOME=/usr/bin/gradle
 $(echo "$2") \
@@ -13,7 +16,7 @@ $(echo "$2") \
   "-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar" \
   -jar $(echo "$JAR") \
   -configuration "$HOME/.local/share/nvim/mason/packages/jdtls/config_linux" \
-  -data $(echo "$HOME/dev/nvim/jdtls/$1") \
+  -data $(echo "$1") \
   --add-modules=ALL-SYSTEM \
   --add-opens java.base/java.util=ALL-UNNAMED \
   --add-opens java.base/java.lang=ALL-UNNAMED

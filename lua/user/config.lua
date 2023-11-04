@@ -16,5 +16,6 @@ vim.opt.laststatus = 3
 vim.opt.wrap = false
 vim.opt.updatetime = 1000 -- faster cursor hold event
 vim.opt.swapfile = false
+vim.opt.ignorecase = true
 
 vim.opt.guifont = {"CaskaydiaCove Nerd Font", ":h12"}

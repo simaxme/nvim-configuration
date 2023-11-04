@@ -12,7 +12,8 @@ require('nvim-treesitter.configs').setup {
         "json",
         "tsx",
         "javascript",
-        "nix"
+        "nix",
+        "kotlin" -- for kotlin scripts
     },
 
     highlight = {

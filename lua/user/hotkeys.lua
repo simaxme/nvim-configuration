@@ -26,7 +26,7 @@ vim.keymap.set("n", "<Leader>q", require('user.telescope.pickers.buffer.init').o
 -- terminal stuff
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 vim.keymap.set("t", "<C-w>", "<C-\\><C-n><C-w>", { noremap = true })
-vim.keymap.set("n", "<C-t>", ":ToggleTerm direction=horizontal<CR>", { noremap = true })
+vim.keymap.set("n", "<C-t>", ":ToggleTerm direction=float<CR>", { noremap = true })
 vim.keymap.set("n", "<S-t>", ":ToggleTerm direction=vertical size=40<CR>", { noremap = true })
 -- vim.keymap.set("n", "<Leader>t", ":ToggleTerm direction=float<CR>", { noremap = true })
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true })
@@ -34,7 +34,7 @@ vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true })
 -- nvimtree
 vim.keymap.set("", "<S-e>", require('user.nvimtree').findFile, { noremap = true })
 vim.keymap.set("", "<C-e>", require('user.nvimtree').toggle, { noremap = true })
-vim.keymap.set("c", "x<CR>", ":bp|bd#<CR>", { noremap = true })
+vim.keymap.set("", "<Leader>x", ":bp|bd#<CR>", { noremap = true })
 
 -- symbols summary
 vim.keymap.set("n", "<Leader>s", ":SymbolsOutline<CR>", { noremap = true })

@@ -105,9 +105,9 @@ if tmux.isTmux() then
         else
             local folderName = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 
-            local message = "---- " .. folderName .. " -----"
+            local message = "---- Terminal for " .. folderName .. " -----"
 
-            id = tmux.createWindow(folderName, vim.fn.getcwd(), nil, "echo \"" .. message .. "\" && zsh")
+            id = tmux.createWindow(folderName .. " terminal", vim.fn.getcwd(), nil, "echo \"" .. message .. "\" && zsh")
         end
 
     end, { noremap = true })

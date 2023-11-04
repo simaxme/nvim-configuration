@@ -3,7 +3,7 @@ local utils = require('user.utils')
 
 local M = {}
 
-local startupLib = require('user.startup.telescope')
+-- local startupLib = require('user.startup.telescope')
 
 function M.openSelect()
     local options = {
@@ -25,13 +25,13 @@ function M.openSelect()
         }
     }
 
-    local startupOptions = startupLib.extractOptions()
-    for _, name in ipairs(startupOptions) do
-        table.insert(options, {
-            name = name,
-            action = function() startupLib.runSelection(name, true) end
-        })
-    end
+    -- local startupOptions = startupLib.extractOptions()
+    -- for _, name in ipairs(startupOptions) do
+    --     table.insert(options, {
+    --         name = name,
+    --         action = function() startupLib.runSelection(name, true) end
+    --     })
+    -- end
 
     lib.start("NvimTreeActions", options)
 end

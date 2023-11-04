@@ -10,7 +10,7 @@ require("auto-session").setup {
     }
 }
 
-local session_lens = require("session-lens")
+local session_lens = require("auto-session.session-lens")
 
 
 vim.api.nvim_create_autocmd("VimLeave", {

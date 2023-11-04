@@ -1,3 +1,0 @@
-[submodule "lua/dependencies/jsonlua"]
-	path = lua/dependencies/jsonlua
-	url = https://github.com/rxi/json.lua

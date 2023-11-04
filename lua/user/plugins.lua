@@ -1,125 +1,136 @@
 -- Automatically install packer
-local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = vim.fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
-end
+-- local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+-- if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+-- 	PACKER_BOOTSTRAP = vim.fn.system({
+-- 		"git",
+-- 		"clone",
+-- 		"--depth",
+-- 		"1",
+-- 		"https://github.com/wbthomason/packer.nvim",
+-- 		install_path,
+-- 	})
+-- 	print("Installing packer close and reopen Neovim...")
+-- 	vim.cmd([[packadd packer.nvim]])
+-- end
 
-require('packer').startup(function(use)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    'wbthomason/packer.nvim',
 
     -- theme
-    use 'navarasu/onedark.nvim'
+    'navarasu/onedark.nvim',
 
     -- Statusline and top tab/buffer bar
-    use 'nvim-lualine/lualine.nvim'
-    use 'akinsho/bufferline.nvim'
+    'nvim-lualine/lualine.nvim',
+    'akinsho/bufferline.nvim',
 
 
-    use 'kyazdani42/nvim-tree.lua'
+    'kyazdani42/nvim-tree.lua',
 
     -- basic session management
-    use 'rmagatti/auto-session'
-    use 'rmagatti/session-lens'
+    'rmagatti/auto-session',
+    -- 'rmagatti/session-lens',
 
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
+    'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope.nvim',
 
     -- comments
-    use 'numToStr/Comment.nvim'
+    'numToStr/Comment.nvim',
 
     -- basic git tools
-    use 'lewis6991/gitsigns.nvim'
-    use 'sindrets/diffview.nvim'
+    'lewis6991/gitsigns.nvim',
+    'sindrets/diffview.nvim',
 
     -- auto completion
-    use "neovim/nvim-lspconfig"
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
-    use 'arkav/lualine-lsp-progress'
-    use "antosha417/nvim-lsp-file-operations"
+    "neovim/nvim-lspconfig",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    'arkav/lualine-lsp-progress',
+    "antosha417/nvim-lsp-file-operations",
 
 
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/cmp-nvim-lsp-signature-help'
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
-    use 'hrsh7th/nvim-cmp'
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/vim-vsnip',
+    'hrsh7th/vim-vsnip-integ',
+    'hrsh7th/nvim-cmp',
 
 
     -- external lsp servers for config
-    use 'mfussenegger/nvim-jdtls'
-    use 'MunifTanjim/prettier.nvim'
-    use 'jose-elias-alvarez/typescript.nvim'
+    'mfussenegger/nvim-jdtls',
+    'MunifTanjim/prettier.nvim',
+    'jose-elias-alvarez/typescript.nvim',
 
     -- -- syntax
-    use 'nvim-treesitter/nvim-treesitter'
+    'nvim-treesitter/nvim-treesitter',
 
-    use 'rcarriga/nvim-notify'
+    'rcarriga/nvim-notify',
 
     -- icon support
-    use 'ryanoasis/vim-devicons'
-    use 'kyazdani42/nvim-web-devicons'
+    'ryanoasis/vim-devicons',
+    'kyazdani42/nvim-web-devicons',
 
     -- css color highlighting
-    use 'ap/vim-css-color'
+    'ap/vim-css-color',
 
-    use 'andweeb/presence.nvim'
+    'andweeb/presence.nvim',
     -- html
-    use 'windwp/nvim-ts-autotag'
+    'windwp/nvim-ts-autotag',
 
     -- method summary
-    use 'simrat39/symbols-outline.nvim'
+    'simrat39/symbols-outline.nvim',
 
-    use 'windwp/nvim-autopairs'
+    'windwp/nvim-autopairs',
 
-    use 'glepnir/dashboard-nvim'
+    'glepnir/dashboard-nvim',
 
-    use 'lambdalisue/suda.vim'
+    'lambdalisue/suda.vim',
 
-    use 'stevearc/dressing.nvim'
+    'stevearc/dressing.nvim',
 
-    use 'RRethy/vim-illuminate'
+    'RRethy/vim-illuminate',
 
-    use 'MunifTanjim/nui.nvim'
+    'MunifTanjim/nui.nvim',
 
-    use {
+    {
         'j-hui/fidget.nvim',
         tag = "legacy"
-    }
-
-    use 'karb94/neoscroll.nvim'
+    },
 
     -- copilot
-    use 'zbirenbaum/copilot-cmp'
-    use 'zbirenbaum/copilot.lua'
+    'zbirenbaum/copilot-cmp',
+    'zbirenbaum/copilot.lua',
 
     -- terminal
-    use 'akinsho/toggleterm.nvim'
+    'akinsho/toggleterm.nvim',
 
-    use 'jose-elias-alvarez/null-ls.nvim'
+    'jose-elias-alvarez/null-ls.nvim',
 
-    use 'SmiteshP/nvim-navic'
+    'SmiteshP/nvim-navic'
+})
 
-    use 'junegunn/fzf'
-    use 'junegunn/fzf.vim'
-
-
-    -- use 'antosha417/nvim-lsp-file-operations'
-
-    if PACKER_BOOTSTRAP then
-        require("packer").sync()
-    end
-end)
+-- require('packer').startup(function(use)
+--
+--
+--     -- 'antosha417/nvim-lsp-file-operations'
+--
+--     if PACKER_BOOTSTRAP then
+--         require("packer").sync()
+--     end
+-- end)

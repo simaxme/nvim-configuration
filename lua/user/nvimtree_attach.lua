@@ -105,15 +105,9 @@ local function on_attach(bufnr)
     -- your code goes here
   end, opts('open_nvimtree_options'))
 
-  vim.keymap.set('n', 'ff', function()
-    local node = api.tree.get_node_under_cursor()
-    -- your code goes here
-  end, opts('telescope_file'))
+  vim.keymap.set('n', 'ff', "<cmd>Telescope find_files<CR>", opts('telescope_file'))
 
-  vim.keymap.set('n', 'fg', function()
-    local node = api.tree.get_node_under_cursor()
-    -- your code goes here
-  end, opts('telescope_grep'))
+  vim.keymap.set('n', 'fg', "<cmd>Telescope live_grep<CR>", opts('telescope_grep'))
 
 
 end
