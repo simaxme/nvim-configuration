@@ -28,5 +28,6 @@ require('user.illuminate')
 require('user.tmux')
 require('user.autosession')
 require("user.mediafiles")
+require("user.guessindent")
 
 require("user.grep")

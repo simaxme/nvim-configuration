@@ -18,4 +18,12 @@ vim.opt.updatetime = 1000 -- faster cursor hold event
 vim.opt.swapfile = false
 vim.opt.ignorecase = true
 
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    vim.opt.formatoptions:remove {"c", "r", "o"}
+  end
+})
+
 vim.opt.guifont = {"CaskaydiaCove Nerd Font", ":h12"}
