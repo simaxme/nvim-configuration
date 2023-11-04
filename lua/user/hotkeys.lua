@@ -7,7 +7,7 @@ vim.keymap.set("v", "<S-Tab>", "<gv", { noremap = false })
 -- center only with one z
 -- vim.api.nvim_set_keymap("n", "z", "zz", {noremap = true})
 -- do not yank newline symbol
-vim.keymap.set("n", "yy", "mm^vg_y`m", { noremap = true })
+-- vim.keymap.set("n", "yy", "mm^vg_y`m", { noremap = true })
 
 -- use ctrl + hjkl for navigation
 vim.keymap.set("i", "<C-j>", "<Down>", { noremap = true })
@@ -63,7 +63,7 @@ vim.keymap.set("n", "<Leader>v", function() require('neoclip.fzf')({ 'unnamed', 
 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
--- vim.keymap.set("v", "d", '"_d', { noremap = true })
+vim.keymap.set("v", "p", '"_dP', {noremap = true})
 
 -- close all tabs except current
 vim.cmd [[command! X %bd|e#|bd#]]
