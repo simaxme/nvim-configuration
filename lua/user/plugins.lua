@@ -54,8 +54,8 @@ require("lazy").setup({
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-nvim-lsp-signature-help',
-    'hrsh7th/vim-vsnip',
-    'hrsh7th/vim-vsnip-integ',
+    -- 'hrsh7th/vim-vsnip',
+    -- 'hrsh7th/vim-vsnip-integ',
     'hrsh7th/nvim-cmp',
 
 
@@ -101,8 +101,8 @@ require("lazy").setup({
     },
 
     -- copilot
-    'zbirenbaum/copilot-cmp',
-    'zbirenbaum/copilot.lua',
+    -- 'zbirenbaum/copilot-cmp',
+    -- 'zbirenbaum/copilot.lua',
 
     -- terminal
     'akinsho/toggleterm.nvim',
@@ -113,7 +113,17 @@ require("lazy").setup({
 
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
-    'nmac427/guess-indent.nvim'
+    'nmac427/guess-indent.nvim',
+
+    'Wansmer/treesj',
+
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.0.0", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    },
+
+    'saadparwaiz1/cmp_luasnip'
 })
 
 -- require('packer').startup(function(use)

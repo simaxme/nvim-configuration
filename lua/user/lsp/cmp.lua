@@ -6,12 +6,13 @@ local compare = require('cmp.config.compare')
 
 cmp.setup({
     snippet = {
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-      end,
+        expand = function(args)
+            require'luasnip'.lsp_expand(args.body)
+        end,
     },
 
     sources = cmp.config.sources({
+        { name = 'luasnip' },
         { name = "nvim_lsp" },
         { name = "nvim_lsp_signature_help" },
         { name = "copilot" }
