@@ -1,7 +1,6 @@
 -- require('user.lsp.rename')
 
 require('user.lsp.typescript')
-require('user.lsp.nullls')
 require('user.lsp.fileutils')
 
 -- lsp config
@@ -24,7 +23,7 @@ local navic = require('nvim-navic')
 navic.setup {
     highlight = true
 }
-local function onAttach(client, bufnr)
+local function on_attach(client, bufnr)
     if client.server_capabilities.documentSymbolProvider then
         vim.g.navic_silence = true
         navic.attach(client, bufnr)
@@ -35,12 +34,12 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 
-require('lspconfig').tsserver.setup { on_attach = onAttach }
-require('lspconfig').lua_ls.setup { on_attach = onAttach }
-require('lspconfig').angularls.setup { on_attach = onAttach }
-require('lspconfig').html.setup { on_attach = onAttach }
-require('lspconfig').jsonls.setup { on_attach = onAttach }
-require('lspconfig').cssls.setup { on_attach = onAttach, filetypes = {"css", "scss"}, capabilities = capabilities }
+require('lspconfig').tsserver.setup { on_attach = on_attach }
+require('lspconfig').lua_ls.setup { on_attach = on_attach }
+require('lspconfig').angularls.setup { on_attach = on_attach }
+require("lspconfig").tailwindcss.setup {on_attach = on_attach}
+require('lspconfig').jsonls.setup { on_attach = on_attach }
+require('lspconfig').cssls.setup { on_attach = on_attach, filetypes = {"css", "scss"}, capabilities = capabilities }
 
-require "fidget".setup { on_attach = onAttach }
+require "fidget".setup { on_attach = on_attach }
 

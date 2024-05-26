@@ -10,22 +10,17 @@ require('user.toggleterm')
 require('user.git')
 
 -- plugins
-require('user.mason')
+require('user.lsp.mason')
 require('user.lsp.init')
 require('user.lsp.cmp')
 require('user.nvimtree')
 require('user.treesitter')
-require('user.echodoc')
-require('user.comment')
 require('user.telescope.init')
-require('user.dashboard')
 require('user.gitsigns')
-require('user.theme')
 require('user.autopairs')
 require('user.symbols')
 require('user.illuminate')
 require('user.tmux')
-require('user.autosession')
 require("user.mediafiles")
 require("user.guessindent")
 require("user.indent-blackline")
@@ -33,3 +28,14 @@ require("user.treesj")
 require("user.lsp.luasnip")
 
 require("user.grep")
+
+require("simaxme-java").setup({
+    rename = {
+        enable = true,
+        nvimtree = true,
+        write_and_close = false
+    },
+    snippets = {
+        enable = true
+    }
+})

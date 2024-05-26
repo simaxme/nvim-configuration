@@ -43,6 +43,7 @@ vim.keymap.set("n", "<Leader>s", ":SymbolsOutline<CR>", { noremap = true })
 vim.keymap.set("n", "<C-s>", function() vim.lsp.buf.definition() end, { noremap = true })
 vim.keymap.set("n", "<C-c>", ":Telescope lsp_references<CR>", { noremap = true })
 vim.keymap.set("n", "rn", function() vim.lsp.buf.rename() end, { noremap = true })
+-- vim.keymap.set("n", "rn", require("java.rename.lsp").rename_symbol_wrapper, { noremap = true })
 vim.keymap.set("n", "<Leader>w", function() vim.lsp.buf.code_action() end, {})
 
 -- Commenting
@@ -64,6 +65,16 @@ vim.keymap.set("n", "<Leader>v", function() require('neoclip.fzf')({ 'unnamed', 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
 vim.keymap.set("v", "p", '"_dP', {noremap = true})
+
+-- remove arrow bindings -> for learning reasons
+vim.keymap.set("n", "<Left>", "<Nop>")
+vim.keymap.set("n", "<Right>", "<Nop>")
+vim.keymap.set("n", "<Up>", "<Nop>")
+vim.keymap.set("n", "<Down>", "<Nop>")
+vim.keymap.set("", "<C-w><Left>", "<Nop>")
+vim.keymap.set("", "<C-w><Right>", "<Nop>")
+vim.keymap.set("", "<C-w><Down>", "<Nop>")
+vim.keymap.set("", "<C-w><Up>", "<Nop>")
 
 -- close all tabs except current
 vim.cmd [[command! X %bd|e#|bd#]]
