@@ -4,8 +4,8 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         "angularls",
         "jdtls",
-        "html",
         "jsonls",
-        "cssls"
+        "cssls",
+        "tailwindcss"
     }
 })

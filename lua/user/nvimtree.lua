@@ -41,16 +41,6 @@ require('nvim-tree').setup({
 
     view = {
         width = 40
-        -- mappings = {
-        --     list = {
-        --         { key = "<C-e>", action = "" },
-        --         { key = "E", action = "" },
-        --         { key = "<Leader>q", action = "open_nvimtree_options",
-        --             action_cb = require('user.telescope.pickers.nvimtreeactions').openSelect },
-        --         { key = "ff", action = "telescope_file", action_cb = function() vim.cmd("Telescope find_files") end },
-        --         { key = "fg", action = "telescope_grep", action_cb = function() vim.cmd("Telescope live_grep") end }
-        --     }
-        -- }
     },
 
     git = {

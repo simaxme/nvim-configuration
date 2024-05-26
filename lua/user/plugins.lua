@@ -17,25 +17,17 @@ require("lazy").setup({
     -- Packer can manage itself
     'wbthomason/packer.nvim',
 
-    -- theme
-    'navarasu/onedark.nvim',
-
     -- Statusline and top tab/buffer bar
     'nvim-lualine/lualine.nvim',
     'akinsho/bufferline.nvim',
 
-
-    'kyazdani42/nvim-tree.lua',
-
     -- basic session management
-    'rmagatti/auto-session',
+    -- 'rmagatti/auto-session',
     -- 'rmagatti/session-lens',
 
     'nvim-lua/plenary.nvim',
     'nvim-telescope/telescope.nvim',
 
-    -- comments
-    'numToStr/Comment.nvim',
 
     -- basic git tools
     'lewis6991/gitsigns.nvim',
@@ -67,6 +59,9 @@ require("lazy").setup({
     -- -- syntax
     'nvim-treesitter/nvim-treesitter',
 
+    -- TODO change
+    'kyazdani42/nvim-tree.lua',
+
     'rcarriga/nvim-notify',
 
     -- icon support
@@ -84,8 +79,6 @@ require("lazy").setup({
     'simrat39/symbols-outline.nvim',
 
     'windwp/nvim-autopairs',
-
-    'glepnir/dashboard-nvim',
 
     'lambdalisue/suda.vim',
 
@@ -107,8 +100,6 @@ require("lazy").setup({
     -- terminal
     'akinsho/toggleterm.nvim',
 
-    'jose-elias-alvarez/null-ls.nvim',
-
     'SmiteshP/nvim-navic',
 
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
@@ -123,7 +114,27 @@ require("lazy").setup({
         version = "v2.0.0", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     },
 
-    'saadparwaiz1/cmp_luasnip'
+    'saadparwaiz1/cmp_luasnip',
+
+    -- 'simaxme/java.nvim',
+
+
+    {
+        "simaxme/nvim-tree-angular",
+        config = function ()
+            require("nvim-tree-angular").setup()
+        end
+    },
+
+    require("user.plugins.harpoon"),
+    require("user.plugins.onedark"),
+    require("user.plugins.comment"),
+    require("user.plugins.possession"),
+    require("user.plugins.dashboard"),
+
+    {
+        dir = "~/Documents/Coding/private/java.nvim"
+    }
 })
 
 -- require('packer').startup(function(use)

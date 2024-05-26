@@ -109,7 +109,7 @@ local function on_attach(bufnr)
 
   vim.keymap.set('n', 'fg', "<cmd>Telescope live_grep<CR>", opts('telescope_grep'))
 
-
+  vim.keymap.set("n", "<Leader>ng", require("nvim-tree-angular").create_angular_schematic, opts(''))
 end
 
 return on_attach
