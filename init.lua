@@ -6,7 +6,6 @@ require('user.title')
 require('user.events')
 require('user.hotkeys')
 require('user.toggleterm')
-
 require('user.git')
 
 -- plugins
