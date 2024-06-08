@@ -1,6 +1,6 @@
 local tmux = require("user.tmux")
 
-local config
+local toDelete = {}
 
 if not tmux.isTmux() then
   return
@@ -30,6 +30,8 @@ local function handle_dir()
       tmux.createWindow(name, cwd, nil, command)
       tmux.lastWindow()
     end
+
+    toDelete[key] = value
   end
 
   config = data
@@ -41,17 +43,35 @@ vim.api.nvim_create_autocmd("DirChanged", {
   end
 })
 
+local function destroySession()
+  for key, value in pairs(toDelete) do
+    local name = "autorun-" .. key
+
+    if tmux.windowExistsByName(name) then
+      tmux.killWindow(name)
+    end
+  end
+  toDelete = {}
+end
+
 
 vim.api.nvim_create_autocmd("ExitPre", {
   callback = function()
-    if config == nil then return end
-
-    for key, value in pairs(config) do
-      local name = "autorun-" .. key
-
-      if tmux.windowExistsByName(name) then
-        tmux.killWindow(name)
-      end
-    end
+    destroySession()
   end
 })
+
+local function restart()
+  destroySession()
+  handle_dir()
+end
+
+vim.api.nvim_create_user_command("AutorunStart", function()
+  restart()
+end, {})
+vim.api.nvim_create_user_command("AutorunRestart", function()
+  restart()
+end, {})
+vim.api.nvim_create_user_command("AutorunStop", function()
+  destroySession()
+end, {})
