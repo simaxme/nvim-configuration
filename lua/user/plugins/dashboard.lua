@@ -1,14 +1,11 @@
 local function setup()
     local db = require('dashboard')
-    -- local session_lens = require("auto-session.session-lens")
-    local utils = require('user.utils')
-    local possession = require("nvim-possession")
 
     local custom_center = {}
 
     table.insert(custom_center, {icon='', desc=' Load Session',
         action = function ()
-            possession.list()
+            require('telescope').extensions.possession.list()
         end
     })
 

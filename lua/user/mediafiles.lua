@@ -7,11 +7,11 @@ vim.api.nvim_create_autocmd("BufEnter", {
 
 
     if utils.stringEndsWithWith(name, ".jpg") or utils.stringEndsWithWith(name, ".png") then
-        io.popen("qlmanage -p " .. name)
+      io.popen("qlmanage -p " .. name)
 
-        vim.cmd ("bp|bd#")
+      vim.cmd("bp|bd#")
 
-        vim.cmd ("NvimTreeFocus")
+      vim.cmd("NvimTreeFocus")
     end
   end
 })

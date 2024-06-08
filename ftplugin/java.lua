@@ -4,7 +4,7 @@ local git = require("user.git")
 -- local version = java.findJavaVersion()
 
 if not git.isGitDirectory() then
-    return
+  return
 end
 
 git.navigateToGitRoot()
@@ -14,7 +14,7 @@ local home = os.getenv("HOME")
 
 local dataFolder = home .. "/.local/share/nvim"
 
-require('jdtls').start_or_attach{
+require('jdtls').start_or_attach {
   cmd = {
     "bash",
     home .. '/.config/nvim/scripts/java-lsp.bash',
@@ -46,4 +46,3 @@ require('jdtls').start_or_attach{
     }
   }
 }
-

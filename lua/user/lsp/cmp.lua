@@ -16,7 +16,7 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require'luasnip'.lsp_expand(args.body)
+            require 'luasnip'.lsp_expand(args.body)
 
             -- reqrequire'luasnip'.lsp_expand(args.body)uire('luasnip').lsp_expand(args.body) -- For `luasnip` users.
             -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
@@ -42,7 +42,7 @@ cmp.setup({
     --     completeopt = 'menu,menuone,noinsert'
     -- },
     view = {
-        entries = {name = 'custom', selection_order = 'near_cursor'}
+        entries = { name = 'custom', selection_order = 'near_cursor' }
     },
 
     window = {
