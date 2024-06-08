@@ -7,7 +7,7 @@ local compare = require('cmp.config.compare')
 cmp.setup({
     snippet = {
         expand = function(args)
-            require'luasnip'.lsp_expand(args.body)
+            require 'luasnip'.lsp_expand(args.body)
         end,
     },
 
@@ -29,7 +29,7 @@ cmp.setup({
     --     completeopt = 'menu,menuone,noinsert'
     -- },
     view = {
-        entries = {name = 'custom', selection_order = 'near_cursor'}
+        entries = { name = 'custom', selection_order = 'near_cursor' }
     },
 
     window = {

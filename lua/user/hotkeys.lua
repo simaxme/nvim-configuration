@@ -57,14 +57,14 @@ vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.keymap.set("n", "fb", require('user.telescope.lib').findBuffer, { noremap = true })
 -- vim.keymap.set("n", "fr", require('user.lsp.rename'), {noremap = true})
 
-vim.keymap.set("n", "fd", "<cmd>DiffviewOpen<CR>", {noremap = true})
+vim.keymap.set("n", "fd", "<cmd>DiffviewOpen<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-b>", "<cmd>ShowBufferList<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>v", function() require('neoclip.fzf')({ 'unnamed', 'plus' }) end, { noremap = true })
 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
-vim.keymap.set("v", "p", '"_dP', {noremap = true})
+vim.keymap.set("v", "p", '"_dP', { noremap = true })
 
 -- remove arrow bindings -> for learning reasons
 vim.keymap.set("n", "<Left>", "<Nop>")
