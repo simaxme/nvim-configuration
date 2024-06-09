@@ -21,7 +21,7 @@ vim.keymap.set("n", "<S-Tab>", "v<gv<ESC>", { noremap = true })
 
 -- standard custom made options menu
 vim.keymap.set("n", "<Leader>q", require('user.telescope.pickers.buffer.init').openSelect,
-    { noremap = true })
+  { noremap = true })
 
 -- terminal stuff
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
@@ -34,6 +34,7 @@ vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true })
 -- nvimtree
 vim.keymap.set("", "<S-e>", require('user.nvimtree').findFile, { noremap = true })
 vim.keymap.set("", "<C-e>", require('user.nvimtree').toggle, { noremap = true })
+
 vim.keymap.set("", "<Leader>x", ":bp|bd#<CR>", { noremap = true })
 
 -- symbols summary

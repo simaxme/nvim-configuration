@@ -3,7 +3,8 @@ function setup()
     background_clear = { "float_win" }
   })
 
-  vim.cmd("colorscheme monokai-pro-spectrum")
+  -- vim.cmd("colorscheme monokai-pro-spectrum")
+  vim.cmd("colorscheme monokai-pro-default")
 end
 
 return {
