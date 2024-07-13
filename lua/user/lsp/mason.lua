@@ -7,6 +7,7 @@ require('mason-lspconfig').setup({
     "jsonls",
     "cssls",
     "tailwindcss",
-    "html"
+    "html",
+    "phpactor"
   }
 })
