@@ -17,6 +17,7 @@ vim.opt.wrap = false
 vim.opt.updatetime = 1000 -- faster cursor hold event
 vim.opt.swapfile = false
 vim.opt.ignorecase = true
+vim.opt.cursorline = true
 
 
 vim.api.nvim_create_autocmd("BufEnter", {

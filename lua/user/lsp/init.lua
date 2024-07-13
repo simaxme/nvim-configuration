@@ -41,10 +41,11 @@ end
 
 require('lspconfig').tsserver.setup { on_attach = on_attach }
 require('lspconfig').lua_ls.setup { on_attach = on_attach }
-require("lspconfig").tailwindcss.setup { on_attach = on_attach }
+require("lspconfig").tailwindcss.setup { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } }
 require('lspconfig').jsonls.setup { on_attach = on_attach }
 require('lspconfig').cssls.setup { on_attach = on_attach, filetypes = { "css", "scss" }, capabilities = capabilities }
 require("lspconfig").html.setup { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } }
+require("lspconfig").phpactor.setup { on_attach = on_attach, capabilities = capabilities }
 
 
 -- angularls fix
@@ -79,7 +80,7 @@ local angularConfig = {
   end,
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "angular.html" }
+  -- filetypes = { "angular.html" }
 }
 
 require('lspconfig').angularls.setup(angularConfig)
