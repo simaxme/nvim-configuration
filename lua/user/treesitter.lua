@@ -20,7 +20,8 @@ require('nvim-treesitter.configs').setup {
     "kotlin", -- for kotlin scripts,
     "angular",
     "dockerfile",
-    "php"
+    "php",
+    "rust"
   },
 
   highlight = {

@@ -46,7 +46,7 @@ require('lspconfig').jsonls.setup { on_attach = on_attach }
 require('lspconfig').cssls.setup { on_attach = on_attach, filetypes = { "css", "scss" }, capabilities = capabilities }
 require("lspconfig").html.setup { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } }
 require("lspconfig").phpactor.setup { on_attach = on_attach, capabilities = capabilities }
-
+require("lspconfig").rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
 
 -- angularls fix
 local ok, mason_registry = pcall(require, 'mason-registry')
