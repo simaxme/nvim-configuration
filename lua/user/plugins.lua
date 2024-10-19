@@ -133,6 +133,7 @@ require("lazy").setup({
   require("user.plugins.dashboard"),
   require("user.plugins.graple"),
   require("user.plugins.mini"),
+  require("user.plugins.neogen"),
   {
     dir = "~/Documents/Coding/private/java.nvim"
   }

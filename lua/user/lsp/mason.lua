@@ -8,6 +8,7 @@ require('mason-lspconfig').setup({
     "cssls",
     "tailwindcss",
     "html",
-    "phpactor"
+    "phpactor",
+    "rust_analyzer"
   }
 })

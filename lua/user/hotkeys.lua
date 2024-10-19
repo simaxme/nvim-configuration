@@ -77,5 +77,12 @@ vim.keymap.set("", "<C-w><Right>", "<Nop>")
 vim.keymap.set("", "<C-w><Down>", "<Nop>")
 vim.keymap.set("", "<C-w><Up>", "<Nop>")
 
+vim.keymap.set("n", "<Leader>nc", function()
+  require("neogen").generate()
+end, { noremap = true })
+vim.keymap.set("", "<C-h>", function()
+  vim.lsp.buf.hover()
+end)
+
 -- close all tabs except current
 vim.cmd [[command! X %bd|e#|bd#]]
