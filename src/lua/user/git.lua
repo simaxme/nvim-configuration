@@ -27,4 +27,6 @@ function git.navigateToGitRoot()
 
 end
 
+vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = function() git.navigateToGitRoot() end })
+
 return git

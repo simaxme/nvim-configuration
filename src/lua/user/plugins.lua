@@ -21,40 +21,28 @@ require("lazy").setup({
   'nvim-lualine/lualine.nvim',
   'akinsho/bufferline.nvim',
 
-  -- basic session management
-  -- 'rmagatti/auto-session',
-  -- 'rmagatti/session-lens',
-
   'nvim-lua/plenary.nvim',
   'nvim-telescope/telescope.nvim',
 
 
   -- basic git tools
   'lewis6991/gitsigns.nvim',
-  'sindrets/diffview.nvim',
+  -- 'sindrets/diffview.nvim',
 
   -- auto completion
   "neovim/nvim-lspconfig",
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
-  'arkav/lualine-lsp-progress',
-  "antosha417/nvim-lsp-file-operations",
-
 
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
   'hrsh7th/cmp-nvim-lsp-signature-help',
-  -- 'hrsh7th/vim-vsnip',
-  -- 'hrsh7th/vim-vsnip-integ',
   'hrsh7th/nvim-cmp',
-
 
   -- external lsp servers for config
   'mfussenegger/nvim-jdtls',
-  'MunifTanjim/prettier.nvim',
-  'jose-elias-alvarez/typescript.nvim',
 
   -- -- syntax
   'nvim-treesitter/nvim-treesitter',
@@ -65,24 +53,17 @@ require("lazy").setup({
   'rcarriga/nvim-notify',
 
   -- icon support
-  'ryanoasis/vim-devicons',
-  'kyazdani42/nvim-web-devicons',
+  -- 'ryanoasis/vim-devicons',
+  -- 'kyazdani42/nvim-web-devicons',
 
   -- css color highlighting
-  'ap/vim-css-color',
+  -- TODO LOOK HERE
 
-  'andweeb/presence.nvim',
   -- html
   'windwp/nvim-ts-autotag',
 
-  -- method summary
-  'simrat39/symbols-outline.nvim',
 
   'windwp/nvim-autopairs',
-
-  'lambdalisue/suda.vim',
-
-  'stevearc/dressing.nvim',
 
   -- require("user.plugins.noice"),
 
@@ -106,8 +87,6 @@ require("lazy").setup({
 
   'nmac427/guess-indent.nvim',
 
-  'Wansmer/treesj',
-
   {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
@@ -115,8 +94,6 @@ require("lazy").setup({
   },
 
   'saadparwaiz1/cmp_luasnip',
-
-  -- 'simaxme/java.nvim',
 
 
   {
@@ -126,25 +103,9 @@ require("lazy").setup({
     end
   },
 
-  -- require("user.plugins.harpoon"),
-  -- require("user.plugins.onedark"),
   require("user.plugins.monokai"),
   require("user.plugins.possession"),
   require("user.plugins.dashboard"),
-  require("user.plugins.graple"),
   require("user.plugins.mini"),
-  require("user.plugins.neogen"),
-  {
-    dir = "~/Documents/Coding/private/java.nvim"
-  }
+  require("user.plugins.neogen")
 })
-
--- require('packer').startup(function(use)
---
---
---     -- 'antosha417/nvim-lsp-file-operations'
---
---     if PACKER_BOOTSTRAP then
---         require("packer").sync()
---     end
--- end)

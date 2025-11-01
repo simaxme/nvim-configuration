@@ -1,7 +1,3 @@
--- require('user.lsp.rename')
-
-require('user.lsp.typescript')
-require('user.lsp.fileutils')
 
 -- lsp config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
@@ -13,29 +9,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   })
 
 
--- I am writing annn text
-local git = require('user.git')
-
--- vim.api.nvim_create_autocmd({ 'BufWritePre' }, { callback = function() formatLspWithoutError() end })
-vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = function() git.navigateToGitRoot() end })
-
--- local navic = require('nvim-navic')
--- navic.setup {
---     highlight = true
--- }
-
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
--- local lsp_completion = require("completion")
 local function on_attach(client, bufnr)
-  -- if client.server_capabilities.documentSymbolProvider then
-  --     vim.g.navic_silence = true
-  --     navic.attach(client, bufnr)
-  --     vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-  -- end
-
-  -- if client.resolved_capabilities.completion then
-  --   lsp_completion.on_attach(client, bufnr)
-  -- end
 end
 
 
