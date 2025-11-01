@@ -39,7 +39,7 @@ local function setup()
         theme = "doom",
         config = {
             header = header,
-            footer = {"Config by SimaxDev"},
+            footer = {"Config by simaxme"},
             center = custom_center
         }
     }

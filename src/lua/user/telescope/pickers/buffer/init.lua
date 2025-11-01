@@ -25,14 +25,6 @@ function M.openSelect()
         }
     }
 
-    -- local startupOptions = startupLib.extractOptions()
-    -- for _, name in ipairs(startupOptions) do
-    --     table.insert(options, {
-    --         name = name,
-    --         action = function() startupLib.runSelection(name, true) end
-    --     })
-    -- end
-
     lib.start("NvimTreeActions", options)
 end
 

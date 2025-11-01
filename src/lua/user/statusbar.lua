@@ -63,36 +63,10 @@ require('lualine').setup {
   }
 }
 
--- vim.opt.termguicolors = true
--- require("bufferline").setup {
---     options = {
---         diagnostics = "nvim_lsp",
---
---         diagnostics_indicator = function(count, level, diagnostics_dict, context)
---             if not level:match("error") then
---                 return ""
---             end
---
---             local icon = " "
---             return " " .. icon .. count
---         end,
---
---         offsets = {
---             {
---                 filetype = "NvimTree",
---                 text = "",
---                 highlight = "FolderTitle",
---                 text_align = "left",
---                 -- separator = true
---             }
---         }
---     }
--- }
-
-vim.cmd [[
-autocmd VimEnter * hi FolderTitle guifg=red
-autocmd VimEnter * hi! link FolderTitle NvimTreeNormal
-]]
+-- vim.cmd [[
+-- autocmd VimEnter * hi FolderTitle guifg=red
+-- autocmd VimEnter * hi! link FolderTitle NvimTreeNormal
+-- ]]
 
 -- autocmd VimEnter * hi FolderTitle guifg=red
 return x
