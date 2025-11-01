@@ -1,4 +1,3 @@
-
 -- lsp config
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -13,54 +12,31 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local function on_attach(client, bufnr)
 end
 
-
-require('lspconfig').tsserver.setup { on_attach = on_attach }
-require('lspconfig').lua_ls.setup { on_attach = on_attach }
-require("lspconfig").tailwindcss.setup { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } }
-require('lspconfig').jsonls.setup { on_attach = on_attach }
-require('lspconfig').cssls.setup { on_attach = on_attach, filetypes = { "css", "scss" }, capabilities = capabilities }
-require("lspconfig").html.setup { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } }
-require("lspconfig").phpactor.setup { on_attach = on_attach, capabilities = capabilities }
-require("lspconfig").rust_analyzer.setup { on_attach = on_attach, capabilities = capabilities }
-
--- angularls fix
-local ok, mason_registry = pcall(require, 'mason-registry')
-if not ok then
-  vim.notify 'mason-registry could not be loaded'
-  return
-end
-
-local angularls_path =
-    mason_registry.get_package('angular-language-server'):get_install_path()
-
-local cmd = {
-  'ngserver',
-  '--stdio',
-  '--tsProbeLocations',
-  table.concat({
-    angularls_path,
-    vim.uv.cwd(),
-  }, ','),
-  '--ngProbeLocations',
-  table.concat({
-    angularls_path .. '/node_modules/@angular/language-server',
-    vim.uv.cwd(),
-  }, ','),
-}
-
-local angularConfig = {
-  cmd = cmd,
-  on_new_config = function(new_config, new_root_dir)
-    new_config.cmd = cmd
-  end,
+vim.lsp.config('*', {
   on_attach = on_attach,
-  capabilities = capabilities,
-  -- filetypes = { "angular.html" }
-}
+  capabilities = capabilities
+})
+vim.lsp.config('tailwindcss',
+  { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } }
+)
+vim.lsp.config('cssls', {
+  on_attach = on_attach, filetypes = { "css", "scss" }, capabilities = capabilities
+})
+vim.lsp.config('html', { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } })
 
-require('lspconfig').angularls.setup(angularConfig)
+vim.lsp.enable({
+  'tsserver',
+  'lua_ls',
+  'tailwindcss',
+  'jsonls',
+  'cssls',
+  'html',
+  'phpactor',
+  'rust_analyzer',
+  'angularls'
+})
 
-require "fidget".setup { on_attach = on_attach }
+require "fidget".setup()
 
 local function any_client_has_formatting()
   local clients = vim.lsp.get_clients({

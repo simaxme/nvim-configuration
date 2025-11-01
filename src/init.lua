@@ -19,8 +19,6 @@ require('user.gitsigns')
 require('user.autopairs')
 require('user.tmux')
 require("user.guessindent")
-require("user.treesj")
-require("user.lsp.luasnip")
 -- require("user.tmux-autorun")
 
 require("user.mediafiles")

@@ -32,8 +32,8 @@ vim.keymap.set("n", "<S-t>", ":ToggleTerm direction=vertical size=40<CR>", { nor
 vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true })
 
 -- nvimtree
-vim.keymap.set("", "<S-e>", require('user.nvimtree').findFile, { noremap = true })
-vim.keymap.set("", "<C-e>", require('user.nvimtree').toggle, { noremap = true })
+-- vim.keymap.set("", "<S-e>", require('user.nvimtree').findFile, { noremap = true })
+-- vim.keymap.set("", "<C-e>", require('user.nvimtree').toggle, { noremap = true })
 
 vim.keymap.set("", "<Leader>x", ":bp|bd#<CR>", { noremap = true })
 
