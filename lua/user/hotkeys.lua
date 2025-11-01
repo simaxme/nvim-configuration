@@ -21,7 +21,7 @@ vim.keymap.set("n", "<S-Tab>", "v<gv<ESC>", { noremap = true })
 
 -- standard custom made options menu
 vim.keymap.set("n", "<Leader>q", require('user.telescope.pickers.buffer.init').openSelect,
-    { noremap = true })
+  { noremap = true })
 
 -- terminal stuff
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
@@ -34,6 +34,7 @@ vim.keymap.set("t", "<C-t>", "<C-\\><C-n>:ToggleTerm<CR>", { noremap = true })
 -- nvimtree
 vim.keymap.set("", "<S-e>", require('user.nvimtree').findFile, { noremap = true })
 vim.keymap.set("", "<C-e>", require('user.nvimtree').toggle, { noremap = true })
+
 vim.keymap.set("", "<Leader>x", ":bp|bd#<CR>", { noremap = true })
 
 -- symbols summary
@@ -57,14 +58,14 @@ vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.keymap.set("n", "fb", require('user.telescope.lib').findBuffer, { noremap = true })
 -- vim.keymap.set("n", "fr", require('user.lsp.rename'), {noremap = true})
 
-vim.keymap.set("n", "fd", "<cmd>DiffviewOpen<CR>", {noremap = true})
+vim.keymap.set("n", "fd", "<cmd>DiffviewOpen<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-b>", "<cmd>ShowBufferList<CR>", { noremap = true })
 vim.keymap.set("n", "<Leader>v", function() require('neoclip.fzf')({ 'unnamed', 'plus' }) end, { noremap = true })
 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
-vim.keymap.set("v", "p", '"_dP', {noremap = true})
+vim.keymap.set("v", "p", '"_dP', { noremap = true })
 
 -- remove arrow bindings -> for learning reasons
 vim.keymap.set("n", "<Left>", "<Nop>")
@@ -75,6 +76,13 @@ vim.keymap.set("", "<C-w><Left>", "<Nop>")
 vim.keymap.set("", "<C-w><Right>", "<Nop>")
 vim.keymap.set("", "<C-w><Down>", "<Nop>")
 vim.keymap.set("", "<C-w><Up>", "<Nop>")
+
+vim.keymap.set("n", "<Leader>nc", function()
+  require("neogen").generate()
+end, { noremap = true })
+vim.keymap.set("", "<C-h>", function()
+  vim.lsp.buf.hover()
+end)
 
 -- close all tabs except current
 vim.cmd [[command! X %bd|e#|bd#]]

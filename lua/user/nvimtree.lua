@@ -6,53 +6,52 @@ local M = {}
 local git = require('user.git')
 
 function M.findFile()
-    git.navigateToGitRoot()
-    vim.cmd [[NvimTreeFindFile]]
+  git.navigateToGitRoot()
+  vim.cmd [[NvimTreeFindFile]]
 end
 
 function M.toggle()
-    git.navigateToGitRoot()
-    vim.cmd [[NvimTreeToggle]]
+  git.navigateToGitRoot()
+  vim.cmd [[NvimTreeToggle]]
 end
 
 require('nvim-tree').setup({
-    update_focused_file = {
-        -- enable = true,
-        update_cwd = true
+  update_focused_file = {
+    -- enable = true,
+    update_cwd = true
+  },
+
+  on_attach = require("user.nvimtree_attach"),
+
+  renderer = {
+    add_trailing = false,
+    group_empty = false,
+    highlight_git = false,
+    highlight_opened_files = "none",
+    root_folder_modifier = ":t",
+    indent_markers = {
+      enable = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        none = "  ",
+      },
     },
+  },
 
-    on_attach = require("user.nvimtree_attach"),
+  view = {
+    width = 40
+  },
 
-    renderer = {
-        add_trailing = false,
-        group_empty = false,
-        highlight_git = false,
-        highlight_opened_files = "none",
-        root_folder_modifier = ":t",
-        indent_markers = {
-            enable = false,
-            icons = {
-                corner = "└ ",
-                edge = "│ ",
-                none = "  ",
-            },
-        },
-    },
-
-    view = {
-        width = 40
-    },
-
-    git = {
-        enable = true,
-        ignore = false
-    }
+  git = {
+    enable = true,
+    ignore = false
+  }
 })
 
 --require('lsp-file-operations').setup({})
 
 local function open_nvim_tree(data)
-
   -- buffer is a directory
   local directory = vim.fn.isdirectory(data.file) == 1
 
@@ -71,7 +70,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 
 -- hide seperator
 vim.cmd [[
-    autocmd VimEnter * hi NvimTreeVertSplit guibg=NONE guifg=background 
+    autocmd VimEnter * hi NvimTreeVertSplit guibg=NONE guifg=background
 ]]
 
 -- bd fix
@@ -85,9 +84,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
       -- Required to let the close event complete. An error is thrown without this.
       vim.defer_fn(function()
         -- close nvim-tree: will go to the last hidden buffer used before closing
-        api.tree.toggle({find_file = true, focus = true})
+        api.tree.toggle({ find_file = true, focus = true })
         -- re-open nivm-tree
-        api.tree.toggle({find_file = true, focus = true})
+        api.tree.toggle({ find_file = true, focus = true })
         -- nvim-tree is still the active window. Go to the previous window.
         vim.cmd("wincmd p")
       end, 0)
