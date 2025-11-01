@@ -69,10 +69,7 @@ require("lazy").setup({
 
   'MunifTanjim/nui.nvim',
 
-  {
-    'j-hui/fidget.nvim',
-    tag = "legacy"
-  },
+  'j-hui/fidget.nvim',
 
   -- copilot
   -- 'zbirenbaum/copilot-cmp',

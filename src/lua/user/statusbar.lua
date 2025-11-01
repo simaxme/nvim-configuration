@@ -31,7 +31,7 @@ end
 
 local resultString = ""
 local function loadLSPClients()
-  local clients = vim.lsp.buf_get_clients(vim.api.nvim_get_current_buf())
+  local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
   local names = {}
 
   for index = 1, #clients do
