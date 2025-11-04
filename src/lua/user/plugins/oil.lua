@@ -1,5 +1,13 @@
 local function setup()
-  require("oil").setup({})
+  require("oil").setup({
+    float = {
+      border = true,
+      override = function(conf)
+        conf.border = { "╔", "═", "╗", "║", "╝", "═", "╚", "║" }
+        return conf
+      end
+    }
+  })
 end
 
 return {
