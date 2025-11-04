@@ -10,7 +10,8 @@ require('mason-lspconfig').setup({
     "html",
     "phpactor",
     "rust_analyzer",
-    "lua_ls"
+    "lua_ls",
+    "pyright"
   },
   automatic_enable = false
 })

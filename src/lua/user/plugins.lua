@@ -101,8 +101,9 @@ require("lazy").setup({
   },
 
   require("user.plugins.monokai"),
-  require("user.plugins.possession"),
   require("user.plugins.dashboard"),
   require("user.plugins.mini"),
-  require("user.plugins.neogen")
+  require("user.plugins.neogen"),
+  require("user.plugins.oil"),
+  require("user.plugins.snacks")
 })
