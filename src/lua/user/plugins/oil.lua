@@ -1,7 +1,5 @@
 local function setup()
-  require("oil").setup({
-
-  })
+  require("oil").setup({})
 end
 
 return {

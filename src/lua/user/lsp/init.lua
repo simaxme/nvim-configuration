@@ -33,7 +33,8 @@ vim.lsp.enable({
   'html',
   'phpactor',
   'rust_analyzer',
-  'angularls'
+  'angularls',
+  'pyright'
 })
 
 require "fidget".setup()
