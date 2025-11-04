@@ -62,9 +62,6 @@ require("lazy").setup({
   -- html
   'windwp/nvim-ts-autotag',
 
-
-  'windwp/nvim-autopairs',
-
   -- require("user.plugins.noice"),
 
   'MunifTanjim/nui.nvim',
@@ -97,5 +94,6 @@ require("lazy").setup({
   require("user.plugins.mini"),
   require("user.plugins.neogen"),
   require("user.plugins.oil"),
-  require("user.plugins.snacks")
+  require("user.plugins.snacks"),
+  require("user.plugins.autopairs")
 })
