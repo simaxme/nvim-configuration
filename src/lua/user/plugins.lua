@@ -92,14 +92,6 @@ require("lazy").setup({
 
   'saadparwaiz1/cmp_luasnip',
 
-
-  {
-    "simaxme/nvim-tree-angular",
-    config = function()
-      require("nvim-tree-angular").setup()
-    end
-  },
-
   require("user.plugins.monokai"),
   require("user.plugins.dashboard"),
   require("user.plugins.mini"),
