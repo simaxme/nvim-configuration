@@ -18,7 +18,7 @@ require("lazy").setup({
   'wbthomason/packer.nvim',
 
   -- Statusline and top tab/buffer bar
-  'nvim-lualine/lualine.nvim',
+  require('user.plugins.lualine'),
 
   'nvim-lua/plenary.nvim',
   'nvim-telescope/telescope.nvim',
@@ -28,10 +28,7 @@ require("lazy").setup({
   'lewis6991/gitsigns.nvim',
   -- 'sindrets/diffview.nvim',
 
-  -- auto completion
-  "neovim/nvim-lspconfig",
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  require('user.plugins.lsp.init'),
 
   -- external lsp servers for config
   'mfussenegger/nvim-jdtls',
