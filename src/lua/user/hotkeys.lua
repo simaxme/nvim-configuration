@@ -24,8 +24,10 @@ vim.keymap.set("n", "<Leader>q", require('user.telescope.pickers.buffer.init').o
   { noremap = true })
 
 -- oil.nvim
-vim.keymap.set("", "<S-e>", function() require('oil').open_float(nil) end, { noremap = true })
-vim.keymap.set("", "<C-e>", function() require('oil').open_float(vim.fn.getcwd()) end, { noremap = true })
+vim.keymap.set("", "<S-e>", function() require('oil').open(nil) end,
+  { noremap = true })
+vim.keymap.set("", "<C-e>", function() require('oil').open(nil) end,
+  { noremap = true })
 
 vim.keymap.set("", "<Leader>x", ":bp|bd#<CR>", { noremap = true })
 

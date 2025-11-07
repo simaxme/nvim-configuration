@@ -8,6 +8,11 @@ local function exists(file)
 end
 
 function git.gitcheck(dir)
+  -- For instance, this is required for buffers that are not real buffers, e. g. "oil:...."
+  if string.find(dir, ":") ~= nil then
+    return false
+  end
+
   while #dir > 0 and not exists(dir .. "/.git") do
     dir = dir:gsub("/+[^/]*$", "")
   end
@@ -27,7 +32,6 @@ function git.navigateToGitRoot()
   end
 end
 
--- This does not work together with oil.nvim
--- vim.api.nvim_create_autocmd({ 'BufRead' }, { callback = function() git.navigateToGitRoot() end })
+vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = function() git.navigateToGitRoot() end })
 
 return git
