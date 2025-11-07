@@ -19,7 +19,6 @@ require("lazy").setup({
 
   -- Statusline and top tab/buffer bar
   'nvim-lualine/lualine.nvim',
-  'akinsho/bufferline.nvim',
 
   'nvim-lua/plenary.nvim',
   'nvim-telescope/telescope.nvim',
@@ -34,21 +33,11 @@ require("lazy").setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
 
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
-  'hrsh7th/cmp-nvim-lsp-signature-help',
-  'hrsh7th/nvim-cmp',
-
   -- external lsp servers for config
   'mfussenegger/nvim-jdtls',
 
   -- -- syntax
   'nvim-treesitter/nvim-treesitter',
-
-  -- TODO change
-  'kyazdani42/nvim-tree.lua',
 
   'rcarriga/nvim-notify',
 
@@ -89,11 +78,12 @@ require("lazy").setup({
 
   'saadparwaiz1/cmp_luasnip',
 
+  require("user.plugins.cmp"),
   require("user.plugins.monokai"),
   require("user.plugins.dashboard"),
   require("user.plugins.mini"),
   require("user.plugins.neogen"),
   require("user.plugins.oil"),
   require("user.plugins.snacks"),
-  require("user.plugins.autopairs")
+  require("user.plugins.autopairs"),
 })
