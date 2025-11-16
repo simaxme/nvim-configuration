@@ -19,10 +19,6 @@ vim.keymap.set("i", "<C-l>", "<Right>", { noremap = true })
 vim.keymap.set("n", "<Tab>", "v>gv<ESC>", { noremap = true })
 vim.keymap.set("n", "<S-Tab>", "v<gv<ESC>", { noremap = true })
 
--- standard custom made options menu
-vim.keymap.set("n", "<Leader>q", require('user.telescope.pickers.buffer.init').openSelect,
-  { noremap = true })
-
 -- oil.nvim
 vim.keymap.set("", "<S-e>", function() require('oil').open(nil) end,
   { noremap = true })
@@ -49,7 +45,9 @@ vim.api.nvim_set_keymap("v", "<Leader><Tab>", "gcc", { noremap = false })
 vim.keymap.set("n", "ff", "<cmd>Telescope find_files<CR>", { noremap = true })
 vim.keymap.set("n", "fg", "<cmd>Telescope live_grep<CR>", { noremap = true })
 vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>", { noremap = true })
-vim.keymap.set("n", "fb", require('user.telescope.lib').findBuffer, { noremap = true })
+vim.keymap.set("n", "fb", function()
+  require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({ previewer = false }))
+end, { noremap = true })
 -- vim.keymap.set("n", "fr", require('user.lsp.rename'), {noremap = true})
 
 vim.keymap.set("n", "fd", "<cmd>DiffviewOpen<CR>", { noremap = true })
