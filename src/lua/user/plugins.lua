@@ -23,15 +23,13 @@ require("lazy").setup({
   'nvim-lua/plenary.nvim',
   'nvim-telescope/telescope.nvim',
 
-
   -- basic git tools
   require('user.plugins.gitsigns'),
   require('user.plugins.diffview'),
 
   require('user.plugins.lsp.init'),
 
-  -- -- syntax
-  'nvim-treesitter/nvim-treesitter',
+  require('user.plugins.treesitter'),
 
   require('user.plugins.notify'),
 
