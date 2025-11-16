@@ -1,5 +1,4 @@
 local git = {}
-
 local utils = require "user.utils"
 
 local function exists(file)
@@ -24,7 +23,6 @@ function git.isGitDirectory()
 end
 
 function git.navigateToGitRoot()
-  print("Navigate to git root!")
   local isGitRepo = git.gitcheck(vim.fn.expand("%:p:h"));
 
   if isGitRepo then

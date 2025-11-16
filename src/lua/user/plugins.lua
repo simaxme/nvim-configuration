@@ -25,18 +25,15 @@ require("lazy").setup({
 
 
   -- basic git tools
-  'lewis6991/gitsigns.nvim',
-  -- 'sindrets/diffview.nvim',
+  require('user.plugins.gitsigns'),
+  require('user.plugins.diffview'),
 
   require('user.plugins.lsp.init'),
-
-  -- external lsp servers for config
-  'mfussenegger/nvim-jdtls',
 
   -- -- syntax
   'nvim-treesitter/nvim-treesitter',
 
-  'rcarriga/nvim-notify',
+  require('user.plugins.notify'),
 
   -- icon support
   -- 'ryanoasis/vim-devicons',
@@ -46,34 +43,19 @@ require("lazy").setup({
   -- TODO LOOK HERE
 
   -- html
-  'windwp/nvim-ts-autotag',
+  require('user.plugins.html_autotag'),
 
-  -- require("user.plugins.noice"),
+  -- 'MunifTanjim/nui.nvim',
 
-  'MunifTanjim/nui.nvim',
-
-  'j-hui/fidget.nvim',
+  require('user.plugins.fidget'),
 
   -- copilot
   -- 'zbirenbaum/copilot-cmp',
   -- 'zbirenbaum/copilot.lua',
 
-  -- terminal
-  'akinsho/toggleterm.nvim',
-
   -- 'SmiteshP/nvim-navic',
 
   -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
-
-  'nmac427/guess-indent.nvim',
-
-  {
-    "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    version = "v2.0.0", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-  },
-
-  'saadparwaiz1/cmp_luasnip',
 
   require("user.plugins.cmp"),
   require("user.plugins.monokai"),

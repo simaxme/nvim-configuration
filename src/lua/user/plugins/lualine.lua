@@ -1,3 +1,7 @@
+local function get_current_tabs()
+  return vim.opt.tabstop:get() .. " spaces"
+end
+
 return {
   'nvim-lualine/lualine.nvim',
 
@@ -10,6 +14,7 @@ return {
         theme = "monokai-pro"
       },
       sections = {
+        lualine_x = { get_current_tabs, 'encoding', 'fileformat', 'filetype' },
         lualine_y = { "lsp_status" },
         lualine_z = { 'progress', 'location' }
       }
