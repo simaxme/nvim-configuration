@@ -20,9 +20,6 @@ require("lazy").setup({
   -- Statusline and top tab/buffer bar
   require('user.plugins.lualine'),
 
-  'nvim-lua/plenary.nvim',
-  'nvim-telescope/telescope.nvim',
-
   -- basic git tools
   require('user.plugins.gitsigns'),
   require('user.plugins.diffview'),
@@ -30,6 +27,7 @@ require("lazy").setup({
   require('user.plugins.lsp.init'),
 
   require('user.plugins.treesitter'),
+  require('user.plugins.telescope'),
 
   require('user.plugins.notify'),
 
