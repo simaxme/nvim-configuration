@@ -37,8 +37,6 @@ vim.lsp.enable({
   'pyright'
 })
 
-require "fidget".setup()
-
 local function any_client_has_formatting()
   local clients = vim.lsp.get_clients({
     method = "textDocument/formatting",

@@ -4,7 +4,8 @@ return {
 
   dependencies = {
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim"
+    "williamboman/mason-lspconfig.nvim",
+    "mfussenegger/nvim-jdtls",
   },
 
   config = function()
