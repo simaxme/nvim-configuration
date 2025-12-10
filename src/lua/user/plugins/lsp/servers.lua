@@ -25,7 +25,7 @@ vim.lsp.config('cssls', {
 vim.lsp.config('html', { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } })
 
 vim.lsp.enable({
-  'tsserver',
+  'ts_ls',
   'lua_ls',
   'tailwindcss',
   'jsonls',
