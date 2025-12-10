@@ -12,5 +12,6 @@ return {
     require('user.plugins.lsp.mason')
     require('user.plugins.lsp.servers')
     require('user.plugins.lsp.java')
+    require('user.plugins.lsp.diagnostics')
   end
 }
