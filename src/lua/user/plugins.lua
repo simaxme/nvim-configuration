@@ -22,7 +22,6 @@ require("lazy").setup({
 
   -- basic git tools
   require('user.plugins.gitsigns'),
-  require('user.plugins.diffview'),
 
   require('user.plugins.lsp.init'),
 
