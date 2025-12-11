@@ -53,7 +53,7 @@ require("lazy").setup({
   -- { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
   require("user.plugins.cmp"),
-  require("user.plugins.monokai"),
+  require("user.plugins.theme"),
   require("user.plugins.mini"),
   require("user.plugins.neogen"),
   require("user.plugins.oil"),
