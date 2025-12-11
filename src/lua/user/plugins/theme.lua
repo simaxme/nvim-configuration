@@ -9,5 +9,6 @@ end
 
 return {
   "loctvl842/monokai-pro.nvim",
+  commit = "1ac671f6da720cba967d28d25c2f16b8b4e18808",
   config = setup
 }
