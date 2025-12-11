@@ -1,5 +1,7 @@
 return {
   'nvim-treesitter/nvim-treesitter',
+  commit = "2979e048b356cfd32dc419d5803dc356b9832adf",
+
   lazy = false,
   branch = "main",
   build = ":TSUpdate",

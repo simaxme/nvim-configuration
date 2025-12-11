@@ -7,6 +7,6 @@ end
 
 return {
   'nvim-mini/mini.nvim',
-  version = false,
+  version = "0.16.0",
   config = setup
 }
