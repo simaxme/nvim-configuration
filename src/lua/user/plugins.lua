@@ -55,7 +55,6 @@ require("lazy").setup({
 
   require("user.plugins.cmp"),
   require("user.plugins.monokai"),
-  require("user.plugins.dashboard"),
   require("user.plugins.mini"),
   require("user.plugins.neogen"),
   require("user.plugins.oil"),
