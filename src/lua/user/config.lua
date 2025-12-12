@@ -19,6 +19,13 @@ vim.opt.swapfile = false
 vim.opt.ignorecase = true
 vim.opt.cursorline = true
 
+-- For auto reloading file
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  callback = function()
+    vim.cmd("checktime")
+  end
+})
 
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
