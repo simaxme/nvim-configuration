@@ -46,7 +46,13 @@ local function any_client_has_formatting()
 end
 
 vim.api.nvim_create_autocmd('BufWritePre', {
-  callback = function()
+  callback = function(information)
+    local bufnr = information.buf
+    local filetype = vim.fn.getbufvar(bufnr, "&filetype")
+    if filetype == "java" or filetype == "typescript" or filetype == "html" or filetype == "css" or filetype == "scss" then
+      return
+    end
+
     if not any_client_has_formatting() then
       return
     end

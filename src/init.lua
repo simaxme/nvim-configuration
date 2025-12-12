@@ -4,6 +4,7 @@ require('user.syntax')
 require('user.title')
 require('user.hotkeys')
 require('user.git')
+require('user.prettier')
 
 -- plugins
 require('user.tmux')
