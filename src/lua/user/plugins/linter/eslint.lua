@@ -2,7 +2,7 @@ local M = {}
 
 local lint = require("lint")
 
-function M.setup_eslint(information)
+function M.run_eslint(information)
   local bufnr = information.buf
   local filetype = vim.fn.getbufvar(bufnr, "&filetype")
 
