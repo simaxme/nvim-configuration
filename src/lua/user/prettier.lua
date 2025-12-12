@@ -12,6 +12,11 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 
       local binary = root_folder .. "/node_modules/.bin/prettier"
 
+      if vim.fn.filereadable(binary) == 0 then
+        vim.notify("Prettier binary not readbable/found!")
+        return
+      end
+
       local output = vim.system({ binary, buffer_path, "--check" }, {
         text = true,
         cwd = root_folder
