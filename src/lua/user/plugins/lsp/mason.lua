@@ -6,7 +6,6 @@ require('mason-lspconfig').setup({
     "jdtls",
     "jsonls",
     "cssls",
-    "tailwindcss",
     "html",
     "phpactor",
     "rust_analyzer",
