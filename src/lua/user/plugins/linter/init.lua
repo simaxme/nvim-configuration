@@ -1,7 +1,7 @@
 local function setup()
   vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufEnter' }, {
     callback = function(information)
-      require('user.plugins.linter.eslint').setup_eslint(information)
+      require('user.plugins.linter.eslint').run_eslint(information)
     end
   })
 end
