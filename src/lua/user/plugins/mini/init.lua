@@ -1,6 +1,6 @@
 return {
   {
-    'nvim-mini/mini.nvim',
+    "nvim-mini/mini.nvim",
     version = "0.16.0",
     config = function()
       require("user.plugins.mini.ai")

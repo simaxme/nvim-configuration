@@ -1,7 +1,7 @@
 return {
   {
-    'folke/snacks.nvim',
-    version = '2.30.0',
+    "folke/snacks.nvim",
+    version = "2.30.0",
     priority = 1000,
     opts = {
       input = {

@@ -1,10 +1,10 @@
 return {
   {
-    'nvim-telescope/telescope.nvim',
-    version = '0.2.0',
+    "nvim-telescope/telescope.nvim",
+    version = "0.2.0",
 
     dependencies = {
-      'nvim-lua/plenary.nvim'
+      "nvim-lua/plenary.nvim"
     },
 
     opts = {

@@ -10,5 +10,4 @@ require('user.diagnostics')
 
 -- plugins
 require('user.tmux')
-require("user.guessindent")
 require("user.mediafiles")

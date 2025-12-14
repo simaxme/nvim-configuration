@@ -1,7 +1,7 @@
 return {
   {
-    'stevearc/oil.nvim',
-    commit = 'cbcb3f997f6f261c577b943ec94e4ef55108dd95',
+    "stevearc/oil.nvim",
+    commit = "cbcb3f997f6f261c577b943ec94e4ef55108dd95",
 
     opts = {
       float = {

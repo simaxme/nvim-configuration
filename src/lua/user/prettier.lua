@@ -1,4 +1,4 @@
-vim.api.nvim_create_autocmd('BufWritePost', {
+vim.api.nvim_create_autocmd("BufWritePost", {
   callback = function(information)
     local bufnr = information.buf
     local filetype = vim.fn.getbufvar(bufnr, "&filetype")

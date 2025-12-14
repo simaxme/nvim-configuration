@@ -30,6 +30,6 @@ function git.navigateToGitRoot()
   end
 end
 
-vim.api.nvim_create_autocmd({ 'BufEnter' }, { callback = function() git.navigateToGitRoot() end })
+vim.api.nvim_create_autocmd({ "BufEnter" }, { callback = function() git.navigateToGitRoot() end })
 
 return git

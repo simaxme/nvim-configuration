@@ -12,29 +12,29 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local function on_attach(client, bufnr)
 end
 
-vim.lsp.config('*', {
+vim.lsp.config("*", {
   on_attach = on_attach,
   capabilities = capabilities
 })
-vim.lsp.config('tailwindcss',
+vim.lsp.config("tailwindcss",
   { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } }
 )
-vim.lsp.config('cssls', {
+vim.lsp.config("cssls", {
   on_attach = on_attach, filetypes = { "css", "scss" }, capabilities = capabilities
 })
-vim.lsp.config('html', { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } })
+vim.lsp.config("html", { on_attach = on_attach, capabilities = capabilities, filetypes = { "html", "angular.html" } })
 
 vim.lsp.enable({
-  'ts_ls',
-  'lua_ls',
-  'tailwindcss',
-  'jsonls',
-  'cssls',
-  'html',
-  'phpactor',
-  'rust_analyzer',
-  'angularls',
-  'pyright'
+  "ts_ls",
+  "lua_ls",
+  "tailwindcss",
+  "jsonls",
+  "cssls",
+  "html",
+  "phpactor",
+  "rust_analyzer",
+  "angularls",
+  "pyright"
 })
 
 local function any_client_has_formatting()
@@ -45,7 +45,7 @@ local function any_client_has_formatting()
   return #clients ~= 0
 end
 
-vim.api.nvim_create_autocmd('BufWritePre', {
+vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function(information)
     local bufnr = information.buf
     local filetype = vim.fn.getbufvar(bufnr, "&filetype")

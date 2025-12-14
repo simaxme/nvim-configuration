@@ -20,9 +20,9 @@ vim.keymap.set("n", "<Tab>", "v>gv<ESC>", { noremap = true })
 vim.keymap.set("n", "<S-Tab>", "v<gv<ESC>", { noremap = true })
 
 -- oil.nvim
-vim.keymap.set("", "<S-e>", function() require('oil').open(nil) end,
+vim.keymap.set("", "<S-e>", function() require("oil").open(nil) end,
   { noremap = true })
-vim.keymap.set("", "<C-e>", function() require('oil').open(nil) end,
+vim.keymap.set("", "<C-e>", function() require("oil").open(nil) end,
   { noremap = true })
 
 vim.keymap.set("", "<Leader>x", ":bp|bd#<CR>", { noremap = true })
@@ -46,14 +46,13 @@ vim.keymap.set("n", "ff", "<cmd>Telescope find_files<CR>", { noremap = true })
 vim.keymap.set("n", "fg", "<cmd>Telescope live_grep<CR>", { noremap = true })
 vim.keymap.set("n", "fb", "<cmd>Telescope buffers<CR>", { noremap = true })
 vim.keymap.set("n", "fb", function()
-  require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({ previewer = false }))
+  require("telescope.builtin").buffers(require("telescope.themes").get_dropdown({ previewer = false }))
 end, { noremap = true })
--- vim.keymap.set("n", "fr", require('user.lsp.rename'), {noremap = true})
 
 vim.keymap.set("n", "fd", "<cmd>DiffviewOpen<CR>", { noremap = true })
 
 vim.keymap.set("n", "<C-b>", "<cmd>ShowBufferList<CR>", { noremap = true })
-vim.keymap.set("n", "<Leader>v", function() require('neoclip.fzf')({ 'unnamed', 'plus' }) end, { noremap = true })
+vim.keymap.set("n", "<Leader>v", function() require("neoclip.fzf")({ "unnamed", "plus" }) end, { noremap = true })
 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
