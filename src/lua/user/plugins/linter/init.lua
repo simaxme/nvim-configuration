@@ -7,7 +7,9 @@ local function setup()
 end
 
 return {
-  "mfussenegger/nvim-lint",
-  commit = "897f7771c1ca4b11659dfe372d9376acd9fe3097",
-  config = setup
+  {
+    "mfussenegger/nvim-lint",
+    commit = "897f7771c1ca4b11659dfe372d9376acd9fe3097",
+    config = setup
+  }
 }
