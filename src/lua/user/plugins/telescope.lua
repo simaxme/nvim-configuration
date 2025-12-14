@@ -7,12 +7,10 @@ return {
       'nvim-lua/plenary.nvim'
     },
 
-    config = function()
-      require("telescope").setup({
-        defaults = {
-          borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
-        }
-      })
-    end
+    opts = {
+      defaults = {
+        borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
+      }
+    }
   }
 }
