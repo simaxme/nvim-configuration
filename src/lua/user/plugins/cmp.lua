@@ -72,7 +72,6 @@ return {
     { "hrsh7th/cmp-path",                    commit = "c642487086dbd9a93160e1679a1327be111cbc25" },
     { "hrsh7th/cmp-cmdline",                 commit = "d126061b624e0af6c3a556428712dd4d4194ec6d" },
     { "hrsh7th/cmp-nvim-lsp-signature-help", commit = "fd3e882e56956675c620898bf1ffcf4fcbe7ec84" },
-    { "L3MON4D3/LuaSnip",                    version = "2.4.1" },
     { "saadparwaiz1/cmp_luasnip",            commit = "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   }
 }
