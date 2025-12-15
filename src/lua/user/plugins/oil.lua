@@ -1,9 +1,21 @@
+function _G.get_winbar()
+  local dir = require("oil").get_current_dir()
+  if dir then
+    return vim.fn.fnamemodify(dir, ":~")
+  else
+    return "?"
+  end
+end
+
 return {
   {
     "stevearc/oil.nvim",
     commit = "cbcb3f997f6f261c577b943ec94e4ef55108dd95",
 
     opts = {
+      win_options = {
+        winbar = "%!v:lua.get_winbar()"
+      },
       float = {
         border = true,
         override = function(conf)
