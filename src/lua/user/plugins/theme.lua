@@ -3,8 +3,21 @@ return {
 
   config = function()
     require("catppuccin").setup({
-      telescope = {
-        enabled = true
+      integrations = {
+        cmp = true,
+        telescope = {
+          enabled = true
+        },
+        gitsigns = true,
+        mini = {
+          enabled = true,
+          indentscope_color = "",
+        },
+        notify = true,
+        snacks = {
+          enabled = false,
+          indent_scope_color = "",
+        }
       }
     })
 
