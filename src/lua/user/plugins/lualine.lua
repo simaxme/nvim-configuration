@@ -12,7 +12,7 @@ return {
         refresh = {
           statusline = 5000
         },
-        theme = "monokai-pro"
+        theme = "catppuccin"
       },
       sections = {
         lualine_x = { get_current_tabs, "encoding", "fileformat", "filetype" },
