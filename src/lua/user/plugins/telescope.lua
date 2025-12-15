@@ -5,12 +5,6 @@ return {
 
     dependencies = {
       "nvim-lua/plenary.nvim"
-    },
-
-    opts = {
-      defaults = {
-        borderchars = { "█", " ", "▀", "█", "█", " ", " ", "▀" },
-      }
     }
   }
 }
