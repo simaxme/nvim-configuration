@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     local bufnr = information.buf
     local filetype = vim.fn.getbufvar(bufnr, "&filetype")
 
-    if filetype == "java" or filetype == "typescript" or filetype == "html" or filetype == "css" or filetype == "scss" then
+    if filetype == "java" or filetype == "typescript" or filetype == "html" or filetype == "css" or filetype == "scss" or filetype == "htmlangular" then
       local root_folder = vim.fs.root(bufnr, ".prettierrc")
 
       if root_folder == nil then return end

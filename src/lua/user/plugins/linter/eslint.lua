@@ -5,7 +5,7 @@ local lint = require("lint")
 function M.run_eslint(bufnr)
   local filetype = vim.fn.getbufvar(bufnr, "&filetype")
 
-  if filetype ~= 'typescript' and filetype ~= 'javascript' and filetype ~= 'scss' and filetype ~= 'css' and filetype ~= 'html' then
+  if filetype ~= "typescript" and filetype ~= "javascript" and filetype ~= "scss" and filetype ~= "css" and filetype ~= "html" and filetype ~= "htmlangular" then
     return
   end
 
@@ -34,7 +34,7 @@ function M.run_eslint(bufnr)
     "cd '" .. cwd .. "' && '" .. binary .. "' --format json --stdin --stdin-filename '" .. filepath .. "'"
   }
 
-  require('lint').try_lint("eslint")
+  require("lint").try_lint("eslint")
 end
 
 return M
