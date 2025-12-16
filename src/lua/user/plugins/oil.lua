@@ -34,7 +34,15 @@ return {
         ["<C-t>"] = { "actions.select", opts = { tab = true } },
         ["<C-p>"] = "actions.preview",
         ["<C-c>"] = { "actions.close", mode = "n" },
-        ["<C-l>"] = "actions.refresh",
+        ["<C-l>"] = {
+          callback = function()
+            require("oil").discard_all_changes()
+
+            vim.defer_fn(function()
+              require("oil.actions").refresh.callback()
+            end, 100)
+          end
+        },
         ["-"] = { "actions.parent", mode = "n" },
         ["_"] = { "actions.open_cwd", mode = "n" },
         ["`"] = { "actions.cd", mode = "n" },
