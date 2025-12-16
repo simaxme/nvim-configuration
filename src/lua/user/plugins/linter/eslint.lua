@@ -2,8 +2,7 @@ local M = {}
 
 local lint = require("lint")
 
-function M.run_eslint(information)
-  local bufnr = information.buf
+function M.run_eslint(bufnr)
   local filetype = vim.fn.getbufvar(bufnr, "&filetype")
 
   if filetype ~= 'typescript' and filetype ~= 'javascript' and filetype ~= 'scss' and filetype ~= 'css' and filetype ~= 'html' then
