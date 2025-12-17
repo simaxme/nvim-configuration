@@ -13,8 +13,6 @@ function tmux.getWindowName()
   return string.gsub(content, "[\n\r]", "")
 end
 
-local oldWindowName = tmux.getWindowName()
-
 function tmux.getSessionName()
   local handle = io.popen("tmux display-message -p '#S'")
   if (handle == nil) then return nil end
@@ -93,28 +91,7 @@ function tmux.createSession(shellCommand)
   io.popen("tmux new-session '" .. shellCommand .. "'")
 end
 
-local function autoRenameWindow()
-  local folderName = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-  tmux.renameWindow("nvim - " .. folderName)
-end
-
 if tmux.isTmux() then
-  autoRenameWindow()
-
-  local id = nil
-
-  vim.api.nvim_create_autocmd("DirChanged", {
-    callback = function()
-      autoRenameWindow()
-      id = nil
-    end
-  })
-  vim.api.nvim_create_autocmd("ExitPre", {
-    callback = function()
-      tmux.renameWindow(oldWindowName)
-    end
-  })
-
   vim.keymap.set("n", "<Leader>t", function()
     local folderName = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 
