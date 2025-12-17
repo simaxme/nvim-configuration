@@ -1,5 +1,4 @@
 local git = {}
-local utils = require "user.utils"
 
 local function exists(file)
   local f = io.open(file)
