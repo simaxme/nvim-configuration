@@ -2,6 +2,15 @@ local function get_current_tabs()
   return vim.opt.tabstop:get() .. " spaces"
 end
 
+local function get_available_formatters()
+  local formatters = require("conform").list_formatters(0)
+  local names = {}
+  for _, v in ipairs(formatters) do
+    table.insert(names, v.name)
+  end
+  return table.concat(names, " ")
+end
+
 return {
   {
     "nvim-lualine/lualine.nvim",
@@ -16,7 +25,7 @@ return {
       },
       sections = {
         lualine_x = { get_current_tabs, "encoding", "fileformat", "filetype" },
-        lualine_y = { "lsp_status" },
+        lualine_y = { get_available_formatters, "lsp_status" },
         lualine_z = { "progress", "location" }
       }
     }
