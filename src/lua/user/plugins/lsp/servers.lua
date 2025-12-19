@@ -39,26 +39,3 @@ vim.lsp.enable({
   "angularls",
   "pyright"
 })
-
-local function any_client_has_formatting()
-  local clients = vim.lsp.get_clients({
-    method = "textDocument/formatting",
-    bufnr = 0
-  })
-  return #clients ~= 0
-end
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-  callback = function(information)
-    local bufnr = information.buf
-    local filetype = vim.fn.getbufvar(bufnr, "&filetype")
-    if filetype == "java" or filetype == "typescript" or filetype == "html" or filetype == "css" or filetype == "scss" then
-      return
-    end
-
-    if not any_client_has_formatting() then
-      return
-    end
-    vim.lsp.buf.format()
-  end,
-})
