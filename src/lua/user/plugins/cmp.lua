@@ -49,7 +49,7 @@ local function setup()
     },
 
     formatting = {
-      fields = { "kind", "abbr", "menu" },
+      fields = { "abbr", "menu", "kind" },
     },
   })
 
