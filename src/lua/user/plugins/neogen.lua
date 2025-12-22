@@ -2,8 +2,14 @@ return {
   {
     "danymat/neogen",
     commit = "d7f9461727751fb07f82011051338a9aba07581d",
-    opts = {}
-    -- Uncomment next line if you want to follow only stable versions
-    -- version = "*"
+    opts = {},
+    config = function(_, opts)
+      require("neogen").setup(opts)
+
+      -- keymap
+      vim.keymap.set("n", "<Leader>nc", function()
+        require("neogen").generate()
+      end, { noremap = true })
+    end
   }
 }

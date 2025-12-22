@@ -6,6 +6,7 @@ return {
 
     config = function()
       require("user.plugins.lsp.servers")
+      require("user.plugins.lsp.keymaps")
     end
   },
 

@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<C-s>", function() vim.lsp.buf.definition() end, { noremap = true })
+vim.keymap.set("n", "<C-c>", ":Telescope lsp_references<CR>", { noremap = true })
+vim.keymap.set("n", "rn", function() vim.lsp.buf.rename() end, { noremap = true })
+vim.keymap.set("n", "<Leader>w", function() vim.lsp.buf.code_action() end, {})
+vim.keymap.set("", "<C-h>", function() vim.lsp.buf.hover() end, {})

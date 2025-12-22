@@ -59,8 +59,18 @@ return {
         }
       }
     },
+
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
+
+    config = function(_, opts)
+      require("oil").setup(opts)
+
+      vim.keymap.set("", "<S-e>", function() require("oil").open(nil) end,
+        { noremap = true })
+      vim.keymap.set("", "<C-e>", function() require("oil").open(nil) end,
+        { noremap = true })
+    end
   },
 
   {
