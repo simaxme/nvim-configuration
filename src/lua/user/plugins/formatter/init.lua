@@ -1,5 +1,6 @@
 return {
   "stevearc/conform.nvim",
+  version = "9.1.0",
   opts = {
     formatters_by_ft = {
       css = {
