@@ -9,7 +9,7 @@ return {
       -- keymap
       vim.keymap.set("n", "<Leader>nc", function()
         require("neogen").generate()
-      end, { noremap = true })
+      end, { noremap = true, desc = "Generate documentation for current method/variable/field under cursor" })
     end
   }
 }

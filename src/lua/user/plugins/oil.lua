@@ -67,9 +67,9 @@ return {
       require("oil").setup(opts)
 
       vim.keymap.set("", "<S-e>", function() require("oil").open(nil) end,
-        { noremap = true })
+        { noremap = true, desc = "Open oil at location of current file" })
       vim.keymap.set("", "<C-e>", function() require("oil").open(nil) end,
-        { noremap = true })
+        { noremap = true, desc = "Open oil at location of current file" })
     end
   },
 

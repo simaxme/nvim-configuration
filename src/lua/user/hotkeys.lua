@@ -9,8 +9,8 @@ vim.keymap.set("n", "<Tab>", ">>", { noremap = true })
 vim.keymap.set("n", "<S-Tab>", "<<", { noremap = true })
 
 -- Commenting
-vim.keymap.set("n", "<Leader><Tab>", "gcc", { noremap = false })
-vim.keymap.set("v", "<Leader><Tab>", "gcc", { noremap = false })
+vim.keymap.set("n", "<Leader><Tab>", "gcc", { noremap = false, desc = "Comment currnet line" })
+vim.keymap.set("v", "<Leader><Tab>", "gcc", { noremap = false, desc = "Comment current selection" })
 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
@@ -26,4 +26,4 @@ vim.keymap.set("n", "<Leader>bd", function()
   end
 
   vim.notify("Closed all other buffers!")
-end, { noremap = true })
+end, { noremap = true, desc = "Delete all buffers except current" })
