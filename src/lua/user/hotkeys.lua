@@ -9,8 +9,8 @@ vim.keymap.set("n", "<Tab>", ">>", { noremap = true })
 vim.keymap.set("n", "<S-Tab>", "<<", { noremap = true })
 
 -- Commenting
-vim.keymap.set("n", "<Leader><Tab>", "gcc", { noremap = false, desc = "Comment currnet line" })
-vim.keymap.set("v", "<Leader><Tab>", "gcc", { noremap = false, desc = "Comment current selection" })
+vim.keymap.set("n", "<Leader><Tab>", "gcc", { remap = true, desc = "Comment currnet line" })
+vim.keymap.set("v", "<Leader><Tab>", "gcc", { remap = true, desc = "Comment current selection" })
 
 -- avoid copying
 vim.keymap.set("n", "d", '"_d', { noremap = true })
