@@ -23,7 +23,7 @@ java \
   "-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar" \
   -jar $(echo "$JAR") \
   -configuration "$HOME/.local/share/nvim/mason/packages/jdtls/$JDTLS_CONFIG_NAME" \
-  -data $(echo "$ROOT_DIR/.nvim/jdtls") \
+  -data $(echo "$HOME/.local/share/nvim/jdtlsdata/$MAPPED_ROOT_DIR") \
   --add-modules=ALL-SYSTEM \
   --add-opens java.base/java.util=ALL-UNNAMED \
   --add-opens java.base/java.lang=ALL-UNNAMED
