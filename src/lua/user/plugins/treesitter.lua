@@ -14,7 +14,6 @@ return {
         "bash",
         "html",
         "lua",
-        "vim",
         "python",
         "css",
         "scss",
