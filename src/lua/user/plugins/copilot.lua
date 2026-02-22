@@ -1,6 +1,7 @@
 return {
   "zbirenbaum/copilot.lua",
 
+  commit = "5c01badd42049a63ac9e5d6c8ea85aaf66cb940f",
   cmd = "Copilot",
   event = "InsertEnter",
 
