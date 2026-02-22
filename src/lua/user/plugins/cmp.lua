@@ -13,8 +13,7 @@ local function setup()
     sources = cmp.config.sources({
       { name = "luasnip" },
       { name = "nvim_lsp" },
-      { name = "nvim_lsp_signature_help" },
-      { name = "copilot" }
+      { name = "nvim_lsp_signature_help" }
     }),
 
     mapping = cmp.mapping.preset.insert({
@@ -52,6 +51,13 @@ local function setup()
       fields = { "abbr", "menu", "kind" },
     },
   })
+
+  -- cmp.event:on("menu_opened", function()
+  --   vim.b.copilot_suggestion_hidden = true
+  -- end)
+  -- cmp.event:on("menu_closed", function()
+  --   vim.b.copilot_suggestion_hidden = false
+  -- end)
 
   local cmp_autopairs = require("nvim-autopairs.completion.cmp")
   cmp.event:on(
