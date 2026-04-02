@@ -23,5 +23,7 @@ return {
     })
 
     vim.cmd("colorscheme catppuccin-mocha")
+
+    vim.api.nvim_set_hl(0, "Whitespace", { fg = "#ff0000" })
   end
 }
