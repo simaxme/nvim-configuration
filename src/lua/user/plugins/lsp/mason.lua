@@ -11,7 +11,8 @@ require("mason-lspconfig").setup({
     "rust_analyzer",
     "lua_ls",
     "pyright",
-    "ts_ls"
+    "ts_ls",
+    "clangd"
   },
   automatic_enable = false
 })

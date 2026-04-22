@@ -34,5 +34,6 @@ vim.lsp.enable({
   "phpactor",
   "rust_analyzer",
   "angularls",
-  "pyright"
+  "pyright",
+  "clangd"
 })
