@@ -36,11 +36,19 @@ return {
       java = {
         "prettier",
         stop_after_first = true
-      }
+      },
     },
-    format_on_save = {
-      lsp_format = "fallback",
-      timeout_ms = 2000
-    }
+    format_on_save = function(bufnr)
+      local filetype = vim.bo[bufnr].filetype
+
+      if filetype == "c" then
+        return nil
+      end
+
+      return {
+        lsp_format = "fallback",
+        timeout_ms = 2000
+      }
+    end
   }
 }
